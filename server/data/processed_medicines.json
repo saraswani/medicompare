@@ -1,0 +1,4932 @@
+{
+  "medicines": [
+    {
+      "id": "MED001",
+      "name": "Dolo 650 Tablet",
+      "price": 33.6,
+      "is_discontinued": false,
+      "manufacturer_name": "Micro Labs Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 2.24,
+      "short_composition1": "Paracetamol (650mg)",
+      "short_composition2": "",
+      "display_composition": "Paracetamol (650mg)",
+      "composition_key": "paracetamol-650mg",
+      "salts": [
+        {
+          "raw": "Paracetamol (650mg)",
+          "name": "Paracetamol",
+          "strength": "650mg",
+          "normalizedName": "paracetamol"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED002",
+      "name": "Calpol 650 Tablet",
+      "price": 31,
+      "is_discontinued": false,
+      "manufacturer_name": "GlaxoSmithKline Pharmaceuticals Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 2.07,
+      "short_composition1": "Paracetamol (650mg)",
+      "short_composition2": "",
+      "display_composition": "Paracetamol (650mg)",
+      "composition_key": "paracetamol-650mg",
+      "salts": [
+        {
+          "raw": "Paracetamol (650mg)",
+          "name": "Paracetamol",
+          "strength": "650mg",
+          "normalizedName": "paracetamol"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED003",
+      "name": "Crocin 650 Tablet",
+      "price": 32.5,
+      "is_discontinued": false,
+      "manufacturer_name": "GlaxoSmithKline Pharmaceuticals Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 2.17,
+      "short_composition1": "Paracetamol (650mg)",
+      "short_composition2": "",
+      "display_composition": "Paracetamol (650mg)",
+      "composition_key": "paracetamol-650mg",
+      "salts": [
+        {
+          "raw": "Paracetamol (650mg)",
+          "name": "Paracetamol",
+          "strength": "650mg",
+          "normalizedName": "paracetamol"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED004",
+      "name": "Pacimol 650 Tablet",
+      "price": 30,
+      "is_discontinued": false,
+      "manufacturer_name": "Ipca Laboratories Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 2,
+      "short_composition1": "Paracetamol (650mg)",
+      "short_composition2": "",
+      "display_composition": "Paracetamol (650mg)",
+      "composition_key": "paracetamol-650mg",
+      "salts": [
+        {
+          "raw": "Paracetamol (650mg)",
+          "name": "Paracetamol",
+          "strength": "650mg",
+          "normalizedName": "paracetamol"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED005",
+      "name": "P-650 Tablet",
+      "price": 21,
+      "is_discontinued": false,
+      "manufacturer_name": "Apex Laboratories Pvt Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 2.1,
+      "short_composition1": "Paracetamol (650mg)",
+      "short_composition2": "",
+      "display_composition": "Paracetamol (650mg)",
+      "composition_key": "paracetamol-650mg",
+      "salts": [
+        {
+          "raw": "Paracetamol (650mg)",
+          "name": "Paracetamol",
+          "strength": "650mg",
+          "normalizedName": "paracetamol"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED006",
+      "name": "Paracetamol 650 Jan Aushadhi",
+      "price": 8.5,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 0.85,
+      "short_composition1": "Paracetamol (650mg)",
+      "short_composition2": "",
+      "display_composition": "Paracetamol (650mg)",
+      "composition_key": "paracetamol-650mg",
+      "salts": [
+        {
+          "raw": "Paracetamol (650mg)",
+          "name": "Paracetamol",
+          "strength": "650mg",
+          "normalizedName": "paracetamol"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED007",
+      "name": "Zee Paracetamol 650",
+      "price": 9,
+      "is_discontinued": false,
+      "manufacturer_name": "Zee Laboratories Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 0.9,
+      "short_composition1": "Paracetamol (650mg)",
+      "short_composition2": "",
+      "display_composition": "Paracetamol (650mg)",
+      "composition_key": "paracetamol-650mg",
+      "salts": [
+        {
+          "raw": "Paracetamol (650mg)",
+          "name": "Paracetamol",
+          "strength": "650mg",
+          "normalizedName": "paracetamol"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": false,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED008",
+      "name": "Cipla Paracetamol 650 Generics",
+      "price": 12,
+      "is_discontinued": false,
+      "manufacturer_name": "Cipla Generics",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 1.2,
+      "short_composition1": "Paracetamol (650mg)",
+      "short_composition2": "",
+      "display_composition": "Paracetamol (650mg)",
+      "composition_key": "paracetamol-650mg",
+      "salts": [
+        {
+          "raw": "Paracetamol (650mg)",
+          "name": "Paracetamol",
+          "strength": "650mg",
+          "normalizedName": "paracetamol"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": false,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED010",
+      "name": "Crocin Advance 500 Tablet",
+      "price": 20,
+      "is_discontinued": false,
+      "manufacturer_name": "GlaxoSmithKline",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 1.33,
+      "short_composition1": "Paracetamol (500mg)",
+      "short_composition2": "",
+      "display_composition": "Paracetamol (500mg)",
+      "composition_key": "paracetamol-500mg",
+      "salts": [
+        {
+          "raw": "Paracetamol (500mg)",
+          "name": "Paracetamol",
+          "strength": "500mg",
+          "normalizedName": "paracetamol"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED011",
+      "name": "Calpol 500 Tablet",
+      "price": 18,
+      "is_discontinued": false,
+      "manufacturer_name": "GlaxoSmithKline",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 1.2,
+      "short_composition1": "Paracetamol (500mg)",
+      "short_composition2": "",
+      "display_composition": "Paracetamol (500mg)",
+      "composition_key": "paracetamol-500mg",
+      "salts": [
+        {
+          "raw": "Paracetamol (500mg)",
+          "name": "Paracetamol",
+          "strength": "500mg",
+          "normalizedName": "paracetamol"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": false,
+      "badge_type": "Low-Cost Generic"
+    },
+    {
+      "id": "MED012",
+      "name": "Dolo 500 Tablet",
+      "price": 19.5,
+      "is_discontinued": false,
+      "manufacturer_name": "Micro Labs Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 1.3,
+      "short_composition1": "Paracetamol (500mg)",
+      "short_composition2": "",
+      "display_composition": "Paracetamol (500mg)",
+      "composition_key": "paracetamol-500mg",
+      "salts": [
+        {
+          "raw": "Paracetamol (500mg)",
+          "name": "Paracetamol",
+          "strength": "500mg",
+          "normalizedName": "paracetamol"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED013",
+      "name": "Paracetamol 500 PMBJP",
+      "price": 5.5,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 0.55,
+      "short_composition1": "Paracetamol (500mg)",
+      "short_composition2": "",
+      "display_composition": "Paracetamol (500mg)",
+      "composition_key": "paracetamol-500mg",
+      "salts": [
+        {
+          "raw": "Paracetamol (500mg)",
+          "name": "Paracetamol",
+          "strength": "500mg",
+          "normalizedName": "paracetamol"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED014",
+      "name": "Metacin 500 Tablet",
+      "price": 16,
+      "is_discontinued": false,
+      "manufacturer_name": "Themis Medicare Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 1.6,
+      "short_composition1": "Paracetamol (500mg)",
+      "short_composition2": "",
+      "display_composition": "Paracetamol (500mg)",
+      "composition_key": "paracetamol-500mg",
+      "salts": [
+        {
+          "raw": "Paracetamol (500mg)",
+          "name": "Paracetamol",
+          "strength": "500mg",
+          "normalizedName": "paracetamol"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED020",
+      "name": "Combiflam Tablet",
+      "price": 42.5,
+      "is_discontinued": false,
+      "manufacturer_name": "Sanofi India Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 20 tablets",
+      "pack_unit_count": 20,
+      "pack_unit_type": "tablets",
+      "unit_price": 2.13,
+      "short_composition1": "Ibuprofen (400mg)",
+      "short_composition2": "Paracetamol (325mg)",
+      "display_composition": "Ibuprofen (400mg) + Paracetamol (325mg)",
+      "composition_key": "ibuprofen-400mg+paracetamol-325mg",
+      "salts": [
+        {
+          "raw": "Ibuprofen (400mg)",
+          "name": "Ibuprofen",
+          "strength": "400mg",
+          "normalizedName": "ibuprofen"
+        },
+        {
+          "raw": "Paracetamol (325mg)",
+          "name": "Paracetamol",
+          "strength": "325mg",
+          "normalizedName": "paracetamol"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED021",
+      "name": "Ibugesic Plus Tablet",
+      "price": 36,
+      "is_discontinued": false,
+      "manufacturer_name": "Cipla Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 20 tablets",
+      "pack_unit_count": 20,
+      "pack_unit_type": "tablets",
+      "unit_price": 1.8,
+      "short_composition1": "Ibuprofen (400mg)",
+      "short_composition2": "Paracetamol (325mg)",
+      "display_composition": "Ibuprofen (400mg) + Paracetamol (325mg)",
+      "composition_key": "ibuprofen-400mg+paracetamol-325mg",
+      "salts": [
+        {
+          "raw": "Ibuprofen (400mg)",
+          "name": "Ibuprofen",
+          "strength": "400mg",
+          "normalizedName": "ibuprofen"
+        },
+        {
+          "raw": "Paracetamol (325mg)",
+          "name": "Paracetamol",
+          "strength": "325mg",
+          "normalizedName": "paracetamol"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": false,
+      "badge_type": "Low-Cost Generic"
+    },
+    {
+      "id": "MED022",
+      "name": "Brufen Plus Tablet",
+      "price": 40,
+      "is_discontinued": false,
+      "manufacturer_name": "Abbott",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 2.67,
+      "short_composition1": "Ibuprofen (400mg)",
+      "short_composition2": "Paracetamol (325mg)",
+      "display_composition": "Ibuprofen (400mg) + Paracetamol (325mg)",
+      "composition_key": "ibuprofen-400mg+paracetamol-325mg",
+      "salts": [
+        {
+          "raw": "Ibuprofen (400mg)",
+          "name": "Ibuprofen",
+          "strength": "400mg",
+          "normalizedName": "ibuprofen"
+        },
+        {
+          "raw": "Paracetamol (325mg)",
+          "name": "Paracetamol",
+          "strength": "325mg",
+          "normalizedName": "paracetamol"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED023",
+      "name": "Flexon Tablet",
+      "price": 32,
+      "is_discontinued": false,
+      "manufacturer_name": "Aristo Pharmaceuticals Pvt Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 2.13,
+      "short_composition1": "Ibuprofen (400mg)",
+      "short_composition2": "Paracetamol (325mg)",
+      "display_composition": "Ibuprofen (400mg) + Paracetamol (325mg)",
+      "composition_key": "ibuprofen-400mg+paracetamol-325mg",
+      "salts": [
+        {
+          "raw": "Ibuprofen (400mg)",
+          "name": "Ibuprofen",
+          "strength": "400mg",
+          "normalizedName": "ibuprofen"
+        },
+        {
+          "raw": "Paracetamol (325mg)",
+          "name": "Paracetamol",
+          "strength": "325mg",
+          "normalizedName": "paracetamol"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED024",
+      "name": "Ibuprofen & Paracetamol Jan Aushadhi",
+      "price": 11,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 1.1,
+      "short_composition1": "Ibuprofen (400mg)",
+      "short_composition2": "Paracetamol (325mg)",
+      "display_composition": "Ibuprofen (400mg) + Paracetamol (325mg)",
+      "composition_key": "ibuprofen-400mg+paracetamol-325mg",
+      "salts": [
+        {
+          "raw": "Ibuprofen (400mg)",
+          "name": "Ibuprofen",
+          "strength": "400mg",
+          "normalizedName": "ibuprofen"
+        },
+        {
+          "raw": "Paracetamol (325mg)",
+          "name": "Paracetamol",
+          "strength": "325mg",
+          "normalizedName": "paracetamol"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED030",
+      "name": "Zerodol-P Tablet",
+      "price": 72,
+      "is_discontinued": false,
+      "manufacturer_name": "Ipca Laboratories Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 7.2,
+      "short_composition1": "Aceclofenac (100mg)",
+      "short_composition2": "Paracetamol (325mg)",
+      "display_composition": "Aceclofenac (100mg) + Paracetamol (325mg)",
+      "composition_key": "aceclofenac-100mg+paracetamol-325mg",
+      "salts": [
+        {
+          "raw": "Aceclofenac (100mg)",
+          "name": "Aceclofenac",
+          "strength": "100mg",
+          "normalizedName": "aceclofenac"
+        },
+        {
+          "raw": "Paracetamol (325mg)",
+          "name": "Paracetamol",
+          "strength": "325mg",
+          "normalizedName": "paracetamol"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED031",
+      "name": "Aceclo Plus Tablet",
+      "price": 65,
+      "is_discontinued": false,
+      "manufacturer_name": "Aristo Pharmaceuticals Pvt Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 6.5,
+      "short_composition1": "Aceclofenac (100mg)",
+      "short_composition2": "Paracetamol (325mg)",
+      "display_composition": "Aceclofenac (100mg) + Paracetamol (325mg)",
+      "composition_key": "aceclofenac-100mg+paracetamol-325mg",
+      "salts": [
+        {
+          "raw": "Aceclofenac (100mg)",
+          "name": "Aceclofenac",
+          "strength": "100mg",
+          "normalizedName": "aceclofenac"
+        },
+        {
+          "raw": "Paracetamol (325mg)",
+          "name": "Paracetamol",
+          "strength": "325mg",
+          "normalizedName": "paracetamol"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED032",
+      "name": "Hifenac-P Tablet",
+      "price": 68,
+      "is_discontinued": false,
+      "manufacturer_name": "Intas Pharmaceuticals Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 6.8,
+      "short_composition1": "Aceclofenac (100mg)",
+      "short_composition2": "Paracetamol (325mg)",
+      "display_composition": "Aceclofenac (100mg) + Paracetamol (325mg)",
+      "composition_key": "aceclofenac-100mg+paracetamol-325mg",
+      "salts": [
+        {
+          "raw": "Aceclofenac (100mg)",
+          "name": "Aceclofenac",
+          "strength": "100mg",
+          "normalizedName": "aceclofenac"
+        },
+        {
+          "raw": "Paracetamol (325mg)",
+          "name": "Paracetamol",
+          "strength": "325mg",
+          "normalizedName": "paracetamol"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED033",
+      "name": "Dolokind Plus Tablet",
+      "price": 58,
+      "is_discontinued": false,
+      "manufacturer_name": "Mankind Pharma Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 5.8,
+      "short_composition1": "Aceclofenac (100mg)",
+      "short_composition2": "Paracetamol (325mg)",
+      "display_composition": "Aceclofenac (100mg) + Paracetamol (325mg)",
+      "composition_key": "aceclofenac-100mg+paracetamol-325mg",
+      "salts": [
+        {
+          "raw": "Aceclofenac (100mg)",
+          "name": "Aceclofenac",
+          "strength": "100mg",
+          "normalizedName": "aceclofenac"
+        },
+        {
+          "raw": "Paracetamol (325mg)",
+          "name": "Paracetamol",
+          "strength": "325mg",
+          "normalizedName": "paracetamol"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": false,
+      "badge_type": "Low-Cost Generic"
+    },
+    {
+      "id": "MED034",
+      "name": "Aceclofenac & Paracetamol Jan Aushadhi",
+      "price": 15,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 1.5,
+      "short_composition1": "Aceclofenac (100mg)",
+      "short_composition2": "Paracetamol (325mg)",
+      "display_composition": "Aceclofenac (100mg) + Paracetamol (325mg)",
+      "composition_key": "aceclofenac-100mg+paracetamol-325mg",
+      "salts": [
+        {
+          "raw": "Aceclofenac (100mg)",
+          "name": "Aceclofenac",
+          "strength": "100mg",
+          "normalizedName": "aceclofenac"
+        },
+        {
+          "raw": "Paracetamol (325mg)",
+          "name": "Paracetamol",
+          "strength": "325mg",
+          "normalizedName": "paracetamol"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED040",
+      "name": "Zerodol-SP Tablet",
+      "price": 125,
+      "is_discontinued": false,
+      "manufacturer_name": "Ipca Laboratories Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 12.5,
+      "short_composition1": "Aceclofenac (100mg) + Paracetamol (325mg)",
+      "short_composition2": "Serratiopeptidase (15mg)",
+      "display_composition": "Aceclofenac (100mg) + Paracetamol (325mg) + Serratiopeptidase (15mg)",
+      "composition_key": "aceclofenac-100mg+paracetamol-325mg+serratiopeptidase-15mg",
+      "salts": [
+        {
+          "raw": "Aceclofenac (100mg)",
+          "name": "Aceclofenac",
+          "strength": "100mg",
+          "normalizedName": "aceclofenac"
+        },
+        {
+          "raw": "Paracetamol (325mg)",
+          "name": "Paracetamol",
+          "strength": "325mg",
+          "normalizedName": "paracetamol"
+        },
+        {
+          "raw": "Serratiopeptidase (15mg)",
+          "name": "Serratiopeptidase",
+          "strength": "15mg",
+          "normalizedName": "serratiopeptidase"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": false,
+      "badge_type": "Low-Cost Generic"
+    },
+    {
+      "id": "MED041",
+      "name": "Signoflam Tablet",
+      "price": 135,
+      "is_discontinued": false,
+      "manufacturer_name": "Lupin Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 13.5,
+      "short_composition1": "Aceclofenac (100mg) + Paracetamol (325mg)",
+      "short_composition2": "Serratiopeptidase (15mg)",
+      "display_composition": "Aceclofenac (100mg) + Paracetamol (325mg) + Serratiopeptidase (15mg)",
+      "composition_key": "aceclofenac-100mg+paracetamol-325mg+serratiopeptidase-15mg",
+      "salts": [
+        {
+          "raw": "Aceclofenac (100mg)",
+          "name": "Aceclofenac",
+          "strength": "100mg",
+          "normalizedName": "aceclofenac"
+        },
+        {
+          "raw": "Paracetamol (325mg)",
+          "name": "Paracetamol",
+          "strength": "325mg",
+          "normalizedName": "paracetamol"
+        },
+        {
+          "raw": "Serratiopeptidase (15mg)",
+          "name": "Serratiopeptidase",
+          "strength": "15mg",
+          "normalizedName": "serratiopeptidase"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED042",
+      "name": "Hifenac-SP Tablet",
+      "price": 128,
+      "is_discontinued": false,
+      "manufacturer_name": "Intas Pharmaceuticals Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 12.8,
+      "short_composition1": "Aceclofenac (100mg) + Paracetamol (325mg)",
+      "short_composition2": "Serratiopeptidase (15mg)",
+      "display_composition": "Aceclofenac (100mg) + Paracetamol (325mg) + Serratiopeptidase (15mg)",
+      "composition_key": "aceclofenac-100mg+paracetamol-325mg+serratiopeptidase-15mg",
+      "salts": [
+        {
+          "raw": "Aceclofenac (100mg)",
+          "name": "Aceclofenac",
+          "strength": "100mg",
+          "normalizedName": "aceclofenac"
+        },
+        {
+          "raw": "Paracetamol (325mg)",
+          "name": "Paracetamol",
+          "strength": "325mg",
+          "normalizedName": "paracetamol"
+        },
+        {
+          "raw": "Serratiopeptidase (15mg)",
+          "name": "Serratiopeptidase",
+          "strength": "15mg",
+          "normalizedName": "serratiopeptidase"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED043",
+      "name": "Aceclo-SP Jan Aushadhi",
+      "price": 26,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 2.6,
+      "short_composition1": "Aceclofenac (100mg) + Paracetamol (325mg)",
+      "short_composition2": "Serratiopeptidase (15mg)",
+      "display_composition": "Aceclofenac (100mg) + Paracetamol (325mg) + Serratiopeptidase (15mg)",
+      "composition_key": "aceclofenac-100mg+paracetamol-325mg+serratiopeptidase-15mg",
+      "salts": [
+        {
+          "raw": "Aceclofenac (100mg)",
+          "name": "Aceclofenac",
+          "strength": "100mg",
+          "normalizedName": "aceclofenac"
+        },
+        {
+          "raw": "Paracetamol (325mg)",
+          "name": "Paracetamol",
+          "strength": "325mg",
+          "normalizedName": "paracetamol"
+        },
+        {
+          "raw": "Serratiopeptidase (15mg)",
+          "name": "Serratiopeptidase",
+          "strength": "15mg",
+          "normalizedName": "serratiopeptidase"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED050",
+      "name": "Voveran SP Tablet",
+      "price": 148,
+      "is_discontinued": false,
+      "manufacturer_name": "Novartis India Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 14.8,
+      "short_composition1": "Diclofenac (50mg) + Paracetamol (325mg)",
+      "short_composition2": "Serratiopeptidase (10mg)",
+      "display_composition": "Diclofenac (50mg) + Paracetamol (325mg) + Serratiopeptidase (10mg)",
+      "composition_key": "diclofenac-50mg+paracetamol-325mg+serratiopeptidase-10mg",
+      "salts": [
+        {
+          "raw": "Diclofenac (50mg)",
+          "name": "Diclofenac",
+          "strength": "50mg",
+          "normalizedName": "diclofenac"
+        },
+        {
+          "raw": "Paracetamol (325mg)",
+          "name": "Paracetamol",
+          "strength": "325mg",
+          "normalizedName": "paracetamol"
+        },
+        {
+          "raw": "Serratiopeptidase (10mg)",
+          "name": "Serratiopeptidase",
+          "strength": "10mg",
+          "normalizedName": "serratiopeptidase"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED051",
+      "name": "Cipzen D Tablet",
+      "price": 115,
+      "is_discontinued": false,
+      "manufacturer_name": "Cipla Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 11.5,
+      "short_composition1": "Diclofenac (50mg) + Paracetamol (325mg)",
+      "short_composition2": "Serratiopeptidase (10mg)",
+      "display_composition": "Diclofenac (50mg) + Paracetamol (325mg) + Serratiopeptidase (10mg)",
+      "composition_key": "diclofenac-50mg+paracetamol-325mg+serratiopeptidase-10mg",
+      "salts": [
+        {
+          "raw": "Diclofenac (50mg)",
+          "name": "Diclofenac",
+          "strength": "50mg",
+          "normalizedName": "diclofenac"
+        },
+        {
+          "raw": "Paracetamol (325mg)",
+          "name": "Paracetamol",
+          "strength": "325mg",
+          "normalizedName": "paracetamol"
+        },
+        {
+          "raw": "Serratiopeptidase (10mg)",
+          "name": "Serratiopeptidase",
+          "strength": "10mg",
+          "normalizedName": "serratiopeptidase"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED052",
+      "name": "Diclogesic SP Tablet",
+      "price": 98,
+      "is_discontinued": false,
+      "manufacturer_name": "Torrent Pharmaceuticals Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 9.8,
+      "short_composition1": "Diclofenac (50mg) + Paracetamol (325mg)",
+      "short_composition2": "Serratiopeptidase (10mg)",
+      "display_composition": "Diclofenac (50mg) + Paracetamol (325mg) + Serratiopeptidase (10mg)",
+      "composition_key": "diclofenac-50mg+paracetamol-325mg+serratiopeptidase-10mg",
+      "salts": [
+        {
+          "raw": "Diclofenac (50mg)",
+          "name": "Diclofenac",
+          "strength": "50mg",
+          "normalizedName": "diclofenac"
+        },
+        {
+          "raw": "Paracetamol (325mg)",
+          "name": "Paracetamol",
+          "strength": "325mg",
+          "normalizedName": "paracetamol"
+        },
+        {
+          "raw": "Serratiopeptidase (10mg)",
+          "name": "Serratiopeptidase",
+          "strength": "10mg",
+          "normalizedName": "serratiopeptidase"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": false,
+      "badge_type": "Low-Cost Generic"
+    },
+    {
+      "id": "MED053",
+      "name": "Diclofenac + Paracetamol + Serratiopeptidase Jan Aushadhi",
+      "price": 24,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 2.4,
+      "short_composition1": "Diclofenac (50mg) + Paracetamol (325mg)",
+      "short_composition2": "Serratiopeptidase (10mg)",
+      "display_composition": "Diclofenac (50mg) + Paracetamol (325mg) + Serratiopeptidase (10mg)",
+      "composition_key": "diclofenac-50mg+paracetamol-325mg+serratiopeptidase-10mg",
+      "salts": [
+        {
+          "raw": "Diclofenac (50mg)",
+          "name": "Diclofenac",
+          "strength": "50mg",
+          "normalizedName": "diclofenac"
+        },
+        {
+          "raw": "Paracetamol (325mg)",
+          "name": "Paracetamol",
+          "strength": "325mg",
+          "normalizedName": "paracetamol"
+        },
+        {
+          "raw": "Serratiopeptidase (10mg)",
+          "name": "Serratiopeptidase",
+          "strength": "10mg",
+          "normalizedName": "serratiopeptidase"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED060",
+      "name": "Meftal-Spas Tablet",
+      "price": 52,
+      "is_discontinued": false,
+      "manufacturer_name": "Blue Cross Laboratories Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 5.2,
+      "short_composition1": "Mefenamic Acid (250mg)",
+      "short_composition2": "Dicyclomine (10mg)",
+      "display_composition": "Mefenamic Acid (250mg) + Dicyclomine (10mg)",
+      "composition_key": "dicyclomine-10mg+mefenamicacid-250mg",
+      "salts": [
+        {
+          "raw": "Mefenamic Acid (250mg)",
+          "name": "Mefenamic Acid",
+          "strength": "250mg",
+          "normalizedName": "mefenamicacid"
+        },
+        {
+          "raw": "Dicyclomine (10mg)",
+          "name": "Dicyclomine",
+          "strength": "10mg",
+          "normalizedName": "dicyclomine"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED061",
+      "name": "Colimex Tablet",
+      "price": 45,
+      "is_discontinued": false,
+      "manufacturer_name": "Wallace Pharmaceuticals Pvt Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 4.5,
+      "short_composition1": "Mefenamic Acid (250mg)",
+      "short_composition2": "Dicyclomine (10mg)",
+      "display_composition": "Mefenamic Acid (250mg) + Dicyclomine (10mg)",
+      "composition_key": "dicyclomine-10mg+mefenamicacid-250mg",
+      "salts": [
+        {
+          "raw": "Mefenamic Acid (250mg)",
+          "name": "Mefenamic Acid",
+          "strength": "250mg",
+          "normalizedName": "mefenamicacid"
+        },
+        {
+          "raw": "Dicyclomine (10mg)",
+          "name": "Dicyclomine",
+          "strength": "10mg",
+          "normalizedName": "dicyclomine"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED062",
+      "name": "Spasmonil Tablet",
+      "price": 42,
+      "is_discontinued": false,
+      "manufacturer_name": "Cipla Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 4.2,
+      "short_composition1": "Mefenamic Acid (250mg)",
+      "short_composition2": "Dicyclomine (10mg)",
+      "display_composition": "Mefenamic Acid (250mg) + Dicyclomine (10mg)",
+      "composition_key": "dicyclomine-10mg+mefenamicacid-250mg",
+      "salts": [
+        {
+          "raw": "Mefenamic Acid (250mg)",
+          "name": "Mefenamic Acid",
+          "strength": "250mg",
+          "normalizedName": "mefenamicacid"
+        },
+        {
+          "raw": "Dicyclomine (10mg)",
+          "name": "Dicyclomine",
+          "strength": "10mg",
+          "normalizedName": "dicyclomine"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": false,
+      "badge_type": "Low-Cost Generic"
+    },
+    {
+      "id": "MED063",
+      "name": "Mefenamic Acid & Dicyclomine Jan Aushadhi",
+      "price": 12,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 1.2,
+      "short_composition1": "Mefenamic Acid (250mg)",
+      "short_composition2": "Dicyclomine (10mg)",
+      "display_composition": "Mefenamic Acid (250mg) + Dicyclomine (10mg)",
+      "composition_key": "dicyclomine-10mg+mefenamicacid-250mg",
+      "salts": [
+        {
+          "raw": "Mefenamic Acid (250mg)",
+          "name": "Mefenamic Acid",
+          "strength": "250mg",
+          "normalizedName": "mefenamicacid"
+        },
+        {
+          "raw": "Dicyclomine (10mg)",
+          "name": "Dicyclomine",
+          "strength": "10mg",
+          "normalizedName": "dicyclomine"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED070",
+      "name": "Augmentin 625 Duo Tablet",
+      "price": 204,
+      "is_discontinued": false,
+      "manufacturer_name": "GlaxoSmithKline Pharmaceuticals Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 20.4,
+      "short_composition1": "Amoxycillin (500mg)",
+      "short_composition2": "Clavulanic Acid (125mg)",
+      "display_composition": "Amoxycillin (500mg) + Clavulanic Acid (125mg)",
+      "composition_key": "amoxycillin-500mg+clavulanicacid-125mg",
+      "salts": [
+        {
+          "raw": "Amoxycillin (500mg)",
+          "name": "Amoxycillin",
+          "strength": "500mg",
+          "normalizedName": "amoxycillin"
+        },
+        {
+          "raw": "Clavulanic Acid (125mg)",
+          "name": "Clavulanic Acid",
+          "strength": "125mg",
+          "normalizedName": "clavulanicacid"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED072",
+      "name": "Clavam 625 Tablet",
+      "price": 190,
+      "is_discontinued": false,
+      "manufacturer_name": "Alkem Laboratories Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 19,
+      "short_composition1": "Amoxycillin (500mg)",
+      "short_composition2": "Clavulanic Acid (125mg)",
+      "display_composition": "Amoxycillin (500mg) + Clavulanic Acid (125mg)",
+      "composition_key": "amoxycillin-500mg+clavulanicacid-125mg",
+      "salts": [
+        {
+          "raw": "Amoxycillin (500mg)",
+          "name": "Amoxycillin",
+          "strength": "500mg",
+          "normalizedName": "amoxycillin"
+        },
+        {
+          "raw": "Clavulanic Acid (125mg)",
+          "name": "Clavulanic Acid",
+          "strength": "125mg",
+          "normalizedName": "clavulanicacid"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED073",
+      "name": "Megapen-CV 625 Tablet",
+      "price": 165,
+      "is_discontinued": false,
+      "manufacturer_name": "Aristo Pharmaceuticals Pvt Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 16.5,
+      "short_composition1": "Amoxycillin (500mg)",
+      "short_composition2": "Clavulanic Acid (125mg)",
+      "display_composition": "Amoxycillin (500mg) + Clavulanic Acid (125mg)",
+      "composition_key": "amoxycillin-500mg+clavulanicacid-125mg",
+      "salts": [
+        {
+          "raw": "Amoxycillin (500mg)",
+          "name": "Amoxycillin",
+          "strength": "500mg",
+          "normalizedName": "amoxycillin"
+        },
+        {
+          "raw": "Clavulanic Acid (125mg)",
+          "name": "Clavulanic Acid",
+          "strength": "125mg",
+          "normalizedName": "clavulanicacid"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": false,
+      "badge_type": "Low-Cost Generic"
+    },
+    {
+      "id": "MED075",
+      "name": "Zee Amoxyclav 625",
+      "price": 60,
+      "is_discontinued": false,
+      "manufacturer_name": "Zee Laboratories Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 6,
+      "short_composition1": "Amoxycillin (500mg)",
+      "short_composition2": "Clavulanic Acid (125mg)",
+      "display_composition": "Amoxycillin (500mg) + Clavulanic Acid (125mg)",
+      "composition_key": "amoxycillin-500mg+clavulanicacid-125mg",
+      "salts": [
+        {
+          "raw": "Amoxycillin (500mg)",
+          "name": "Amoxycillin",
+          "strength": "500mg",
+          "normalizedName": "amoxycillin"
+        },
+        {
+          "raw": "Clavulanic Acid (125mg)",
+          "name": "Clavulanic Acid",
+          "strength": "125mg",
+          "normalizedName": "clavulanicacid"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED071",
+      "name": "Moxikind-CV 625 Tablet",
+      "price": 175,
+      "is_discontinued": false,
+      "manufacturer_name": "Mankind Pharma Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 17.5,
+      "short_composition1": "Amoxicillin (500mg)",
+      "short_composition2": "Clavulanic Acid (125mg)",
+      "display_composition": "Amoxicillin (500mg) + Clavulanic Acid (125mg)",
+      "composition_key": "amoxicillin-500mg+clavulanicacid-125mg",
+      "salts": [
+        {
+          "raw": "Amoxicillin (500mg)",
+          "name": "Amoxicillin",
+          "strength": "500mg",
+          "normalizedName": "amoxicillin"
+        },
+        {
+          "raw": "Clavulanic Acid (125mg)",
+          "name": "Clavulanic Acid",
+          "strength": "125mg",
+          "normalizedName": "clavulanicacid"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED074",
+      "name": "Amoxyclav 625 Jan Aushadhi",
+      "price": 54,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 5.4,
+      "short_composition1": "Amoxicillin (500mg)",
+      "short_composition2": "Clavulanic Acid (125mg)",
+      "display_composition": "Amoxicillin (500mg) + Clavulanic Acid (125mg)",
+      "composition_key": "amoxicillin-500mg+clavulanicacid-125mg",
+      "salts": [
+        {
+          "raw": "Amoxicillin (500mg)",
+          "name": "Amoxicillin",
+          "strength": "500mg",
+          "normalizedName": "amoxicillin"
+        },
+        {
+          "raw": "Clavulanic Acid (125mg)",
+          "name": "Clavulanic Acid",
+          "strength": "125mg",
+          "normalizedName": "clavulanicacid"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED080",
+      "name": "Azithral 500 Tablet",
+      "price": 132,
+      "is_discontinued": false,
+      "manufacturer_name": "Alembic Pharmaceuticals Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 5 tablets",
+      "pack_unit_count": 5,
+      "pack_unit_type": "tablets",
+      "unit_price": 26.4,
+      "short_composition1": "Azithromycin (500mg)",
+      "short_composition2": "",
+      "display_composition": "Azithromycin (500mg)",
+      "composition_key": "azithromycin-500mg",
+      "salts": [
+        {
+          "raw": "Azithromycin (500mg)",
+          "name": "Azithromycin",
+          "strength": "500mg",
+          "normalizedName": "azithromycin"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED081",
+      "name": "Azee 500 Tablet",
+      "price": 130,
+      "is_discontinued": false,
+      "manufacturer_name": "Cipla Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 5 tablets",
+      "pack_unit_count": 5,
+      "pack_unit_type": "tablets",
+      "unit_price": 26,
+      "short_composition1": "Azithromycin (500mg)",
+      "short_composition2": "",
+      "display_composition": "Azithromycin (500mg)",
+      "composition_key": "azithromycin-500mg",
+      "salts": [
+        {
+          "raw": "Azithromycin (500mg)",
+          "name": "Azithromycin",
+          "strength": "500mg",
+          "normalizedName": "azithromycin"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED082",
+      "name": "Zithrox 500 Tablet",
+      "price": 115,
+      "is_discontinued": false,
+      "manufacturer_name": "Macleods Pharmaceuticals Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 5 tablets",
+      "pack_unit_count": 5,
+      "pack_unit_type": "tablets",
+      "unit_price": 23,
+      "short_composition1": "Azithromycin (500mg)",
+      "short_composition2": "",
+      "display_composition": "Azithromycin (500mg)",
+      "composition_key": "azithromycin-500mg",
+      "salts": [
+        {
+          "raw": "Azithromycin (500mg)",
+          "name": "Azithromycin",
+          "strength": "500mg",
+          "normalizedName": "azithromycin"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED083",
+      "name": "Azithromycin 500 Jan Aushadhi",
+      "price": 35,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "strip of 5 tablets",
+      "pack_unit_count": 5,
+      "pack_unit_type": "tablets",
+      "unit_price": 7,
+      "short_composition1": "Azithromycin (500mg)",
+      "short_composition2": "",
+      "display_composition": "Azithromycin (500mg)",
+      "composition_key": "azithromycin-500mg",
+      "salts": [
+        {
+          "raw": "Azithromycin (500mg)",
+          "name": "Azithromycin",
+          "strength": "500mg",
+          "normalizedName": "azithromycin"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED084",
+      "name": "Zee Azithromycin 500",
+      "price": 38,
+      "is_discontinued": false,
+      "manufacturer_name": "Zee Laboratories Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 5 tablets",
+      "pack_unit_count": 5,
+      "pack_unit_type": "tablets",
+      "unit_price": 7.6,
+      "short_composition1": "Azithromycin (500mg)",
+      "short_composition2": "",
+      "display_composition": "Azithromycin (500mg)",
+      "composition_key": "azithromycin-500mg",
+      "salts": [
+        {
+          "raw": "Azithromycin (500mg)",
+          "name": "Azithromycin",
+          "strength": "500mg",
+          "normalizedName": "azithromycin"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": false,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED090",
+      "name": "Taxim-O 200 Tablet",
+      "price": 120,
+      "is_discontinued": false,
+      "manufacturer_name": "Alkem Laboratories Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 12,
+      "short_composition1": "Cefixime (200mg)",
+      "short_composition2": "",
+      "display_composition": "Cefixime (200mg)",
+      "composition_key": "cefixime-200mg",
+      "salts": [
+        {
+          "raw": "Cefixime (200mg)",
+          "name": "Cefixime",
+          "strength": "200mg",
+          "normalizedName": "cefixime"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED091",
+      "name": "Mahacef 200 Tablet",
+      "price": 98,
+      "is_discontinued": false,
+      "manufacturer_name": "Mankind Pharma Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 9.8,
+      "short_composition1": "Cefixime (200mg)",
+      "short_composition2": "",
+      "display_composition": "Cefixime (200mg)",
+      "composition_key": "cefixime-200mg",
+      "salts": [
+        {
+          "raw": "Cefixime (200mg)",
+          "name": "Cefixime",
+          "strength": "200mg",
+          "normalizedName": "cefixime"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": false,
+      "badge_type": "Low-Cost Generic"
+    },
+    {
+      "id": "MED092",
+      "name": "Zifi 200 Tablet",
+      "price": 115,
+      "is_discontinued": false,
+      "manufacturer_name": "FDC Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 11.5,
+      "short_composition1": "Cefixime (200mg)",
+      "short_composition2": "",
+      "display_composition": "Cefixime (200mg)",
+      "composition_key": "cefixime-200mg",
+      "salts": [
+        {
+          "raw": "Cefixime (200mg)",
+          "name": "Cefixime",
+          "strength": "200mg",
+          "normalizedName": "cefixime"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED093",
+      "name": "Cefixime 200 Jan Aushadhi",
+      "price": 32,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 3.2,
+      "short_composition1": "Cefixime (200mg)",
+      "short_composition2": "",
+      "display_composition": "Cefixime (200mg)",
+      "composition_key": "cefixime-200mg",
+      "salts": [
+        {
+          "raw": "Cefixime (200mg)",
+          "name": "Cefixime",
+          "strength": "200mg",
+          "normalizedName": "cefixime"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED100",
+      "name": "Ceftum 500 Tablet",
+      "price": 495,
+      "is_discontinued": false,
+      "manufacturer_name": "GlaxoSmithKline Pharmaceuticals Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 49.5,
+      "short_composition1": "Cefuroxime (500mg)",
+      "short_composition2": "",
+      "display_composition": "Cefuroxime (500mg)",
+      "composition_key": "cefuroxime-500mg",
+      "salts": [
+        {
+          "raw": "Cefuroxime (500mg)",
+          "name": "Cefuroxime",
+          "strength": "500mg",
+          "normalizedName": "cefuroxime"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED101",
+      "name": "Cetil 500 Tablet",
+      "price": 410,
+      "is_discontinued": false,
+      "manufacturer_name": "Lupin Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 41,
+      "short_composition1": "Cefuroxime (500mg)",
+      "short_composition2": "",
+      "display_composition": "Cefuroxime (500mg)",
+      "composition_key": "cefuroxime-500mg",
+      "salts": [
+        {
+          "raw": "Cefuroxime (500mg)",
+          "name": "Cefuroxime",
+          "strength": "500mg",
+          "normalizedName": "cefuroxime"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED102",
+      "name": "Pulmocef 500 Tablet",
+      "price": 380,
+      "is_discontinued": false,
+      "manufacturer_name": "Micro Labs Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 38,
+      "short_composition1": "Cefuroxime (500mg)",
+      "short_composition2": "",
+      "display_composition": "Cefuroxime (500mg)",
+      "composition_key": "cefuroxime-500mg",
+      "salts": [
+        {
+          "raw": "Cefuroxime (500mg)",
+          "name": "Cefuroxime",
+          "strength": "500mg",
+          "normalizedName": "cefuroxime"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": false,
+      "badge_type": "Low-Cost Generic"
+    },
+    {
+      "id": "MED103",
+      "name": "Cefuroxime Axetil 500 Jan Aushadhi",
+      "price": 98,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 9.8,
+      "short_composition1": "Cefuroxime (500mg)",
+      "short_composition2": "",
+      "display_composition": "Cefuroxime (500mg)",
+      "composition_key": "cefuroxime-500mg",
+      "salts": [
+        {
+          "raw": "Cefuroxime (500mg)",
+          "name": "Cefuroxime",
+          "strength": "500mg",
+          "normalizedName": "cefuroxime"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED110",
+      "name": "O2 Tablet",
+      "price": 145,
+      "is_discontinued": false,
+      "manufacturer_name": "Medley Pharmaceuticals",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 14.5,
+      "short_composition1": "Ofloxacin (200mg)",
+      "short_composition2": "Ornidazole (500mg)",
+      "display_composition": "Ofloxacin (200mg) + Ornidazole (500mg)",
+      "composition_key": "ofloxacin-200mg+ornidazole-500mg",
+      "salts": [
+        {
+          "raw": "Ofloxacin (200mg)",
+          "name": "Ofloxacin",
+          "strength": "200mg",
+          "normalizedName": "ofloxacin"
+        },
+        {
+          "raw": "Ornidazole (500mg)",
+          "name": "Ornidazole",
+          "strength": "500mg",
+          "normalizedName": "ornidazole"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED111",
+      "name": "Zenflox-OZ Tablet",
+      "price": 115,
+      "is_discontinued": false,
+      "manufacturer_name": "Mankind Pharma Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 11.5,
+      "short_composition1": "Ofloxacin (200mg)",
+      "short_composition2": "Ornidazole (500mg)",
+      "display_composition": "Ofloxacin (200mg) + Ornidazole (500mg)",
+      "composition_key": "ofloxacin-200mg+ornidazole-500mg",
+      "salts": [
+        {
+          "raw": "Ofloxacin (200mg)",
+          "name": "Ofloxacin",
+          "strength": "200mg",
+          "normalizedName": "ofloxacin"
+        },
+        {
+          "raw": "Ornidazole (500mg)",
+          "name": "Ornidazole",
+          "strength": "500mg",
+          "normalizedName": "ornidazole"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": false,
+      "badge_type": "Low-Cost Generic"
+    },
+    {
+      "id": "MED112",
+      "name": "Zanocin OZ Tablet",
+      "price": 155,
+      "is_discontinued": false,
+      "manufacturer_name": "Sun Pharma Laboratories Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 15.5,
+      "short_composition1": "Ofloxacin (200mg)",
+      "short_composition2": "Ornidazole (500mg)",
+      "display_composition": "Ofloxacin (200mg) + Ornidazole (500mg)",
+      "composition_key": "ofloxacin-200mg+ornidazole-500mg",
+      "salts": [
+        {
+          "raw": "Ofloxacin (200mg)",
+          "name": "Ofloxacin",
+          "strength": "200mg",
+          "normalizedName": "ofloxacin"
+        },
+        {
+          "raw": "Ornidazole (500mg)",
+          "name": "Ornidazole",
+          "strength": "500mg",
+          "normalizedName": "ornidazole"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED113",
+      "name": "Ofloxacin & Ornidazole Jan Aushadhi",
+      "price": 26,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 2.6,
+      "short_composition1": "Ofloxacin (200mg)",
+      "short_composition2": "Ornidazole (500mg)",
+      "display_composition": "Ofloxacin (200mg) + Ornidazole (500mg)",
+      "composition_key": "ofloxacin-200mg+ornidazole-500mg",
+      "salts": [
+        {
+          "raw": "Ofloxacin (200mg)",
+          "name": "Ofloxacin",
+          "strength": "200mg",
+          "normalizedName": "ofloxacin"
+        },
+        {
+          "raw": "Ornidazole (500mg)",
+          "name": "Ornidazole",
+          "strength": "500mg",
+          "normalizedName": "ornidazole"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED120",
+      "name": "Glycomet 500 Tablet",
+      "price": 24.5,
+      "is_discontinued": false,
+      "manufacturer_name": "USV Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 2.45,
+      "short_composition1": "Metformin (500mg)",
+      "short_composition2": "",
+      "display_composition": "Metformin (500mg)",
+      "composition_key": "metformin-500mg",
+      "salts": [
+        {
+          "raw": "Metformin (500mg)",
+          "name": "Metformin",
+          "strength": "500mg",
+          "normalizedName": "metformin"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED121",
+      "name": "Glyciphage 500 Tablet",
+      "price": 23,
+      "is_discontinued": false,
+      "manufacturer_name": "Franco-Indian Pharmaceuticals Pvt Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 2.3,
+      "short_composition1": "Metformin (500mg)",
+      "short_composition2": "",
+      "display_composition": "Metformin (500mg)",
+      "composition_key": "metformin-500mg",
+      "salts": [
+        {
+          "raw": "Metformin (500mg)",
+          "name": "Metformin",
+          "strength": "500mg",
+          "normalizedName": "metformin"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED122",
+      "name": "Obimet 500 Tablet",
+      "price": 26,
+      "is_discontinued": false,
+      "manufacturer_name": "Abbott",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 2.6,
+      "short_composition1": "Metformin (500mg)",
+      "short_composition2": "",
+      "display_composition": "Metformin (500mg)",
+      "composition_key": "metformin-500mg",
+      "salts": [
+        {
+          "raw": "Metformin (500mg)",
+          "name": "Metformin",
+          "strength": "500mg",
+          "normalizedName": "metformin"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED123",
+      "name": "Metformin 500 Jan Aushadhi",
+      "price": 6,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 0.6,
+      "short_composition1": "Metformin (500mg)",
+      "short_composition2": "",
+      "display_composition": "Metformin (500mg)",
+      "composition_key": "metformin-500mg",
+      "salts": [
+        {
+          "raw": "Metformin (500mg)",
+          "name": "Metformin",
+          "strength": "500mg",
+          "normalizedName": "metformin"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED124",
+      "name": "Zee Metformin 500",
+      "price": 6.5,
+      "is_discontinued": false,
+      "manufacturer_name": "Zee Laboratories Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 0.65,
+      "short_composition1": "Metformin (500mg)",
+      "short_composition2": "",
+      "display_composition": "Metformin (500mg)",
+      "composition_key": "metformin-500mg",
+      "salts": [
+        {
+          "raw": "Metformin (500mg)",
+          "name": "Metformin",
+          "strength": "500mg",
+          "normalizedName": "metformin"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": false,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED130",
+      "name": "Amaryl M 2mg Tablet",
+      "price": 210,
+      "is_discontinued": false,
+      "manufacturer_name": "Sanofi India Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 14,
+      "short_composition1": "Glimepiride (2mg)",
+      "short_composition2": "Metformin (500mg)",
+      "display_composition": "Glimepiride (2mg) + Metformin (500mg)",
+      "composition_key": "glimepiride-2mg+metformin-500mg",
+      "salts": [
+        {
+          "raw": "Glimepiride (2mg)",
+          "name": "Glimepiride",
+          "strength": "2mg",
+          "normalizedName": "glimepiride"
+        },
+        {
+          "raw": "Metformin (500mg)",
+          "name": "Metformin",
+          "strength": "500mg",
+          "normalizedName": "metformin"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED131",
+      "name": "Glycomet-GP 2 Tablet",
+      "price": 165,
+      "is_discontinued": false,
+      "manufacturer_name": "USV Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 11,
+      "short_composition1": "Glimepiride (2mg)",
+      "short_composition2": "Metformin (500mg)",
+      "display_composition": "Glimepiride (2mg) + Metformin (500mg)",
+      "composition_key": "glimepiride-2mg+metformin-500mg",
+      "salts": [
+        {
+          "raw": "Glimepiride (2mg)",
+          "name": "Glimepiride",
+          "strength": "2mg",
+          "normalizedName": "glimepiride"
+        },
+        {
+          "raw": "Metformin (500mg)",
+          "name": "Metformin",
+          "strength": "500mg",
+          "normalizedName": "metformin"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED132",
+      "name": "Glynase-MF Tablet",
+      "price": 140,
+      "is_discontinued": false,
+      "manufacturer_name": "USV Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 9.33,
+      "short_composition1": "Glimepiride (2mg)",
+      "short_composition2": "Metformin (500mg)",
+      "display_composition": "Glimepiride (2mg) + Metformin (500mg)",
+      "composition_key": "glimepiride-2mg+metformin-500mg",
+      "salts": [
+        {
+          "raw": "Glimepiride (2mg)",
+          "name": "Glimepiride",
+          "strength": "2mg",
+          "normalizedName": "glimepiride"
+        },
+        {
+          "raw": "Metformin (500mg)",
+          "name": "Metformin",
+          "strength": "500mg",
+          "normalizedName": "metformin"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": false,
+      "badge_type": "Low-Cost Generic"
+    },
+    {
+      "id": "MED133",
+      "name": "Gemer 2 Tablet",
+      "price": 155,
+      "is_discontinued": false,
+      "manufacturer_name": "Sun Pharma Laboratories Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 10.33,
+      "short_composition1": "Glimepiride (2mg)",
+      "short_composition2": "Metformin (500mg)",
+      "display_composition": "Glimepiride (2mg) + Metformin (500mg)",
+      "composition_key": "glimepiride-2mg+metformin-500mg",
+      "salts": [
+        {
+          "raw": "Glimepiride (2mg)",
+          "name": "Glimepiride",
+          "strength": "2mg",
+          "normalizedName": "glimepiride"
+        },
+        {
+          "raw": "Metformin (500mg)",
+          "name": "Metformin",
+          "strength": "500mg",
+          "normalizedName": "metformin"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED134",
+      "name": "Glimepiride + Metformin 2/500 Jan Aushadhi",
+      "price": 25,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 2.5,
+      "short_composition1": "Glimepiride (2mg)",
+      "short_composition2": "Metformin (500mg)",
+      "display_composition": "Glimepiride (2mg) + Metformin (500mg)",
+      "composition_key": "glimepiride-2mg+metformin-500mg",
+      "salts": [
+        {
+          "raw": "Glimepiride (2mg)",
+          "name": "Glimepiride",
+          "strength": "2mg",
+          "normalizedName": "glimepiride"
+        },
+        {
+          "raw": "Metformin (500mg)",
+          "name": "Metformin",
+          "strength": "500mg",
+          "normalizedName": "metformin"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED140",
+      "name": "Galvus Met 50mg/500mg Tablet",
+      "price": 320,
+      "is_discontinued": false,
+      "manufacturer_name": "Novartis India Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 21.33,
+      "short_composition1": "Vildagliptin (50mg)",
+      "short_composition2": "Metformin (500mg)",
+      "display_composition": "Vildagliptin (50mg) + Metformin (500mg)",
+      "composition_key": "metformin-500mg+vildagliptin-50mg",
+      "salts": [
+        {
+          "raw": "Vildagliptin (50mg)",
+          "name": "Vildagliptin",
+          "strength": "50mg",
+          "normalizedName": "vildagliptin"
+        },
+        {
+          "raw": "Metformin (500mg)",
+          "name": "Metformin",
+          "strength": "500mg",
+          "normalizedName": "metformin"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED141",
+      "name": "Jalra M 50mg/500mg Tablet",
+      "price": 275,
+      "is_discontinued": false,
+      "manufacturer_name": "USV Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 18.33,
+      "short_composition1": "Vildagliptin (50mg)",
+      "short_composition2": "Metformin (500mg)",
+      "display_composition": "Vildagliptin (50mg) + Metformin (500mg)",
+      "composition_key": "metformin-500mg+vildagliptin-50mg",
+      "salts": [
+        {
+          "raw": "Vildagliptin (50mg)",
+          "name": "Vildagliptin",
+          "strength": "50mg",
+          "normalizedName": "vildagliptin"
+        },
+        {
+          "raw": "Metformin (500mg)",
+          "name": "Metformin",
+          "strength": "500mg",
+          "normalizedName": "metformin"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED142",
+      "name": "Vilget M 50/500 Tablet",
+      "price": 180,
+      "is_discontinued": false,
+      "manufacturer_name": "Mankind Pharma Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 18,
+      "short_composition1": "Vildagliptin (50mg)",
+      "short_composition2": "Metformin (500mg)",
+      "display_composition": "Vildagliptin (50mg) + Metformin (500mg)",
+      "composition_key": "metformin-500mg+vildagliptin-50mg",
+      "salts": [
+        {
+          "raw": "Vildagliptin (50mg)",
+          "name": "Vildagliptin",
+          "strength": "50mg",
+          "normalizedName": "vildagliptin"
+        },
+        {
+          "raw": "Metformin (500mg)",
+          "name": "Metformin",
+          "strength": "500mg",
+          "normalizedName": "metformin"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": false,
+      "badge_type": "Low-Cost Generic"
+    },
+    {
+      "id": "MED143",
+      "name": "Vildagliptin & Metformin Jan Aushadhi",
+      "price": 65,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 6.5,
+      "short_composition1": "Vildagliptin (50mg)",
+      "short_composition2": "Metformin (500mg)",
+      "display_composition": "Vildagliptin (50mg) + Metformin (500mg)",
+      "composition_key": "metformin-500mg+vildagliptin-50mg",
+      "salts": [
+        {
+          "raw": "Vildagliptin (50mg)",
+          "name": "Vildagliptin",
+          "strength": "50mg",
+          "normalizedName": "vildagliptin"
+        },
+        {
+          "raw": "Metformin (500mg)",
+          "name": "Metformin",
+          "strength": "500mg",
+          "normalizedName": "metformin"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED150",
+      "name": "Januvia 100mg Tablet",
+      "price": 390,
+      "is_discontinued": false,
+      "manufacturer_name": "MSD Pharmaceuticals Pvt Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 7 tablets",
+      "pack_unit_count": 7,
+      "pack_unit_type": "tablets",
+      "unit_price": 55.71,
+      "short_composition1": "Sitagliptin (100mg)",
+      "short_composition2": "",
+      "display_composition": "Sitagliptin (100mg)",
+      "composition_key": "sitagliptin-100mg",
+      "salts": [
+        {
+          "raw": "Sitagliptin (100mg)",
+          "name": "Sitagliptin",
+          "strength": "100mg",
+          "normalizedName": "sitagliptin"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED151",
+      "name": "Zita 100 Tablet",
+      "price": 180,
+      "is_discontinued": false,
+      "manufacturer_name": "Glenmark Pharmaceuticals Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 18,
+      "short_composition1": "Sitagliptin (100mg)",
+      "short_composition2": "",
+      "display_composition": "Sitagliptin (100mg)",
+      "composition_key": "sitagliptin-100mg",
+      "salts": [
+        {
+          "raw": "Sitagliptin (100mg)",
+          "name": "Sitagliptin",
+          "strength": "100mg",
+          "normalizedName": "sitagliptin"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED152",
+      "name": "Sitagliptin 100 Jan Aushadhi",
+      "price": 45,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 4.5,
+      "short_composition1": "Sitagliptin (100mg)",
+      "short_composition2": "",
+      "display_composition": "Sitagliptin (100mg)",
+      "composition_key": "sitagliptin-100mg",
+      "salts": [
+        {
+          "raw": "Sitagliptin (100mg)",
+          "name": "Sitagliptin",
+          "strength": "100mg",
+          "normalizedName": "sitagliptin"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED160",
+      "name": "Forxiga 10mg Tablet",
+      "price": 760,
+      "is_discontinued": false,
+      "manufacturer_name": "AstraZeneca",
+      "type": "allopathy",
+      "pack_size_label": "strip of 14 tablets",
+      "pack_unit_count": 14,
+      "pack_unit_type": "tablets",
+      "unit_price": 54.29,
+      "short_composition1": "Dapagliflozin (10mg)",
+      "short_composition2": "",
+      "display_composition": "Dapagliflozin (10mg)",
+      "composition_key": "dapagliflozin-10mg",
+      "salts": [
+        {
+          "raw": "Dapagliflozin (10mg)",
+          "name": "Dapagliflozin",
+          "strength": "10mg",
+          "normalizedName": "dapagliflozin"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED161",
+      "name": "Daxid 10 Tablet",
+      "price": 185,
+      "is_discontinued": false,
+      "manufacturer_name": "Torrent Pharmaceuticals Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 18.5,
+      "short_composition1": "Dapagliflozin (10mg)",
+      "short_composition2": "",
+      "display_composition": "Dapagliflozin (10mg)",
+      "composition_key": "dapagliflozin-10mg",
+      "salts": [
+        {
+          "raw": "Dapagliflozin (10mg)",
+          "name": "Dapagliflozin",
+          "strength": "10mg",
+          "normalizedName": "dapagliflozin"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": false,
+      "badge_type": "Low-Cost Generic"
+    },
+    {
+      "id": "MED162",
+      "name": "Oxra 10 Tablet",
+      "price": 195,
+      "is_discontinued": false,
+      "manufacturer_name": "Sun Pharma Laboratories Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 19.5,
+      "short_composition1": "Dapagliflozin (10mg)",
+      "short_composition2": "",
+      "display_composition": "Dapagliflozin (10mg)",
+      "composition_key": "dapagliflozin-10mg",
+      "salts": [
+        {
+          "raw": "Dapagliflozin (10mg)",
+          "name": "Dapagliflozin",
+          "strength": "10mg",
+          "normalizedName": "dapagliflozin"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED163",
+      "name": "Dapagliflozin 10 Jan Aushadhi",
+      "price": 38,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 3.8,
+      "short_composition1": "Dapagliflozin (10mg)",
+      "short_composition2": "",
+      "display_composition": "Dapagliflozin (10mg)",
+      "composition_key": "dapagliflozin-10mg",
+      "salts": [
+        {
+          "raw": "Dapagliflozin (10mg)",
+          "name": "Dapagliflozin",
+          "strength": "10mg",
+          "normalizedName": "dapagliflozin"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED170",
+      "name": "Telma 40 Tablet",
+      "price": 115,
+      "is_discontinued": false,
+      "manufacturer_name": "Glenmark Pharmaceuticals Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 7.67,
+      "short_composition1": "Telmisartan (40mg)",
+      "short_composition2": "",
+      "display_composition": "Telmisartan (40mg)",
+      "composition_key": "telmisartan-40mg",
+      "salts": [
+        {
+          "raw": "Telmisartan (40mg)",
+          "name": "Telmisartan",
+          "strength": "40mg",
+          "normalizedName": "telmisartan"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED171",
+      "name": "Telmikind 40 Tablet",
+      "price": 68,
+      "is_discontinued": false,
+      "manufacturer_name": "Mankind Pharma Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 6.8,
+      "short_composition1": "Telmisartan (40mg)",
+      "short_composition2": "",
+      "display_composition": "Telmisartan (40mg)",
+      "composition_key": "telmisartan-40mg",
+      "salts": [
+        {
+          "raw": "Telmisartan (40mg)",
+          "name": "Telmisartan",
+          "strength": "40mg",
+          "normalizedName": "telmisartan"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED172",
+      "name": "Telpres 40 Tablet",
+      "price": 108,
+      "is_discontinued": false,
+      "manufacturer_name": "Abbott",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 7.2,
+      "short_composition1": "Telmisartan (40mg)",
+      "short_composition2": "",
+      "display_composition": "Telmisartan (40mg)",
+      "composition_key": "telmisartan-40mg",
+      "salts": [
+        {
+          "raw": "Telmisartan (40mg)",
+          "name": "Telmisartan",
+          "strength": "40mg",
+          "normalizedName": "telmisartan"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED173",
+      "name": "Telvas 40 Tablet",
+      "price": 82,
+      "is_discontinued": false,
+      "manufacturer_name": "Aristo Pharmaceuticals Pvt Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 8.2,
+      "short_composition1": "Telmisartan (40mg)",
+      "short_composition2": "",
+      "display_composition": "Telmisartan (40mg)",
+      "composition_key": "telmisartan-40mg",
+      "salts": [
+        {
+          "raw": "Telmisartan (40mg)",
+          "name": "Telmisartan",
+          "strength": "40mg",
+          "normalizedName": "telmisartan"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED174",
+      "name": "Telmisartan 40 Jan Aushadhi",
+      "price": 14,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 1.4,
+      "short_composition1": "Telmisartan (40mg)",
+      "short_composition2": "",
+      "display_composition": "Telmisartan (40mg)",
+      "composition_key": "telmisartan-40mg",
+      "salts": [
+        {
+          "raw": "Telmisartan (40mg)",
+          "name": "Telmisartan",
+          "strength": "40mg",
+          "normalizedName": "telmisartan"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED175",
+      "name": "Zee Telmisartan 40",
+      "price": 16,
+      "is_discontinued": false,
+      "manufacturer_name": "Zee Laboratories Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 1.6,
+      "short_composition1": "Telmisartan (40mg)",
+      "short_composition2": "",
+      "display_composition": "Telmisartan (40mg)",
+      "composition_key": "telmisartan-40mg",
+      "salts": [
+        {
+          "raw": "Telmisartan (40mg)",
+          "name": "Telmisartan",
+          "strength": "40mg",
+          "normalizedName": "telmisartan"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": false,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED180",
+      "name": "Telma AM Tablet",
+      "price": 185,
+      "is_discontinued": false,
+      "manufacturer_name": "Glenmark Pharmaceuticals Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 12.33,
+      "short_composition1": "Telmisartan (40mg)",
+      "short_composition2": "Amlodipine (5mg)",
+      "display_composition": "Telmisartan (40mg) + Amlodipine (5mg)",
+      "composition_key": "amlodipine-5mg+telmisartan-40mg",
+      "salts": [
+        {
+          "raw": "Telmisartan (40mg)",
+          "name": "Telmisartan",
+          "strength": "40mg",
+          "normalizedName": "telmisartan"
+        },
+        {
+          "raw": "Amlodipine (5mg)",
+          "name": "Amlodipine",
+          "strength": "5mg",
+          "normalizedName": "amlodipine"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED181",
+      "name": "Telmikind-AM Tablet",
+      "price": 110,
+      "is_discontinued": false,
+      "manufacturer_name": "Mankind Pharma Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 11,
+      "short_composition1": "Telmisartan (40mg)",
+      "short_composition2": "Amlodipine (5mg)",
+      "display_composition": "Telmisartan (40mg) + Amlodipine (5mg)",
+      "composition_key": "amlodipine-5mg+telmisartan-40mg",
+      "salts": [
+        {
+          "raw": "Telmisartan (40mg)",
+          "name": "Telmisartan",
+          "strength": "40mg",
+          "normalizedName": "telmisartan"
+        },
+        {
+          "raw": "Amlodipine (5mg)",
+          "name": "Amlodipine",
+          "strength": "5mg",
+          "normalizedName": "amlodipine"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": false,
+      "badge_type": "Low-Cost Generic"
+    },
+    {
+      "id": "MED182",
+      "name": "Telvas AM Tablet",
+      "price": 125,
+      "is_discontinued": false,
+      "manufacturer_name": "Aristo Pharmaceuticals Pvt Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 12.5,
+      "short_composition1": "Telmisartan (40mg)",
+      "short_composition2": "Amlodipine (5mg)",
+      "display_composition": "Telmisartan (40mg) + Amlodipine (5mg)",
+      "composition_key": "amlodipine-5mg+telmisartan-40mg",
+      "salts": [
+        {
+          "raw": "Telmisartan (40mg)",
+          "name": "Telmisartan",
+          "strength": "40mg",
+          "normalizedName": "telmisartan"
+        },
+        {
+          "raw": "Amlodipine (5mg)",
+          "name": "Amlodipine",
+          "strength": "5mg",
+          "normalizedName": "amlodipine"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED183",
+      "name": "Telmisartan & Amlodipine Jan Aushadhi",
+      "price": 22,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 2.2,
+      "short_composition1": "Telmisartan (40mg)",
+      "short_composition2": "Amlodipine (5mg)",
+      "display_composition": "Telmisartan (40mg) + Amlodipine (5mg)",
+      "composition_key": "amlodipine-5mg+telmisartan-40mg",
+      "salts": [
+        {
+          "raw": "Telmisartan (40mg)",
+          "name": "Telmisartan",
+          "strength": "40mg",
+          "normalizedName": "telmisartan"
+        },
+        {
+          "raw": "Amlodipine (5mg)",
+          "name": "Amlodipine",
+          "strength": "5mg",
+          "normalizedName": "amlodipine"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED190",
+      "name": "Amlong 5 Tablet",
+      "price": 48,
+      "is_discontinued": false,
+      "manufacturer_name": "Micro Labs Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 3.2,
+      "short_composition1": "Amlodipine (5mg)",
+      "short_composition2": "",
+      "display_composition": "Amlodipine (5mg)",
+      "composition_key": "amlodipine-5mg",
+      "salts": [
+        {
+          "raw": "Amlodipine (5mg)",
+          "name": "Amlodipine",
+          "strength": "5mg",
+          "normalizedName": "amlodipine"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": false,
+      "badge_type": "Low-Cost Generic"
+    },
+    {
+      "id": "MED191",
+      "name": "Stamlo 5 Tablet",
+      "price": 65,
+      "is_discontinued": false,
+      "manufacturer_name": "Dr. Reddy's Laboratories Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 4.33,
+      "short_composition1": "Amlodipine (5mg)",
+      "short_composition2": "",
+      "display_composition": "Amlodipine (5mg)",
+      "composition_key": "amlodipine-5mg",
+      "salts": [
+        {
+          "raw": "Amlodipine (5mg)",
+          "name": "Amlodipine",
+          "strength": "5mg",
+          "normalizedName": "amlodipine"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED192",
+      "name": "Amlopin 5 Tablet",
+      "price": 52,
+      "is_discontinued": false,
+      "manufacturer_name": "USV Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 3.47,
+      "short_composition1": "Amlodipine (5mg)",
+      "short_composition2": "",
+      "display_composition": "Amlodipine (5mg)",
+      "composition_key": "amlodipine-5mg",
+      "salts": [
+        {
+          "raw": "Amlodipine (5mg)",
+          "name": "Amlodipine",
+          "strength": "5mg",
+          "normalizedName": "amlodipine"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED193",
+      "name": "Amlodipine 5 Jan Aushadhi",
+      "price": 6,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 0.6,
+      "short_composition1": "Amlodipine (5mg)",
+      "short_composition2": "",
+      "display_composition": "Amlodipine (5mg)",
+      "composition_key": "amlodipine-5mg",
+      "salts": [
+        {
+          "raw": "Amlodipine (5mg)",
+          "name": "Amlodipine",
+          "strength": "5mg",
+          "normalizedName": "amlodipine"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED200",
+      "name": "Atorva 10 Tablet",
+      "price": 112,
+      "is_discontinued": false,
+      "manufacturer_name": "Zydus Cadila",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 7.47,
+      "short_composition1": "Atorvastatin (10mg)",
+      "short_composition2": "",
+      "display_composition": "Atorvastatin (10mg)",
+      "composition_key": "atorvastatin-10mg",
+      "salts": [
+        {
+          "raw": "Atorvastatin (10mg)",
+          "name": "Atorvastatin",
+          "strength": "10mg",
+          "normalizedName": "atorvastatin"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED201",
+      "name": "Storvas 10 Tablet",
+      "price": 125,
+      "is_discontinued": false,
+      "manufacturer_name": "Sun Pharma Laboratories Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 8.33,
+      "short_composition1": "Atorvastatin (10mg)",
+      "short_composition2": "",
+      "display_composition": "Atorvastatin (10mg)",
+      "composition_key": "atorvastatin-10mg",
+      "salts": [
+        {
+          "raw": "Atorvastatin (10mg)",
+          "name": "Atorvastatin",
+          "strength": "10mg",
+          "normalizedName": "atorvastatin"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED202",
+      "name": "Lipitor 10mg Tablet",
+      "price": 160,
+      "is_discontinued": false,
+      "manufacturer_name": "Pfizer Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 16,
+      "short_composition1": "Atorvastatin (10mg)",
+      "short_composition2": "",
+      "display_composition": "Atorvastatin (10mg)",
+      "composition_key": "atorvastatin-10mg",
+      "salts": [
+        {
+          "raw": "Atorvastatin (10mg)",
+          "name": "Atorvastatin",
+          "strength": "10mg",
+          "normalizedName": "atorvastatin"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED203",
+      "name": "Tonact 10 Tablet",
+      "price": 105,
+      "is_discontinued": false,
+      "manufacturer_name": "Lupin Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 7,
+      "short_composition1": "Atorvastatin (10mg)",
+      "short_composition2": "",
+      "display_composition": "Atorvastatin (10mg)",
+      "composition_key": "atorvastatin-10mg",
+      "salts": [
+        {
+          "raw": "Atorvastatin (10mg)",
+          "name": "Atorvastatin",
+          "strength": "10mg",
+          "normalizedName": "atorvastatin"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": false,
+      "badge_type": "Low-Cost Generic"
+    },
+    {
+      "id": "MED204",
+      "name": "Atorvastatin 10 Jan Aushadhi",
+      "price": 12,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 1.2,
+      "short_composition1": "Atorvastatin (10mg)",
+      "short_composition2": "",
+      "display_composition": "Atorvastatin (10mg)",
+      "composition_key": "atorvastatin-10mg",
+      "salts": [
+        {
+          "raw": "Atorvastatin (10mg)",
+          "name": "Atorvastatin",
+          "strength": "10mg",
+          "normalizedName": "atorvastatin"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED210",
+      "name": "Rozavel 10 Tablet",
+      "price": 185,
+      "is_discontinued": false,
+      "manufacturer_name": "Sun Pharma Laboratories Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 12.33,
+      "short_composition1": "Rosuvastatin (10mg)",
+      "short_composition2": "",
+      "display_composition": "Rosuvastatin (10mg)",
+      "composition_key": "rosuvastatin-10mg",
+      "salts": [
+        {
+          "raw": "Rosuvastatin (10mg)",
+          "name": "Rosuvastatin",
+          "strength": "10mg",
+          "normalizedName": "rosuvastatin"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED211",
+      "name": "Rosuvas 10 Tablet",
+      "price": 175,
+      "is_discontinued": false,
+      "manufacturer_name": "Sun Pharma Laboratories Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 11.67,
+      "short_composition1": "Rosuvastatin (10mg)",
+      "short_composition2": "",
+      "display_composition": "Rosuvastatin (10mg)",
+      "composition_key": "rosuvastatin-10mg",
+      "salts": [
+        {
+          "raw": "Rosuvastatin (10mg)",
+          "name": "Rosuvastatin",
+          "strength": "10mg",
+          "normalizedName": "rosuvastatin"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": false,
+      "badge_type": "Low-Cost Generic"
+    },
+    {
+      "id": "MED212",
+      "name": "Crestor 10mg Tablet",
+      "price": 240,
+      "is_discontinued": false,
+      "manufacturer_name": "AstraZeneca",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 16,
+      "short_composition1": "Rosuvastatin (10mg)",
+      "short_composition2": "",
+      "display_composition": "Rosuvastatin (10mg)",
+      "composition_key": "rosuvastatin-10mg",
+      "salts": [
+        {
+          "raw": "Rosuvastatin (10mg)",
+          "name": "Rosuvastatin",
+          "strength": "10mg",
+          "normalizedName": "rosuvastatin"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED213",
+      "name": "Rosuvastatin 10 Jan Aushadhi",
+      "price": 22,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 2.2,
+      "short_composition1": "Rosuvastatin (10mg)",
+      "short_composition2": "",
+      "display_composition": "Rosuvastatin (10mg)",
+      "composition_key": "rosuvastatin-10mg",
+      "salts": [
+        {
+          "raw": "Rosuvastatin (10mg)",
+          "name": "Rosuvastatin",
+          "strength": "10mg",
+          "normalizedName": "rosuvastatin"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED220",
+      "name": "Pan D Capsule SR",
+      "price": 199,
+      "is_discontinued": false,
+      "manufacturer_name": "Alkem Laboratories Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 capsules",
+      "pack_unit_count": 15,
+      "pack_unit_type": "capsules",
+      "unit_price": 13.27,
+      "short_composition1": "Pantoprazole (40mg)",
+      "short_composition2": "Domperidone (30mg)",
+      "display_composition": "Pantoprazole (40mg) + Domperidone (30mg)",
+      "composition_key": "domperidone-30mg+pantoprazole-40mg",
+      "salts": [
+        {
+          "raw": "Pantoprazole (40mg)",
+          "name": "Pantoprazole",
+          "strength": "40mg",
+          "normalizedName": "pantoprazole"
+        },
+        {
+          "raw": "Domperidone (30mg)",
+          "name": "Domperidone",
+          "strength": "30mg",
+          "normalizedName": "domperidone"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED221",
+      "name": "Pantocid D Capsule SR",
+      "price": 188,
+      "is_discontinued": false,
+      "manufacturer_name": "Sun Pharma Laboratories Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 capsules",
+      "pack_unit_count": 15,
+      "pack_unit_type": "capsules",
+      "unit_price": 12.53,
+      "short_composition1": "Pantoprazole (40mg)",
+      "short_composition2": "Domperidone (30mg)",
+      "display_composition": "Pantoprazole (40mg) + Domperidone (30mg)",
+      "composition_key": "domperidone-30mg+pantoprazole-40mg",
+      "salts": [
+        {
+          "raw": "Pantoprazole (40mg)",
+          "name": "Pantoprazole",
+          "strength": "40mg",
+          "normalizedName": "pantoprazole"
+        },
+        {
+          "raw": "Domperidone (30mg)",
+          "name": "Domperidone",
+          "strength": "30mg",
+          "normalizedName": "domperidone"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED222",
+      "name": "Pantakind-D Capsule",
+      "price": 110,
+      "is_discontinued": false,
+      "manufacturer_name": "Mankind Pharma Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 capsules",
+      "pack_unit_count": 10,
+      "pack_unit_type": "capsules",
+      "unit_price": 11,
+      "short_composition1": "Pantoprazole (40mg)",
+      "short_composition2": "Domperidone (30mg)",
+      "display_composition": "Pantoprazole (40mg) + Domperidone (30mg)",
+      "composition_key": "domperidone-30mg+pantoprazole-40mg",
+      "salts": [
+        {
+          "raw": "Pantoprazole (40mg)",
+          "name": "Pantoprazole",
+          "strength": "40mg",
+          "normalizedName": "pantoprazole"
+        },
+        {
+          "raw": "Domperidone (30mg)",
+          "name": "Domperidone",
+          "strength": "30mg",
+          "normalizedName": "domperidone"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED223",
+      "name": "Pantoprazole & Domperidone SR Jan Aushadhi",
+      "price": 28,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 capsules",
+      "pack_unit_count": 10,
+      "pack_unit_type": "capsules",
+      "unit_price": 2.8,
+      "short_composition1": "Pantoprazole (40mg)",
+      "short_composition2": "Domperidone (30mg)",
+      "display_composition": "Pantoprazole (40mg) + Domperidone (30mg)",
+      "composition_key": "domperidone-30mg+pantoprazole-40mg",
+      "salts": [
+        {
+          "raw": "Pantoprazole (40mg)",
+          "name": "Pantoprazole",
+          "strength": "40mg",
+          "normalizedName": "pantoprazole"
+        },
+        {
+          "raw": "Domperidone (30mg)",
+          "name": "Domperidone",
+          "strength": "30mg",
+          "normalizedName": "domperidone"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED224",
+      "name": "Zee Pantoprazole D",
+      "price": 32,
+      "is_discontinued": false,
+      "manufacturer_name": "Zee Laboratories Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 capsules",
+      "pack_unit_count": 10,
+      "pack_unit_type": "capsules",
+      "unit_price": 3.2,
+      "short_composition1": "Pantoprazole (40mg)",
+      "short_composition2": "Domperidone (30mg)",
+      "display_composition": "Pantoprazole (40mg) + Domperidone (30mg)",
+      "composition_key": "domperidone-30mg+pantoprazole-40mg",
+      "salts": [
+        {
+          "raw": "Pantoprazole (40mg)",
+          "name": "Pantoprazole",
+          "strength": "40mg",
+          "normalizedName": "pantoprazole"
+        },
+        {
+          "raw": "Domperidone (30mg)",
+          "name": "Domperidone",
+          "strength": "30mg",
+          "normalizedName": "domperidone"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": false,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED230",
+      "name": "Omez 20 Capsule",
+      "price": 64,
+      "is_discontinued": false,
+      "manufacturer_name": "Dr. Reddy's Laboratories Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 20 capsules",
+      "pack_unit_count": 20,
+      "pack_unit_type": "capsules",
+      "unit_price": 3.2,
+      "short_composition1": "Omeprazole (20mg)",
+      "short_composition2": "",
+      "display_composition": "Omeprazole (20mg)",
+      "composition_key": "omeprazole-20mg",
+      "salts": [
+        {
+          "raw": "Omeprazole (20mg)",
+          "name": "Omeprazole",
+          "strength": "20mg",
+          "normalizedName": "omeprazole"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED231",
+      "name": "Omee 20 Capsule",
+      "price": 48,
+      "is_discontinued": false,
+      "manufacturer_name": "Alkem Laboratories Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 20 capsules",
+      "pack_unit_count": 20,
+      "pack_unit_type": "capsules",
+      "unit_price": 2.4,
+      "short_composition1": "Omeprazole (20mg)",
+      "short_composition2": "",
+      "display_composition": "Omeprazole (20mg)",
+      "composition_key": "omeprazole-20mg",
+      "salts": [
+        {
+          "raw": "Omeprazole (20mg)",
+          "name": "Omeprazole",
+          "strength": "20mg",
+          "normalizedName": "omeprazole"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED232",
+      "name": "Omecip 20 Capsule",
+      "price": 42,
+      "is_discontinued": false,
+      "manufacturer_name": "Cipla Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 20 capsules",
+      "pack_unit_count": 20,
+      "pack_unit_type": "capsules",
+      "unit_price": 2.1,
+      "short_composition1": "Omeprazole (20mg)",
+      "short_composition2": "",
+      "display_composition": "Omeprazole (20mg)",
+      "composition_key": "omeprazole-20mg",
+      "salts": [
+        {
+          "raw": "Omeprazole (20mg)",
+          "name": "Omeprazole",
+          "strength": "20mg",
+          "normalizedName": "omeprazole"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": false,
+      "badge_type": "Low-Cost Generic"
+    },
+    {
+      "id": "MED233",
+      "name": "Omeprazole 20 Jan Aushadhi",
+      "price": 8,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 capsules",
+      "pack_unit_count": 10,
+      "pack_unit_type": "capsules",
+      "unit_price": 0.8,
+      "short_composition1": "Omeprazole (20mg)",
+      "short_composition2": "",
+      "display_composition": "Omeprazole (20mg)",
+      "composition_key": "omeprazole-20mg",
+      "salts": [
+        {
+          "raw": "Omeprazole (20mg)",
+          "name": "Omeprazole",
+          "strength": "20mg",
+          "normalizedName": "omeprazole"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED240",
+      "name": "Rablet-D Capsule SR",
+      "price": 198,
+      "is_discontinued": false,
+      "manufacturer_name": "Lupin Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 capsules",
+      "pack_unit_count": 10,
+      "pack_unit_type": "capsules",
+      "unit_price": 19.8,
+      "short_composition1": "Rabeprazole (20mg)",
+      "short_composition2": "Domperidone (30mg)",
+      "display_composition": "Rabeprazole (20mg) + Domperidone (30mg)",
+      "composition_key": "domperidone-30mg+rabeprazole-20mg",
+      "salts": [
+        {
+          "raw": "Rabeprazole (20mg)",
+          "name": "Rabeprazole",
+          "strength": "20mg",
+          "normalizedName": "rabeprazole"
+        },
+        {
+          "raw": "Domperidone (30mg)",
+          "name": "Domperidone",
+          "strength": "30mg",
+          "normalizedName": "domperidone"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED241",
+      "name": "Razo-D Capsule SR",
+      "price": 205,
+      "is_discontinued": false,
+      "manufacturer_name": "Dr. Reddy's Laboratories Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 capsules",
+      "pack_unit_count": 10,
+      "pack_unit_type": "capsules",
+      "unit_price": 20.5,
+      "short_composition1": "Rabeprazole (20mg)",
+      "short_composition2": "Domperidone (30mg)",
+      "display_composition": "Rabeprazole (20mg) + Domperidone (30mg)",
+      "composition_key": "domperidone-30mg+rabeprazole-20mg",
+      "salts": [
+        {
+          "raw": "Rabeprazole (20mg)",
+          "name": "Rabeprazole",
+          "strength": "20mg",
+          "normalizedName": "rabeprazole"
+        },
+        {
+          "raw": "Domperidone (30mg)",
+          "name": "Domperidone",
+          "strength": "30mg",
+          "normalizedName": "domperidone"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED242",
+      "name": "Happi-D Capsule",
+      "price": 175,
+      "is_discontinued": false,
+      "manufacturer_name": "Zydus Cadila",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 capsules",
+      "pack_unit_count": 10,
+      "pack_unit_type": "capsules",
+      "unit_price": 17.5,
+      "short_composition1": "Rabeprazole (20mg)",
+      "short_composition2": "Domperidone (30mg)",
+      "display_composition": "Rabeprazole (20mg) + Domperidone (30mg)",
+      "composition_key": "domperidone-30mg+rabeprazole-20mg",
+      "salts": [
+        {
+          "raw": "Rabeprazole (20mg)",
+          "name": "Rabeprazole",
+          "strength": "20mg",
+          "normalizedName": "rabeprazole"
+        },
+        {
+          "raw": "Domperidone (30mg)",
+          "name": "Domperidone",
+          "strength": "30mg",
+          "normalizedName": "domperidone"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": false,
+      "badge_type": "Low-Cost Generic"
+    },
+    {
+      "id": "MED243",
+      "name": "Rabeprazole & Domperidone Jan Aushadhi",
+      "price": 30,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 capsules",
+      "pack_unit_count": 10,
+      "pack_unit_type": "capsules",
+      "unit_price": 3,
+      "short_composition1": "Rabeprazole (20mg)",
+      "short_composition2": "Domperidone (30mg)",
+      "display_composition": "Rabeprazole (20mg) + Domperidone (30mg)",
+      "composition_key": "domperidone-30mg+rabeprazole-20mg",
+      "salts": [
+        {
+          "raw": "Rabeprazole (20mg)",
+          "name": "Rabeprazole",
+          "strength": "20mg",
+          "normalizedName": "rabeprazole"
+        },
+        {
+          "raw": "Domperidone (30mg)",
+          "name": "Domperidone",
+          "strength": "30mg",
+          "normalizedName": "domperidone"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED250",
+      "name": "Montair LC Tablet",
+      "price": 215,
+      "is_discontinued": false,
+      "manufacturer_name": "Cipla Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 21.5,
+      "short_composition1": "Levocetirizine (5mg)",
+      "short_composition2": "Montelukast (10mg)",
+      "display_composition": "Levocetirizine (5mg) + Montelukast (10mg)",
+      "composition_key": "levocetirizine-5mg+montelukast-10mg",
+      "salts": [
+        {
+          "raw": "Levocetirizine (5mg)",
+          "name": "Levocetirizine",
+          "strength": "5mg",
+          "normalizedName": "levocetirizine"
+        },
+        {
+          "raw": "Montelukast (10mg)",
+          "name": "Montelukast",
+          "strength": "10mg",
+          "normalizedName": "montelukast"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED251",
+      "name": "Monticope Tablet",
+      "price": 130,
+      "is_discontinued": false,
+      "manufacturer_name": "Mankind Pharma Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 13,
+      "short_composition1": "Levocetirizine (5mg)",
+      "short_composition2": "Montelukast (10mg)",
+      "display_composition": "Levocetirizine (5mg) + Montelukast (10mg)",
+      "composition_key": "levocetirizine-5mg+montelukast-10mg",
+      "salts": [
+        {
+          "raw": "Levocetirizine (5mg)",
+          "name": "Levocetirizine",
+          "strength": "5mg",
+          "normalizedName": "levocetirizine"
+        },
+        {
+          "raw": "Montelukast (10mg)",
+          "name": "Montelukast",
+          "strength": "10mg",
+          "normalizedName": "montelukast"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": false,
+      "badge_type": "Low-Cost Generic"
+    },
+    {
+      "id": "MED252",
+      "name": "Telekast L Tablet",
+      "price": 195,
+      "is_discontinued": false,
+      "manufacturer_name": "Lupin Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 19.5,
+      "short_composition1": "Levocetirizine (5mg)",
+      "short_composition2": "Montelukast (10mg)",
+      "display_composition": "Levocetirizine (5mg) + Montelukast (10mg)",
+      "composition_key": "levocetirizine-5mg+montelukast-10mg",
+      "salts": [
+        {
+          "raw": "Levocetirizine (5mg)",
+          "name": "Levocetirizine",
+          "strength": "5mg",
+          "normalizedName": "levocetirizine"
+        },
+        {
+          "raw": "Montelukast (10mg)",
+          "name": "Montelukast",
+          "strength": "10mg",
+          "normalizedName": "montelukast"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED253",
+      "name": "Montek LC Tablet",
+      "price": 205,
+      "is_discontinued": false,
+      "manufacturer_name": "Sun Pharma Laboratories Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 20.5,
+      "short_composition1": "Levocetirizine (5mg)",
+      "short_composition2": "Montelukast (10mg)",
+      "display_composition": "Levocetirizine (5mg) + Montelukast (10mg)",
+      "composition_key": "levocetirizine-5mg+montelukast-10mg",
+      "salts": [
+        {
+          "raw": "Levocetirizine (5mg)",
+          "name": "Levocetirizine",
+          "strength": "5mg",
+          "normalizedName": "levocetirizine"
+        },
+        {
+          "raw": "Montelukast (10mg)",
+          "name": "Montelukast",
+          "strength": "10mg",
+          "normalizedName": "montelukast"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED254",
+      "name": "Levocetirizine & Montelukast Jan Aushadhi",
+      "price": 32,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 3.2,
+      "short_composition1": "Levocetirizine (5mg)",
+      "short_composition2": "Montelukast (10mg)",
+      "display_composition": "Levocetirizine (5mg) + Montelukast (10mg)",
+      "composition_key": "levocetirizine-5mg+montelukast-10mg",
+      "salts": [
+        {
+          "raw": "Levocetirizine (5mg)",
+          "name": "Levocetirizine",
+          "strength": "5mg",
+          "normalizedName": "levocetirizine"
+        },
+        {
+          "raw": "Montelukast (10mg)",
+          "name": "Montelukast",
+          "strength": "10mg",
+          "normalizedName": "montelukast"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED260",
+      "name": "Allegra 120mg Tablet",
+      "price": 210,
+      "is_discontinued": false,
+      "manufacturer_name": "Sanofi India Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 21,
+      "short_composition1": "Fexofenadine (120mg)",
+      "short_composition2": "",
+      "display_composition": "Fexofenadine (120mg)",
+      "composition_key": "fexofenadine-120mg",
+      "salts": [
+        {
+          "raw": "Fexofenadine (120mg)",
+          "name": "Fexofenadine",
+          "strength": "120mg",
+          "normalizedName": "fexofenadine"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED261",
+      "name": "Fexova 120 Tablet",
+      "price": 150,
+      "is_discontinued": false,
+      "manufacturer_name": "Torrent Pharmaceuticals Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 15,
+      "short_composition1": "Fexofenadine (120mg)",
+      "short_composition2": "",
+      "display_composition": "Fexofenadine (120mg)",
+      "composition_key": "fexofenadine-120mg",
+      "salts": [
+        {
+          "raw": "Fexofenadine (120mg)",
+          "name": "Fexofenadine",
+          "strength": "120mg",
+          "normalizedName": "fexofenadine"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED262",
+      "name": "Histafree 120 Tablet",
+      "price": 125,
+      "is_discontinued": false,
+      "manufacturer_name": "Mankind Pharma Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 12.5,
+      "short_composition1": "Fexofenadine (120mg)",
+      "short_composition2": "",
+      "display_composition": "Fexofenadine (120mg)",
+      "composition_key": "fexofenadine-120mg",
+      "salts": [
+        {
+          "raw": "Fexofenadine (120mg)",
+          "name": "Fexofenadine",
+          "strength": "120mg",
+          "normalizedName": "fexofenadine"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": false,
+      "badge_type": "Low-Cost Generic"
+    },
+    {
+      "id": "MED263",
+      "name": "Fexofenadine 120 Jan Aushadhi",
+      "price": 32,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 3.2,
+      "short_composition1": "Fexofenadine (120mg)",
+      "short_composition2": "",
+      "display_composition": "Fexofenadine (120mg)",
+      "composition_key": "fexofenadine-120mg",
+      "salts": [
+        {
+          "raw": "Fexofenadine (120mg)",
+          "name": "Fexofenadine",
+          "strength": "120mg",
+          "normalizedName": "fexofenadine"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED270",
+      "name": "Cetzine 10 Tablet",
+      "price": 22,
+      "is_discontinued": false,
+      "manufacturer_name": "Dr. Reddy's Laboratories Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 2.2,
+      "short_composition1": "Cetirizine (10mg)",
+      "short_composition2": "",
+      "display_composition": "Cetirizine (10mg)",
+      "composition_key": "cetirizine-10mg",
+      "salts": [
+        {
+          "raw": "Cetirizine (10mg)",
+          "name": "Cetirizine",
+          "strength": "10mg",
+          "normalizedName": "cetirizine"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED271",
+      "name": "Alerid 10 Tablet",
+      "price": 21,
+      "is_discontinued": false,
+      "manufacturer_name": "Cipla Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 2.1,
+      "short_composition1": "Cetirizine (10mg)",
+      "short_composition2": "",
+      "display_composition": "Cetirizine (10mg)",
+      "composition_key": "cetirizine-10mg",
+      "salts": [
+        {
+          "raw": "Cetirizine (10mg)",
+          "name": "Cetirizine",
+          "strength": "10mg",
+          "normalizedName": "cetirizine"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED272",
+      "name": "Okacet 10 Tablet",
+      "price": 20.5,
+      "is_discontinued": false,
+      "manufacturer_name": "Cipla Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 2.05,
+      "short_composition1": "Cetirizine (10mg)",
+      "short_composition2": "",
+      "display_composition": "Cetirizine (10mg)",
+      "composition_key": "cetirizine-10mg",
+      "salts": [
+        {
+          "raw": "Cetirizine (10mg)",
+          "name": "Cetirizine",
+          "strength": "10mg",
+          "normalizedName": "cetirizine"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": false,
+      "badge_type": "Low-Cost Generic"
+    },
+    {
+      "id": "MED273",
+      "name": "Cetirizine 10 Jan Aushadhi",
+      "price": 4.5,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 0.45,
+      "short_composition1": "Cetirizine (10mg)",
+      "short_composition2": "",
+      "display_composition": "Cetirizine (10mg)",
+      "composition_key": "cetirizine-10mg",
+      "salts": [
+        {
+          "raw": "Cetirizine (10mg)",
+          "name": "Cetirizine",
+          "strength": "10mg",
+          "normalizedName": "cetirizine"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED280",
+      "name": "Shelcal 500 Tablet",
+      "price": 135,
+      "is_discontinued": false,
+      "manufacturer_name": "Torrent Pharmaceuticals Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 9,
+      "short_composition1": "Calcium Carbonate (500mg)",
+      "short_composition2": "Vitamin D3 (250IU)",
+      "display_composition": "Calcium Carbonate (500mg) + Vitamin D3 (250IU)",
+      "composition_key": "calciumcarbonate-500mg+vitamind3-250iu",
+      "salts": [
+        {
+          "raw": "Calcium Carbonate (500mg)",
+          "name": "Calcium Carbonate",
+          "strength": "500mg",
+          "normalizedName": "calciumcarbonate"
+        },
+        {
+          "raw": "Vitamin D3 (250IU)",
+          "name": "Vitamin D3",
+          "strength": "250IU",
+          "normalizedName": "vitamind3"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED281",
+      "name": "Cipcal 500 Tablet",
+      "price": 120,
+      "is_discontinued": false,
+      "manufacturer_name": "Cipla Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 8,
+      "short_composition1": "Calcium Carbonate (500mg)",
+      "short_composition2": "Vitamin D3 (250IU)",
+      "display_composition": "Calcium Carbonate (500mg) + Vitamin D3 (250IU)",
+      "composition_key": "calciumcarbonate-500mg+vitamind3-250iu",
+      "salts": [
+        {
+          "raw": "Calcium Carbonate (500mg)",
+          "name": "Calcium Carbonate",
+          "strength": "500mg",
+          "normalizedName": "calciumcarbonate"
+        },
+        {
+          "raw": "Vitamin D3 (250IU)",
+          "name": "Vitamin D3",
+          "strength": "250IU",
+          "normalizedName": "vitamind3"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": false,
+      "badge_type": "Low-Cost Generic"
+    },
+    {
+      "id": "MED282",
+      "name": "Gemcal Capsule",
+      "price": 145,
+      "is_discontinued": false,
+      "manufacturer_name": "Alkem Laboratories Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 capsules",
+      "pack_unit_count": 15,
+      "pack_unit_type": "capsules",
+      "unit_price": 9.67,
+      "short_composition1": "Calcium Carbonate (500mg)",
+      "short_composition2": "Vitamin D3 (250IU)",
+      "display_composition": "Calcium Carbonate (500mg) + Vitamin D3 (250IU)",
+      "composition_key": "calciumcarbonate-500mg+vitamind3-250iu",
+      "salts": [
+        {
+          "raw": "Calcium Carbonate (500mg)",
+          "name": "Calcium Carbonate",
+          "strength": "500mg",
+          "normalizedName": "calciumcarbonate"
+        },
+        {
+          "raw": "Vitamin D3 (250IU)",
+          "name": "Vitamin D3",
+          "strength": "250IU",
+          "normalizedName": "vitamind3"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED283",
+      "name": "Calcium & Vitamin D3 Jan Aushadhi",
+      "price": 22,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 1.47,
+      "short_composition1": "Calcium Carbonate (500mg)",
+      "short_composition2": "Vitamin D3 (250IU)",
+      "display_composition": "Calcium Carbonate (500mg) + Vitamin D3 (250IU)",
+      "composition_key": "calciumcarbonate-500mg+vitamind3-250iu",
+      "salts": [
+        {
+          "raw": "Calcium Carbonate (500mg)",
+          "name": "Calcium Carbonate",
+          "strength": "500mg",
+          "normalizedName": "calciumcarbonate"
+        },
+        {
+          "raw": "Vitamin D3 (250IU)",
+          "name": "Vitamin D3",
+          "strength": "250IU",
+          "normalizedName": "vitamind3"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED290",
+      "name": "Nurokind-OD Tablet",
+      "price": 110,
+      "is_discontinued": false,
+      "manufacturer_name": "Mankind Pharma Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 20 tablets",
+      "pack_unit_count": 20,
+      "pack_unit_type": "tablets",
+      "unit_price": 5.5,
+      "short_composition1": "Methylcobalamin (1500mcg)",
+      "short_composition2": "",
+      "display_composition": "Methylcobalamin (1500mcg)",
+      "composition_key": "methylcobalamin-1500mcg",
+      "salts": [
+        {
+          "raw": "Methylcobalamin (1500mcg)",
+          "name": "Methylcobalamin",
+          "strength": "1500mcg",
+          "normalizedName": "methylcobalamin"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED291",
+      "name": "Cobix OD Tablet",
+      "price": 95,
+      "is_discontinued": false,
+      "manufacturer_name": "Cipla Ltd",
+      "type": "allopathy",
+      "pack_size_label": "strip of 15 tablets",
+      "pack_unit_count": 15,
+      "pack_unit_type": "tablets",
+      "unit_price": 6.33,
+      "short_composition1": "Methylcobalamin (1500mcg)",
+      "short_composition2": "",
+      "display_composition": "Methylcobalamin (1500mcg)",
+      "composition_key": "methylcobalamin-1500mcg",
+      "salts": [
+        {
+          "raw": "Methylcobalamin (1500mcg)",
+          "name": "Methylcobalamin",
+          "strength": "1500mcg",
+          "normalizedName": "methylcobalamin"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED292",
+      "name": "Methylcobalamin 1500 Jan Aushadhi",
+      "price": 18,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "strip of 10 tablets",
+      "pack_unit_count": 10,
+      "pack_unit_type": "tablets",
+      "unit_price": 1.8,
+      "short_composition1": "Methylcobalamin (1500mcg)",
+      "short_composition2": "",
+      "display_composition": "Methylcobalamin (1500mcg)",
+      "composition_key": "methylcobalamin-1500mcg",
+      "salts": [
+        {
+          "raw": "Methylcobalamin (1500mcg)",
+          "name": "Methylcobalamin",
+          "strength": "1500mcg",
+          "normalizedName": "methylcobalamin"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    },
+    {
+      "id": "MED300",
+      "name": "Thyronorm 100mcg Tablet",
+      "price": 165,
+      "is_discontinued": false,
+      "manufacturer_name": "Abbott",
+      "type": "allopathy",
+      "pack_size_label": "bottle of 120 tablets",
+      "pack_unit_count": 120,
+      "pack_unit_type": "tablets",
+      "unit_price": 1.38,
+      "short_composition1": "Thyroxine Sodium (100mcg)",
+      "short_composition2": "",
+      "display_composition": "Thyroxine Sodium (100mcg)",
+      "composition_key": "thyroxinesodium-100mcg",
+      "salts": [
+        {
+          "raw": "Thyroxine Sodium (100mcg)",
+          "name": "Thyroxine Sodium",
+          "strength": "100mcg",
+          "normalizedName": "thyroxinesodium"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED301",
+      "name": "Eltroxin 100mcg Tablet",
+      "price": 172,
+      "is_discontinued": false,
+      "manufacturer_name": "GlaxoSmithKline Pharmaceuticals Ltd",
+      "type": "allopathy",
+      "pack_size_label": "bottle of 120 tablets",
+      "pack_unit_count": 120,
+      "pack_unit_type": "tablets",
+      "unit_price": 1.43,
+      "short_composition1": "Thyroxine Sodium (100mcg)",
+      "short_composition2": "",
+      "display_composition": "Thyroxine Sodium (100mcg)",
+      "composition_key": "thyroxinesodium-100mcg",
+      "salts": [
+        {
+          "raw": "Thyroxine Sodium (100mcg)",
+          "name": "Thyroxine Sodium",
+          "strength": "100mcg",
+          "normalizedName": "thyroxinesodium"
+        }
+      ],
+      "generic_flag": false,
+      "is_cheapest": false,
+      "badge_type": "Branded"
+    },
+    {
+      "id": "MED302",
+      "name": "Thyroxine Sodium 100 Jan Aushadhi",
+      "price": 42,
+      "is_discontinued": false,
+      "manufacturer_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "type": "allopathy",
+      "pack_size_label": "bottle of 100 tablets",
+      "pack_unit_count": 100,
+      "pack_unit_type": "tablets",
+      "unit_price": 0.42,
+      "short_composition1": "Thyroxine Sodium (100mcg)",
+      "short_composition2": "",
+      "display_composition": "Thyroxine Sodium (100mcg)",
+      "composition_key": "thyroxinesodium-100mcg",
+      "salts": [
+        {
+          "raw": "Thyroxine Sodium (100mcg)",
+          "name": "Thyroxine Sodium",
+          "strength": "100mcg",
+          "normalizedName": "thyroxinesodium"
+        }
+      ],
+      "generic_flag": true,
+      "is_cheapest": true,
+      "badge_type": "Generic / Jan Aushadhi"
+    }
+  ],
+  "groups": [
+    {
+      "composition_key": "paracetamol-650mg",
+      "display_composition": "Paracetamol (650mg)",
+      "salts": [
+        {
+          "raw": "Paracetamol (650mg)",
+          "name": "Paracetamol",
+          "strength": "650mg",
+          "normalizedName": "paracetamol"
+        }
+      ],
+      "total_alternatives": 8,
+      "active_alternatives": 8,
+      "min_unit_price": 0.85,
+      "max_unit_price": 2.24,
+      "cheapest_medicine_id": "MED006",
+      "cheapest_medicine_name": "Paracetamol 650 Jan Aushadhi",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 8.5,
+      "cheapest_unit_price": 0.85
+    },
+    {
+      "composition_key": "paracetamol-500mg",
+      "display_composition": "Paracetamol (500mg)",
+      "salts": [
+        {
+          "raw": "Paracetamol (500mg)",
+          "name": "Paracetamol",
+          "strength": "500mg",
+          "normalizedName": "paracetamol"
+        }
+      ],
+      "total_alternatives": 5,
+      "active_alternatives": 5,
+      "min_unit_price": 0.55,
+      "max_unit_price": 1.6,
+      "cheapest_medicine_id": "MED013",
+      "cheapest_medicine_name": "Paracetamol 500 PMBJP",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 5.5,
+      "cheapest_unit_price": 0.55
+    },
+    {
+      "composition_key": "ibuprofen-400mg+paracetamol-325mg",
+      "display_composition": "Ibuprofen (400mg) + Paracetamol (325mg)",
+      "salts": [
+        {
+          "raw": "Ibuprofen (400mg)",
+          "name": "Ibuprofen",
+          "strength": "400mg",
+          "normalizedName": "ibuprofen"
+        },
+        {
+          "raw": "Paracetamol (325mg)",
+          "name": "Paracetamol",
+          "strength": "325mg",
+          "normalizedName": "paracetamol"
+        }
+      ],
+      "total_alternatives": 5,
+      "active_alternatives": 5,
+      "min_unit_price": 1.1,
+      "max_unit_price": 2.67,
+      "cheapest_medicine_id": "MED024",
+      "cheapest_medicine_name": "Ibuprofen & Paracetamol Jan Aushadhi",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 11,
+      "cheapest_unit_price": 1.1
+    },
+    {
+      "composition_key": "aceclofenac-100mg+paracetamol-325mg",
+      "display_composition": "Aceclofenac (100mg) + Paracetamol (325mg)",
+      "salts": [
+        {
+          "raw": "Aceclofenac (100mg)",
+          "name": "Aceclofenac",
+          "strength": "100mg",
+          "normalizedName": "aceclofenac"
+        },
+        {
+          "raw": "Paracetamol (325mg)",
+          "name": "Paracetamol",
+          "strength": "325mg",
+          "normalizedName": "paracetamol"
+        }
+      ],
+      "total_alternatives": 5,
+      "active_alternatives": 5,
+      "min_unit_price": 1.5,
+      "max_unit_price": 7.2,
+      "cheapest_medicine_id": "MED034",
+      "cheapest_medicine_name": "Aceclofenac & Paracetamol Jan Aushadhi",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 15,
+      "cheapest_unit_price": 1.5
+    },
+    {
+      "composition_key": "aceclofenac-100mg+paracetamol-325mg+serratiopeptidase-15mg",
+      "display_composition": "Aceclofenac (100mg) + Paracetamol (325mg) + Serratiopeptidase (15mg)",
+      "salts": [
+        {
+          "raw": "Aceclofenac (100mg)",
+          "name": "Aceclofenac",
+          "strength": "100mg",
+          "normalizedName": "aceclofenac"
+        },
+        {
+          "raw": "Paracetamol (325mg)",
+          "name": "Paracetamol",
+          "strength": "325mg",
+          "normalizedName": "paracetamol"
+        },
+        {
+          "raw": "Serratiopeptidase (15mg)",
+          "name": "Serratiopeptidase",
+          "strength": "15mg",
+          "normalizedName": "serratiopeptidase"
+        }
+      ],
+      "total_alternatives": 4,
+      "active_alternatives": 4,
+      "min_unit_price": 2.6,
+      "max_unit_price": 13.5,
+      "cheapest_medicine_id": "MED043",
+      "cheapest_medicine_name": "Aceclo-SP Jan Aushadhi",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 26,
+      "cheapest_unit_price": 2.6
+    },
+    {
+      "composition_key": "diclofenac-50mg+paracetamol-325mg+serratiopeptidase-10mg",
+      "display_composition": "Diclofenac (50mg) + Paracetamol (325mg) + Serratiopeptidase (10mg)",
+      "salts": [
+        {
+          "raw": "Diclofenac (50mg)",
+          "name": "Diclofenac",
+          "strength": "50mg",
+          "normalizedName": "diclofenac"
+        },
+        {
+          "raw": "Paracetamol (325mg)",
+          "name": "Paracetamol",
+          "strength": "325mg",
+          "normalizedName": "paracetamol"
+        },
+        {
+          "raw": "Serratiopeptidase (10mg)",
+          "name": "Serratiopeptidase",
+          "strength": "10mg",
+          "normalizedName": "serratiopeptidase"
+        }
+      ],
+      "total_alternatives": 4,
+      "active_alternatives": 4,
+      "min_unit_price": 2.4,
+      "max_unit_price": 14.8,
+      "cheapest_medicine_id": "MED053",
+      "cheapest_medicine_name": "Diclofenac + Paracetamol + Serratiopeptidase Jan Aushadhi",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 24,
+      "cheapest_unit_price": 2.4
+    },
+    {
+      "composition_key": "dicyclomine-10mg+mefenamicacid-250mg",
+      "display_composition": "Mefenamic Acid (250mg) + Dicyclomine (10mg)",
+      "salts": [
+        {
+          "raw": "Mefenamic Acid (250mg)",
+          "name": "Mefenamic Acid",
+          "strength": "250mg",
+          "normalizedName": "mefenamicacid"
+        },
+        {
+          "raw": "Dicyclomine (10mg)",
+          "name": "Dicyclomine",
+          "strength": "10mg",
+          "normalizedName": "dicyclomine"
+        }
+      ],
+      "total_alternatives": 4,
+      "active_alternatives": 4,
+      "min_unit_price": 1.2,
+      "max_unit_price": 5.2,
+      "cheapest_medicine_id": "MED063",
+      "cheapest_medicine_name": "Mefenamic Acid & Dicyclomine Jan Aushadhi",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 12,
+      "cheapest_unit_price": 1.2
+    },
+    {
+      "composition_key": "amoxycillin-500mg+clavulanicacid-125mg",
+      "display_composition": "Amoxycillin (500mg) + Clavulanic Acid (125mg)",
+      "salts": [
+        {
+          "raw": "Amoxycillin (500mg)",
+          "name": "Amoxycillin",
+          "strength": "500mg",
+          "normalizedName": "amoxycillin"
+        },
+        {
+          "raw": "Clavulanic Acid (125mg)",
+          "name": "Clavulanic Acid",
+          "strength": "125mg",
+          "normalizedName": "clavulanicacid"
+        }
+      ],
+      "total_alternatives": 4,
+      "active_alternatives": 4,
+      "min_unit_price": 6,
+      "max_unit_price": 20.4,
+      "cheapest_medicine_id": "MED075",
+      "cheapest_medicine_name": "Zee Amoxyclav 625",
+      "cheapest_manufacturer": "Zee Laboratories Ltd",
+      "cheapest_price": 60,
+      "cheapest_unit_price": 6
+    },
+    {
+      "composition_key": "amoxicillin-500mg+clavulanicacid-125mg",
+      "display_composition": "Amoxicillin (500mg) + Clavulanic Acid (125mg)",
+      "salts": [
+        {
+          "raw": "Amoxicillin (500mg)",
+          "name": "Amoxicillin",
+          "strength": "500mg",
+          "normalizedName": "amoxicillin"
+        },
+        {
+          "raw": "Clavulanic Acid (125mg)",
+          "name": "Clavulanic Acid",
+          "strength": "125mg",
+          "normalizedName": "clavulanicacid"
+        }
+      ],
+      "total_alternatives": 2,
+      "active_alternatives": 2,
+      "min_unit_price": 5.4,
+      "max_unit_price": 17.5,
+      "cheapest_medicine_id": "MED074",
+      "cheapest_medicine_name": "Amoxyclav 625 Jan Aushadhi",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 54,
+      "cheapest_unit_price": 5.4
+    },
+    {
+      "composition_key": "azithromycin-500mg",
+      "display_composition": "Azithromycin (500mg)",
+      "salts": [
+        {
+          "raw": "Azithromycin (500mg)",
+          "name": "Azithromycin",
+          "strength": "500mg",
+          "normalizedName": "azithromycin"
+        }
+      ],
+      "total_alternatives": 5,
+      "active_alternatives": 5,
+      "min_unit_price": 7,
+      "max_unit_price": 26.4,
+      "cheapest_medicine_id": "MED083",
+      "cheapest_medicine_name": "Azithromycin 500 Jan Aushadhi",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 35,
+      "cheapest_unit_price": 7
+    },
+    {
+      "composition_key": "cefixime-200mg",
+      "display_composition": "Cefixime (200mg)",
+      "salts": [
+        {
+          "raw": "Cefixime (200mg)",
+          "name": "Cefixime",
+          "strength": "200mg",
+          "normalizedName": "cefixime"
+        }
+      ],
+      "total_alternatives": 4,
+      "active_alternatives": 4,
+      "min_unit_price": 3.2,
+      "max_unit_price": 12,
+      "cheapest_medicine_id": "MED093",
+      "cheapest_medicine_name": "Cefixime 200 Jan Aushadhi",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 32,
+      "cheapest_unit_price": 3.2
+    },
+    {
+      "composition_key": "cefuroxime-500mg",
+      "display_composition": "Cefuroxime (500mg)",
+      "salts": [
+        {
+          "raw": "Cefuroxime (500mg)",
+          "name": "Cefuroxime",
+          "strength": "500mg",
+          "normalizedName": "cefuroxime"
+        }
+      ],
+      "total_alternatives": 4,
+      "active_alternatives": 4,
+      "min_unit_price": 9.8,
+      "max_unit_price": 49.5,
+      "cheapest_medicine_id": "MED103",
+      "cheapest_medicine_name": "Cefuroxime Axetil 500 Jan Aushadhi",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 98,
+      "cheapest_unit_price": 9.8
+    },
+    {
+      "composition_key": "ofloxacin-200mg+ornidazole-500mg",
+      "display_composition": "Ofloxacin (200mg) + Ornidazole (500mg)",
+      "salts": [
+        {
+          "raw": "Ofloxacin (200mg)",
+          "name": "Ofloxacin",
+          "strength": "200mg",
+          "normalizedName": "ofloxacin"
+        },
+        {
+          "raw": "Ornidazole (500mg)",
+          "name": "Ornidazole",
+          "strength": "500mg",
+          "normalizedName": "ornidazole"
+        }
+      ],
+      "total_alternatives": 4,
+      "active_alternatives": 4,
+      "min_unit_price": 2.6,
+      "max_unit_price": 15.5,
+      "cheapest_medicine_id": "MED113",
+      "cheapest_medicine_name": "Ofloxacin & Ornidazole Jan Aushadhi",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 26,
+      "cheapest_unit_price": 2.6
+    },
+    {
+      "composition_key": "metformin-500mg",
+      "display_composition": "Metformin (500mg)",
+      "salts": [
+        {
+          "raw": "Metformin (500mg)",
+          "name": "Metformin",
+          "strength": "500mg",
+          "normalizedName": "metformin"
+        }
+      ],
+      "total_alternatives": 5,
+      "active_alternatives": 5,
+      "min_unit_price": 0.6,
+      "max_unit_price": 2.6,
+      "cheapest_medicine_id": "MED123",
+      "cheapest_medicine_name": "Metformin 500 Jan Aushadhi",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 6,
+      "cheapest_unit_price": 0.6
+    },
+    {
+      "composition_key": "glimepiride-2mg+metformin-500mg",
+      "display_composition": "Glimepiride (2mg) + Metformin (500mg)",
+      "salts": [
+        {
+          "raw": "Glimepiride (2mg)",
+          "name": "Glimepiride",
+          "strength": "2mg",
+          "normalizedName": "glimepiride"
+        },
+        {
+          "raw": "Metformin (500mg)",
+          "name": "Metformin",
+          "strength": "500mg",
+          "normalizedName": "metformin"
+        }
+      ],
+      "total_alternatives": 5,
+      "active_alternatives": 5,
+      "min_unit_price": 2.5,
+      "max_unit_price": 14,
+      "cheapest_medicine_id": "MED134",
+      "cheapest_medicine_name": "Glimepiride + Metformin 2/500 Jan Aushadhi",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 25,
+      "cheapest_unit_price": 2.5
+    },
+    {
+      "composition_key": "metformin-500mg+vildagliptin-50mg",
+      "display_composition": "Vildagliptin (50mg) + Metformin (500mg)",
+      "salts": [
+        {
+          "raw": "Vildagliptin (50mg)",
+          "name": "Vildagliptin",
+          "strength": "50mg",
+          "normalizedName": "vildagliptin"
+        },
+        {
+          "raw": "Metformin (500mg)",
+          "name": "Metformin",
+          "strength": "500mg",
+          "normalizedName": "metformin"
+        }
+      ],
+      "total_alternatives": 4,
+      "active_alternatives": 4,
+      "min_unit_price": 6.5,
+      "max_unit_price": 21.33,
+      "cheapest_medicine_id": "MED143",
+      "cheapest_medicine_name": "Vildagliptin & Metformin Jan Aushadhi",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 65,
+      "cheapest_unit_price": 6.5
+    },
+    {
+      "composition_key": "sitagliptin-100mg",
+      "display_composition": "Sitagliptin (100mg)",
+      "salts": [
+        {
+          "raw": "Sitagliptin (100mg)",
+          "name": "Sitagliptin",
+          "strength": "100mg",
+          "normalizedName": "sitagliptin"
+        }
+      ],
+      "total_alternatives": 3,
+      "active_alternatives": 3,
+      "min_unit_price": 4.5,
+      "max_unit_price": 55.71,
+      "cheapest_medicine_id": "MED152",
+      "cheapest_medicine_name": "Sitagliptin 100 Jan Aushadhi",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 45,
+      "cheapest_unit_price": 4.5
+    },
+    {
+      "composition_key": "dapagliflozin-10mg",
+      "display_composition": "Dapagliflozin (10mg)",
+      "salts": [
+        {
+          "raw": "Dapagliflozin (10mg)",
+          "name": "Dapagliflozin",
+          "strength": "10mg",
+          "normalizedName": "dapagliflozin"
+        }
+      ],
+      "total_alternatives": 4,
+      "active_alternatives": 4,
+      "min_unit_price": 3.8,
+      "max_unit_price": 54.29,
+      "cheapest_medicine_id": "MED163",
+      "cheapest_medicine_name": "Dapagliflozin 10 Jan Aushadhi",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 38,
+      "cheapest_unit_price": 3.8
+    },
+    {
+      "composition_key": "telmisartan-40mg",
+      "display_composition": "Telmisartan (40mg)",
+      "salts": [
+        {
+          "raw": "Telmisartan (40mg)",
+          "name": "Telmisartan",
+          "strength": "40mg",
+          "normalizedName": "telmisartan"
+        }
+      ],
+      "total_alternatives": 6,
+      "active_alternatives": 6,
+      "min_unit_price": 1.4,
+      "max_unit_price": 8.2,
+      "cheapest_medicine_id": "MED174",
+      "cheapest_medicine_name": "Telmisartan 40 Jan Aushadhi",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 14,
+      "cheapest_unit_price": 1.4
+    },
+    {
+      "composition_key": "amlodipine-5mg+telmisartan-40mg",
+      "display_composition": "Telmisartan (40mg) + Amlodipine (5mg)",
+      "salts": [
+        {
+          "raw": "Telmisartan (40mg)",
+          "name": "Telmisartan",
+          "strength": "40mg",
+          "normalizedName": "telmisartan"
+        },
+        {
+          "raw": "Amlodipine (5mg)",
+          "name": "Amlodipine",
+          "strength": "5mg",
+          "normalizedName": "amlodipine"
+        }
+      ],
+      "total_alternatives": 4,
+      "active_alternatives": 4,
+      "min_unit_price": 2.2,
+      "max_unit_price": 12.5,
+      "cheapest_medicine_id": "MED183",
+      "cheapest_medicine_name": "Telmisartan & Amlodipine Jan Aushadhi",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 22,
+      "cheapest_unit_price": 2.2
+    },
+    {
+      "composition_key": "amlodipine-5mg",
+      "display_composition": "Amlodipine (5mg)",
+      "salts": [
+        {
+          "raw": "Amlodipine (5mg)",
+          "name": "Amlodipine",
+          "strength": "5mg",
+          "normalizedName": "amlodipine"
+        }
+      ],
+      "total_alternatives": 4,
+      "active_alternatives": 4,
+      "min_unit_price": 0.6,
+      "max_unit_price": 4.33,
+      "cheapest_medicine_id": "MED193",
+      "cheapest_medicine_name": "Amlodipine 5 Jan Aushadhi",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 6,
+      "cheapest_unit_price": 0.6
+    },
+    {
+      "composition_key": "atorvastatin-10mg",
+      "display_composition": "Atorvastatin (10mg)",
+      "salts": [
+        {
+          "raw": "Atorvastatin (10mg)",
+          "name": "Atorvastatin",
+          "strength": "10mg",
+          "normalizedName": "atorvastatin"
+        }
+      ],
+      "total_alternatives": 5,
+      "active_alternatives": 5,
+      "min_unit_price": 1.2,
+      "max_unit_price": 16,
+      "cheapest_medicine_id": "MED204",
+      "cheapest_medicine_name": "Atorvastatin 10 Jan Aushadhi",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 12,
+      "cheapest_unit_price": 1.2
+    },
+    {
+      "composition_key": "rosuvastatin-10mg",
+      "display_composition": "Rosuvastatin (10mg)",
+      "salts": [
+        {
+          "raw": "Rosuvastatin (10mg)",
+          "name": "Rosuvastatin",
+          "strength": "10mg",
+          "normalizedName": "rosuvastatin"
+        }
+      ],
+      "total_alternatives": 4,
+      "active_alternatives": 4,
+      "min_unit_price": 2.2,
+      "max_unit_price": 16,
+      "cheapest_medicine_id": "MED213",
+      "cheapest_medicine_name": "Rosuvastatin 10 Jan Aushadhi",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 22,
+      "cheapest_unit_price": 2.2
+    },
+    {
+      "composition_key": "domperidone-30mg+pantoprazole-40mg",
+      "display_composition": "Pantoprazole (40mg) + Domperidone (30mg)",
+      "salts": [
+        {
+          "raw": "Pantoprazole (40mg)",
+          "name": "Pantoprazole",
+          "strength": "40mg",
+          "normalizedName": "pantoprazole"
+        },
+        {
+          "raw": "Domperidone (30mg)",
+          "name": "Domperidone",
+          "strength": "30mg",
+          "normalizedName": "domperidone"
+        }
+      ],
+      "total_alternatives": 5,
+      "active_alternatives": 5,
+      "min_unit_price": 2.8,
+      "max_unit_price": 13.27,
+      "cheapest_medicine_id": "MED223",
+      "cheapest_medicine_name": "Pantoprazole & Domperidone SR Jan Aushadhi",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 28,
+      "cheapest_unit_price": 2.8
+    },
+    {
+      "composition_key": "omeprazole-20mg",
+      "display_composition": "Omeprazole (20mg)",
+      "salts": [
+        {
+          "raw": "Omeprazole (20mg)",
+          "name": "Omeprazole",
+          "strength": "20mg",
+          "normalizedName": "omeprazole"
+        }
+      ],
+      "total_alternatives": 4,
+      "active_alternatives": 4,
+      "min_unit_price": 0.8,
+      "max_unit_price": 3.2,
+      "cheapest_medicine_id": "MED233",
+      "cheapest_medicine_name": "Omeprazole 20 Jan Aushadhi",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 8,
+      "cheapest_unit_price": 0.8
+    },
+    {
+      "composition_key": "domperidone-30mg+rabeprazole-20mg",
+      "display_composition": "Rabeprazole (20mg) + Domperidone (30mg)",
+      "salts": [
+        {
+          "raw": "Rabeprazole (20mg)",
+          "name": "Rabeprazole",
+          "strength": "20mg",
+          "normalizedName": "rabeprazole"
+        },
+        {
+          "raw": "Domperidone (30mg)",
+          "name": "Domperidone",
+          "strength": "30mg",
+          "normalizedName": "domperidone"
+        }
+      ],
+      "total_alternatives": 4,
+      "active_alternatives": 4,
+      "min_unit_price": 3,
+      "max_unit_price": 20.5,
+      "cheapest_medicine_id": "MED243",
+      "cheapest_medicine_name": "Rabeprazole & Domperidone Jan Aushadhi",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 30,
+      "cheapest_unit_price": 3
+    },
+    {
+      "composition_key": "levocetirizine-5mg+montelukast-10mg",
+      "display_composition": "Levocetirizine (5mg) + Montelukast (10mg)",
+      "salts": [
+        {
+          "raw": "Levocetirizine (5mg)",
+          "name": "Levocetirizine",
+          "strength": "5mg",
+          "normalizedName": "levocetirizine"
+        },
+        {
+          "raw": "Montelukast (10mg)",
+          "name": "Montelukast",
+          "strength": "10mg",
+          "normalizedName": "montelukast"
+        }
+      ],
+      "total_alternatives": 5,
+      "active_alternatives": 5,
+      "min_unit_price": 3.2,
+      "max_unit_price": 21.5,
+      "cheapest_medicine_id": "MED254",
+      "cheapest_medicine_name": "Levocetirizine & Montelukast Jan Aushadhi",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 32,
+      "cheapest_unit_price": 3.2
+    },
+    {
+      "composition_key": "fexofenadine-120mg",
+      "display_composition": "Fexofenadine (120mg)",
+      "salts": [
+        {
+          "raw": "Fexofenadine (120mg)",
+          "name": "Fexofenadine",
+          "strength": "120mg",
+          "normalizedName": "fexofenadine"
+        }
+      ],
+      "total_alternatives": 4,
+      "active_alternatives": 4,
+      "min_unit_price": 3.2,
+      "max_unit_price": 21,
+      "cheapest_medicine_id": "MED263",
+      "cheapest_medicine_name": "Fexofenadine 120 Jan Aushadhi",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 32,
+      "cheapest_unit_price": 3.2
+    },
+    {
+      "composition_key": "cetirizine-10mg",
+      "display_composition": "Cetirizine (10mg)",
+      "salts": [
+        {
+          "raw": "Cetirizine (10mg)",
+          "name": "Cetirizine",
+          "strength": "10mg",
+          "normalizedName": "cetirizine"
+        }
+      ],
+      "total_alternatives": 4,
+      "active_alternatives": 4,
+      "min_unit_price": 0.45,
+      "max_unit_price": 2.2,
+      "cheapest_medicine_id": "MED273",
+      "cheapest_medicine_name": "Cetirizine 10 Jan Aushadhi",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 4.5,
+      "cheapest_unit_price": 0.45
+    },
+    {
+      "composition_key": "calciumcarbonate-500mg+vitamind3-250iu",
+      "display_composition": "Calcium Carbonate (500mg) + Vitamin D3 (250IU)",
+      "salts": [
+        {
+          "raw": "Calcium Carbonate (500mg)",
+          "name": "Calcium Carbonate",
+          "strength": "500mg",
+          "normalizedName": "calciumcarbonate"
+        },
+        {
+          "raw": "Vitamin D3 (250IU)",
+          "name": "Vitamin D3",
+          "strength": "250IU",
+          "normalizedName": "vitamind3"
+        }
+      ],
+      "total_alternatives": 4,
+      "active_alternatives": 4,
+      "min_unit_price": 1.47,
+      "max_unit_price": 9.67,
+      "cheapest_medicine_id": "MED283",
+      "cheapest_medicine_name": "Calcium & Vitamin D3 Jan Aushadhi",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 22,
+      "cheapest_unit_price": 1.47
+    },
+    {
+      "composition_key": "methylcobalamin-1500mcg",
+      "display_composition": "Methylcobalamin (1500mcg)",
+      "salts": [
+        {
+          "raw": "Methylcobalamin (1500mcg)",
+          "name": "Methylcobalamin",
+          "strength": "1500mcg",
+          "normalizedName": "methylcobalamin"
+        }
+      ],
+      "total_alternatives": 3,
+      "active_alternatives": 3,
+      "min_unit_price": 1.8,
+      "max_unit_price": 6.33,
+      "cheapest_medicine_id": "MED292",
+      "cheapest_medicine_name": "Methylcobalamin 1500 Jan Aushadhi",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 18,
+      "cheapest_unit_price": 1.8
+    },
+    {
+      "composition_key": "thyroxinesodium-100mcg",
+      "display_composition": "Thyroxine Sodium (100mcg)",
+      "salts": [
+        {
+          "raw": "Thyroxine Sodium (100mcg)",
+          "name": "Thyroxine Sodium",
+          "strength": "100mcg",
+          "normalizedName": "thyroxinesodium"
+        }
+      ],
+      "total_alternatives": 3,
+      "active_alternatives": 3,
+      "min_unit_price": 0.42,
+      "max_unit_price": 1.43,
+      "cheapest_medicine_id": "MED302",
+      "cheapest_medicine_name": "Thyroxine Sodium 100 Jan Aushadhi",
+      "cheapest_manufacturer": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "cheapest_price": 42,
+      "cheapest_unit_price": 0.42
+    }
+  ]
+}

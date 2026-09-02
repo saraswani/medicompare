@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediCompare Generic Finder</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">💊</span>
+        <div>
+          <h1>MediCompare</h1>
+          <p>Indian Medicine Generic Finder</p>
+        </div>
+      </div>
+      <a href="http://localhost:5173" target="_blank" class="web-link" title="Open full web app">🌐</a>
+    </header>
+
+    <div class="search-section">
+      <input 
+        type="text" 
+        id="search-input" 
+        placeholder="Enter medicine name (e.g. Dolo 650, Augmentin)..." 
+        autocomplete="off"
+        autofocus
+      />
+    </div>
+
+    <div id="results-container" class="results-container">
+      <div class="empty-state">
+        <p>Type a medicine name to compare generic prices instantly.</p>
+      </div>
+    </div>
+
+    <div id="comparison-card" class="comparison-card hidden">
+      <!-- Injected via popup.js -->
+    </div>
+
+    <footer class="footer">
+      <span>Same salt composition • Honest Indian prices</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
