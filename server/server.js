@@ -3,6 +3,8 @@ import cors from 'cors';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 import { buildAndSeedFullDataset } from './scripts/build_full_dataset.js';
 import { STORE_DATABASE, calculateDistanceKm, getDirectionsUrl } from './data/pharmacies.js';
 
@@ -11,11 +13,25 @@ const __dirname = path.dirname(__filename);
 const DATA_FILE = path.join(__dirname, 'data', 'processed_medicines.json');
 const CLIENT_DIST = path.join(__dirname, '..', 'client', 'dist');
 
+// Load environment variables
+dotenv.config();
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(cors());
-app.use(express.json());
+app.use(express.json({ limit: '10mb' }));
+
+// Initialize Gemini AI (lazy — only when key is present)
+let genAI = null;
+let geminiModel = null;
+if (process.env.GEMINI_API_KEY && process.env.GEMINI_API_KEY !== 'your_gemini_api_key_here') {
+  genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+  geminiModel = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+  console.log('🔑 Gemini Vision API initialized for prescription scanning.');
+} else {
+  console.warn('⚠️  GEMINI_API_KEY not set — prescription photo scanning will be unavailable.');
+}
 
 // In-memory indexed data store
 let medicineData = { medicines: [], groups: [] };
@@ -300,6 +316,135 @@ app.get('/api/stats', (req, res) => {
     generics_count: genericCount,
     average_savings_pct: 68
   });
+});
+
+// 6. Prescription Photo Scanner — Gemini Vision OCR
+app.post('/api/scan-prescription', async (req, res) => {
+  try {
+    if (!geminiModel) {
+      return res.status(503).json({
+        error: 'Prescription scanning is not configured. Set GEMINI_API_KEY in server/.env'
+      });
+    }
+
+    const { image, mimeType } = req.body;
+    if (!image) {
+      return res.status(400).json({ error: 'No image provided' });
+    }
+
+    // Strip data URL prefix if present
+    const base64Data = image.replace(/^data:image\/\w+;base64,/, '');
+    const imageType = mimeType || 'image/jpeg';
+
+    const prompt = `You are a medical prescription reader for Indian pharmacies.
+
+Analyze this prescription image carefully and extract ALL medicine/drug names written on it.
+
+Rules:
+1. Extract ONLY medicine brand names or generic drug names (e.g., "Dolo 650", "Augmentin 625 Duo", "Pan D", "Glycomet 500", "Paracetamol 500mg")
+2. Include the dosage/strength if visible (e.g., "650", "500mg", "10mg")
+3. Do NOT include dosage instructions like "1-0-1" or "twice daily"
+4. Do NOT include non-medicine text like doctor name, patient name, dates, or diagnosis
+5. If the handwriting is unclear for a medicine name, provide your best guess with the name only
+6. Return ONLY a JSON array of medicine name strings, nothing else
+
+Example output: ["Dolo 650", "Pan D", "Augmentin 625"]
+
+If no medicines can be identified, return an empty array: []
+
+IMPORTANT: Return ONLY the JSON array, no markdown formatting, no code blocks, no explanation.`;
+
+    const result = await geminiModel.generateContent([
+      prompt,
+      {
+        inlineData: {
+          mimeType: imageType,
+          data: base64Data
+        }
+      }
+    ]);
+
+    const responseText = result.response.text().trim();
+
+    // Parse the JSON array from Gemini's response
+    let extractedNames = [];
+    try {
+      // Remove any markdown code fences if present
+      const cleaned = responseText.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
+      extractedNames = JSON.parse(cleaned);
+      if (!Array.isArray(extractedNames)) {
+        extractedNames = [];
+      }
+    } catch (parseErr) {
+      console.error('Failed to parse Gemini response:', responseText);
+      // Try to extract names from text as fallback
+      extractedNames = responseText
+        .split(/[,\n]+/)
+        .map(s => s.replace(/["\[\]]/g, '').trim())
+        .filter(s => s.length > 1 && s.length < 60);
+    }
+
+    // Match extracted names against our medicine database
+    const matchedMedicines = [];
+    const includeDiscontinued = false;
+    const activePool = medicineData.medicines.filter(m => !m.is_discontinued);
+
+    for (const name of extractedNames) {
+      const queryLower = name.toLowerCase();
+      let bestMatch = null;
+      let bestScore = 0;
+
+      for (const med of activePool) {
+        const medNameLower = med.name.toLowerCase();
+        if (medNameLower === queryLower) {
+          bestMatch = med;
+          bestScore = 100;
+          break;
+        }
+        if (medNameLower.startsWith(queryLower) && bestScore < 80) {
+          bestMatch = med;
+          bestScore = 80;
+        }
+        if (medNameLower.includes(queryLower) && bestScore < 60) {
+          bestMatch = med;
+          bestScore = 60;
+        }
+        // Also check if the query contains the medicine name
+        if (queryLower.includes(medNameLower) && medNameLower.length > 3 && bestScore < 50) {
+          bestMatch = med;
+          bestScore = 50;
+        }
+      }
+
+      matchedMedicines.push({
+        extracted_name: name,
+        matched: bestMatch ? {
+          id: bestMatch.id,
+          name: bestMatch.name,
+          price: bestMatch.price,
+          unit_price: bestMatch.unit_price,
+          pack_size_label: bestMatch.pack_size_label,
+          manufacturer_name: bestMatch.manufacturer_name,
+          display_composition: bestMatch.display_composition,
+          generic_flag: bestMatch.generic_flag
+        } : null,
+        confidence: bestScore
+      });
+    }
+
+    return res.json({
+      extracted_names: extractedNames,
+      medicines: matchedMedicines,
+      total_extracted: extractedNames.length,
+      total_matched: matchedMedicines.filter(m => m.matched).length
+    });
+
+  } catch (err) {
+    console.error('Prescription scan error:', err);
+    return res.status(500).json({
+      error: 'Failed to scan prescription. Please try again with a clearer image.'
+    });
+  }
 });
 
 // Production: Serve static client build files from client/dist

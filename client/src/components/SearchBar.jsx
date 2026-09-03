@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Search, X, Loader2, Pill, Tag, Command } from 'lucide-react';
+import { Search, X, Loader2, Pill, Tag, Command, Camera } from 'lucide-react';
 import { api } from '../services/api';
+import PrescriptionScanner from './PrescriptionScanner';
 
 const QUICK_SEARCH_CHIPS = [
   { label: 'Dolo 650', query: 'Dolo 650', category: 'Fever' },
@@ -19,6 +20,7 @@ export default function SearchBar({ onSelectMedicine, initialQuery = '' }) {
   const [isLoading, setIsLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
+  const [isScannerOpen, setIsScannerOpen] = useState(false);
   const dropdownRef = useRef(null);
   const inputRef = useRef(null);
 
@@ -156,6 +158,18 @@ export default function SearchBar({ onSelectMedicine, initialQuery = '' }) {
                 <Command className="w-3 h-3" /> K
               </kbd>
             )}
+
+            {/* Prescription Camera/Scan Button */}
+            <button
+              type="button"
+              onClick={() => setIsScannerOpen(true)}
+              className="p-2 rounded-xl text-teal-600 hover:text-teal-700 hover:bg-teal-50 border border-transparent hover:border-teal-200 transition-all group relative"
+              aria-label="Scan prescription photo"
+              title="Scan prescription photo"
+            >
+              <Camera className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-white animate-pulse" />
+            </button>
           </div>
         </div>
       </div>
@@ -249,7 +263,23 @@ export default function SearchBar({ onSelectMedicine, initialQuery = '' }) {
             {chip.label}
           </button>
         ))}
+
+        {/* Scan Prescription Chip */}
+        <button
+          type="button"
+          onClick={() => setIsScannerOpen(true)}
+          className="text-xs px-2.5 py-1 rounded-full bg-gradient-to-r from-teal-50 to-emerald-50 hover:from-teal-100 hover:to-emerald-100 text-teal-700 border border-teal-200 font-semibold transition-colors focus:ring-1 focus:ring-teal-500 flex items-center gap-1"
+        >
+          <Camera className="w-3 h-3" /> Scan Rx
+        </button>
       </div>
+
+      {/* Prescription Scanner Modal */}
+      <PrescriptionScanner
+        isOpen={isScannerOpen}
+        onClose={() => setIsScannerOpen(false)}
+        onSelectMedicine={onSelectMedicine}
+      />
     </div>
   );
 }

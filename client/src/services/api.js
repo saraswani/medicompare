@@ -216,6 +216,34 @@ export const api = {
     };
   },
 
+  async scanPrescription(imageFile) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = async () => {
+        try {
+          const base64 = reader.result;
+          const res = await fetch('/api/scan-prescription', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              image: base64,
+              mimeType: imageFile.type || 'image/jpeg'
+            })
+          });
+          if (res.ok) {
+            return resolve(await res.json());
+          }
+          const errBody = await res.json().catch(() => ({}));
+          reject(new Error(errBody.error || 'Scan failed'));
+        } catch (e) {
+          reject(e);
+        }
+      };
+      reader.onerror = () => reject(new Error('Failed to read image file'));
+      reader.readAsDataURL(imageFile);
+    });
+  },
+
   async getStats() {
     try {
       const res = await fetch('/api/stats');
