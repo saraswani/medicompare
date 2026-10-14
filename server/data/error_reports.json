@@ -1,5 +1,24 @@
 [
   {
+    "report_id": "ERR-MV8JIM8W-3440",
+    "medicine_id": "MED001",
+    "medicine_name": "Dolo 650 Tablet",
+    "error_type": "PRICE_INACCURACY",
+    "description": "Audit test: Verifying chemist retail price discrepancy reporting.",
+    "reporter_contact": "qa-tester@medicompare.org",
+    "suggested_correction": "MRP is 34.00 in Maharashtra",
+    "source_reference": "",
+    "status": "PENDING_REVIEW",
+    "submitted_at": "2026-10-14T20:06:13.281Z",
+    "review_log": [
+      {
+        "timestamp": "2026-10-14T20:06:13.281Z",
+        "action": "REPORT_SUBMITTED",
+        "note": "Report queued for clinical reviewer evaluation."
+      }
+    ]
+  },
+  {
     "report_id": "ERR-MV8IIEL1-7381",
     "medicine_id": "MED001",
     "medicine_name": "Dolo 650 Tablet",

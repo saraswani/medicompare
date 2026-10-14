@@ -378,8 +378,8 @@ Return ONLY a valid JSON object in this exact format:
   }
 });
 
-// Production: Serve static client build files from client/dist
-if (fs.existsSync(CLIENT_DIST)) {
+// Production: Serve static client build files from client/dist (when running as standalone server)
+if (!process.env.VERCEL && fs.existsSync(CLIENT_DIST)) {
   app.use(express.static(CLIENT_DIST));
   app.get('*', (req, res) => {
     if (!req.path.startsWith('/api')) {
@@ -389,6 +389,10 @@ if (fs.existsSync(CLIENT_DIST)) {
   console.log(`🌐 Production static client build mounted from ${CLIENT_DIST}`);
 }
 
-app.listen(PORT, () => {
-  console.log(`🏥 MediCompare Healthcare API Server running at http://localhost:${PORT}`);
-});
+export default app;
+
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`🏥 MediCompare Healthcare API Server running at http://localhost:${PORT}`);
+  });
+}

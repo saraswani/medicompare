@@ -10,15 +10,35 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const REPORTS_FILE = path.join(__dirname, '..', 'data', 'error_reports.json');
+const VERCEL_TMP_FILE = path.join('/tmp', 'error_reports.json');
+
+function getFilePath() {
+  if (process.env.VERCEL) {
+    if (!fs.existsSync(VERCEL_TMP_FILE)) {
+      try {
+        if (fs.existsSync(REPORTS_FILE)) {
+          fs.copyFileSync(REPORTS_FILE, VERCEL_TMP_FILE);
+        } else {
+          fs.writeFileSync(VERCEL_TMP_FILE, '[]', 'utf8');
+        }
+      } catch (e) {
+        // Fall back to reading from bundle
+        return REPORTS_FILE;
+      }
+    }
+    return VERCEL_TMP_FILE;
+  }
+  return REPORTS_FILE;
+}
 
 export class ReportService {
   static loadReports() {
     try {
-      if (!fs.existsSync(REPORTS_FILE)) {
-        fs.writeFileSync(REPORTS_FILE, JSON.stringify([], null, 2), 'utf8');
+      const targetFile = getFilePath();
+      if (!fs.existsSync(targetFile)) {
         return [];
       }
-      const raw = fs.readFileSync(REPORTS_FILE, 'utf8');
+      const raw = fs.readFileSync(targetFile, 'utf8');
       return JSON.parse(raw);
     } catch (e) {
       console.error('Error loading error reports:', e);
@@ -28,7 +48,8 @@ export class ReportService {
 
   static saveReports(reports) {
     try {
-      fs.writeFileSync(REPORTS_FILE, JSON.stringify(reports, null, 2), 'utf8');
+      const targetFile = getFilePath();
+      fs.writeFileSync(targetFile, JSON.stringify(reports, null, 2), 'utf8');
       return true;
     } catch (e) {
       console.error('Error saving error reports:', e);
