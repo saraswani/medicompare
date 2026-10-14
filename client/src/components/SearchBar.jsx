@@ -1,17 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Search, X, Loader2, Pill, Tag, Command, Camera } from 'lucide-react';
+import { Search, X, Loader2, Pill, Command, Camera, ChevronRight, Sparkles } from 'lucide-react';
 import { api } from '../services/api';
 import PrescriptionScanner from './PrescriptionScanner';
 
 const QUICK_SEARCH_CHIPS = [
-  { label: 'Dolo 650', query: 'Dolo 650', category: 'Fever' },
-  { label: 'Augmentin 625', query: 'Augmentin 625', category: 'Antibiotic' },
-  { label: 'Glycomet 500', query: 'Glycomet 500', category: 'Diabetes' },
-  { label: 'Pan D', query: 'Pan D', category: 'Acidity' },
-  { label: 'Telma 40', query: 'Telma 40', category: 'BP' },
-  { label: 'Allegra 120', query: 'Allegra 120', category: 'Allergy' },
-  { label: 'Montair LC', query: 'Montair LC', category: 'Asthma' },
-  { label: 'Azithral 500', query: 'Azithral 500', category: 'Antibiotic' }
+  { label: 'Dolo 650', query: 'Dolo 650', condition: 'Fever', color: 'hover:border-orange-300 hover:bg-orange-50/60' },
+  { label: 'Augmentin 625', query: 'Augmentin 625', condition: 'Infection', color: 'hover:border-purple-300 hover:bg-purple-50/60' },
+  { label: 'Glycomet 500', query: 'Glycomet 500', condition: 'Diabetes', color: 'hover:border-sky-300 hover:bg-sky-50/60' },
+  { label: 'Telma 40', query: 'Telma 40', condition: 'BP', color: 'hover:border-rose-300 hover:bg-rose-50/60' },
+  { label: 'Pan D', query: 'Pan D', condition: 'Acidity', color: 'hover:border-emerald-300 hover:bg-emerald-50/60' },
+  { label: 'Allegra 120', query: 'Allegra 120', condition: 'Allergy', color: 'hover:border-blue-300 hover:bg-blue-50/60' },
+  { label: 'Azithral 500', query: 'Azithral 500', condition: 'Antibiotic', color: 'hover:border-indigo-300 hover:bg-indigo-50/60' }
 ];
 
 export default function SearchBar({ onSelectMedicine, initialQuery = '' }) {
@@ -24,7 +23,7 @@ export default function SearchBar({ onSelectMedicine, initialQuery = '' }) {
   const dropdownRef = useRef(null);
   const inputRef = useRef(null);
 
-  // Global keyboard shortcut ('/' or 'Ctrl+K' / 'Cmd+K' to focus search)
+  // Keyboard shortcut ('/' or 'Ctrl+K' / 'Cmd+K' to focus search)
   useEffect(() => {
     function handleGlobalKeyDown(e) {
       if ((e.key === '/' || ((e.metaKey || e.ctrlKey) && e.key === 'k')) && document.activeElement !== inputRef.current) {
@@ -36,7 +35,6 @@ export default function SearchBar({ onSelectMedicine, initialQuery = '' }) {
     return () => window.removeEventListener('keydown', handleGlobalKeyDown);
   }, []);
 
-  // Sync initial query if passed
   useEffect(() => {
     if (initialQuery) {
       setSearchTerm(initialQuery);
@@ -63,12 +61,11 @@ export default function SearchBar({ onSelectMedicine, initialQuery = '' }) {
       } finally {
         setIsLoading(false);
       }
-    }, 150);
+    }, 140);
 
     return () => clearTimeout(timer);
   }, [searchTerm]);
 
-  // Click outside listener
   useEffect(() => {
     function handleClickOutside(event) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -114,17 +111,17 @@ export default function SearchBar({ onSelectMedicine, initialQuery = '' }) {
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto relative" ref={dropdownRef}>
-      {/* Accessible Search Input Box */}
+    <div className="w-full max-w-2xl mx-auto relative" ref={dropdownRef}>
+      {/* Search Input Box */}
       <div 
         role="combobox"
         aria-expanded={isOpen && results.length > 0}
         aria-haspopup="listbox"
         aria-controls="medicine-search-results"
-        className="relative shadow-lg rounded-2xl bg-white transition-all duration-200 border-2 border-slate-200 focus-within:border-teal-500 focus-within:ring-4 focus-within:ring-teal-500/15"
+        className="relative bg-white rounded-2xl border-2 border-blue-200/90 transition-all duration-200 shadow-[0_4px_20px_rgba(37,99,235,0.08)] focus-within:border-blue-600 focus-within:ring-4 focus-within:ring-blue-500/15"
       >
         <div className="flex items-center px-4 py-3 sm:py-3.5">
-          <Search className="w-5 h-5 sm:w-6 sm:h-6 text-teal-600 flex-shrink-0 mr-3" aria-hidden="true" />
+          <Search className="w-5 h-5 text-blue-500 flex-shrink-0 mr-3" aria-hidden="true" />
           
           <input
             ref={inputRef}
@@ -136,55 +133,56 @@ export default function SearchBar({ onSelectMedicine, initialQuery = '' }) {
             onChange={(e) => setSearchTerm(e.target.value)}
             onFocus={() => { if (results.length > 0) setIsOpen(true); }}
             onKeyDown={handleKeyDown}
-            placeholder="Enter medicine name (e.g., Dolo 650, Augmentin, Glycomet)..."
-            className="w-full bg-transparent text-slate-800 placeholder-slate-400 font-medium text-sm sm:text-base focus:outline-none"
+            placeholder="Type prescribed medicine name (e.g., Dolo, Augmentin)..."
+            className="w-full bg-transparent text-slate-900 placeholder-slate-400 font-medium text-sm sm:text-base focus:outline-none"
             autoComplete="off"
+            spellCheck="false"
           />
 
           <div className="flex items-center gap-1.5 flex-shrink-0">
             {isLoading ? (
-              <Loader2 className="w-5 h-5 text-teal-600 animate-spin" />
+              <Loader2 className="w-5 h-5 text-blue-600 animate-spin" />
             ) : searchTerm ? (
               <button
                 type="button"
                 onClick={handleClear}
-                className="p-1 text-slate-400 hover:text-slate-600 rounded-full hover:bg-slate-100 transition-colors"
-                aria-label="Clear search text"
+                className="p-1.5 text-slate-400 hover:text-slate-600 rounded-full hover:bg-slate-100 transition-colors"
+                aria-label="Clear search"
               >
                 <X className="w-4 h-4" />
               </button>
             ) : (
-              <kbd className="hidden sm:inline-flex items-center gap-0.5 px-2 py-0.5 text-[10px] font-semibold text-slate-400 bg-slate-100 border border-slate-200 rounded">
-                <Command className="w-3 h-3" /> K
+              <kbd className="hidden sm:inline-flex items-center gap-0.5 px-2 py-0.5 text-[10px] font-semibold text-slate-400 bg-slate-100 border border-slate-200 rounded-md">
+                <Command className="w-2.5 h-2.5" /> K
               </kbd>
             )}
 
-            {/* Prescription Camera/Scan Button */}
+            {/* Prescription Camera Scan Button */}
             <button
               type="button"
               onClick={() => setIsScannerOpen(true)}
-              className="p-2 rounded-xl text-teal-600 hover:text-teal-700 hover:bg-teal-50 border border-transparent hover:border-teal-200 transition-all group relative"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white transition-all text-xs font-bold shadow-sm shadow-blue-500/25 hover:shadow-md"
               aria-label="Scan prescription photo"
-              title="Scan prescription photo"
+              title="Upload prescription photo for instant matching"
             >
-              <Camera className="w-5 h-5 group-hover:scale-110 transition-transform" />
-              <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-white animate-pulse" />
+              <Camera className="w-4 h-4" />
+              <span className="hidden xs:inline">Scan Rx</span>
             </button>
           </div>
         </div>
       </div>
 
-      {/* Accessible Instant Dropdown Suggestions */}
+      {/* Autocomplete Suggestions Dropdown */}
       {isOpen && results.length > 0 && (
         <ul
           id="medicine-search-results"
           role="listbox"
           aria-label="Medicine search suggestions"
-          className="absolute left-0 right-0 top-full mt-2 bg-white rounded-2xl shadow-elevated border border-slate-200/80 overflow-hidden z-50 divide-y divide-slate-100 max-h-[420px] overflow-y-auto custom-scrollbar"
+          className="absolute left-0 right-0 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-blue-100 overflow-hidden z-50 divide-y divide-slate-100 max-h-[440px] overflow-y-auto custom-scrollbar animate-fade-in"
         >
-          <li className="px-3 py-2 bg-slate-50 text-[11px] font-semibold uppercase tracking-wider text-slate-500 flex justify-between items-center" role="presentation">
-            <span>Matches ({results.length})</span>
-            <span>Use ↑↓ to navigate, Enter to select</span>
+          <li className="px-4 py-2.5 bg-blue-50/70 text-[11px] font-bold uppercase tracking-wider text-blue-800 flex justify-between items-center" role="presentation">
+            <span>Matches Found ({results.length})</span>
+            <span className="hidden sm:inline text-blue-600">Press Enter to view</span>
           </li>
 
           {results.map((item, idx) => {
@@ -197,37 +195,70 @@ export default function SearchBar({ onSelectMedicine, initialQuery = '' }) {
                 aria-selected={isSelected}
                 onClick={() => handleSelect(item)}
                 onMouseEnter={() => setSelectedIndex(idx)}
-                className={`w-full text-left px-4 py-3 flex items-center justify-between gap-3 cursor-pointer transition-colors ${
-                  isSelected ? 'bg-teal-50/80' : 'hover:bg-slate-50'
+                className={`w-full text-left px-4 py-3.5 flex items-center justify-between gap-3 cursor-pointer transition-colors ${
+                  isSelected ? 'bg-blue-50/80' : 'hover:bg-slate-50'
                 }`}
               >
                 <div className="flex items-start gap-3 min-w-0">
-                  <div className={`p-2 rounded-lg flex-shrink-0 ${
-                    item.generic_flag ? 'bg-indigo-50 text-indigo-600' : 'bg-teal-50 text-teal-600'
+                  <div className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5 ${
+                    item.badge_type === 'PMBJP Generic' 
+                      ? 'bg-emerald-100 text-emerald-800' 
+                      : item.generic_flag 
+                        ? 'bg-blue-100 text-blue-800' 
+                        : 'bg-slate-100 text-slate-700'
                   }`}>
                     <Pill className="w-4 h-4" />
                   </div>
-                  <div className="truncate">
-                    <div className="flex items-center gap-2">
-                      <span className="font-semibold text-sm text-slate-900 truncate">{item.name}</span>
-                      {item.generic_flag && (
-                        <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-indigo-100 text-indigo-700">
-                          Generic
+
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className="font-bold text-sm text-slate-900 truncate">
+                        {item.name}
+                      </span>
+                      <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
+                        item.badge_type === 'PMBJP Generic'
+                          ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+                          : item.generic_flag
+                            ? 'bg-blue-50 text-blue-700 border border-blue-200'
+                            : 'bg-slate-100 text-slate-600 border border-slate-200'
+                      }`}>
+                        {item.badge_type}
+                      </span>
+                      {item.country && (
+                        <span className="text-[10px] font-semibold px-1.5 py-0.2 rounded bg-slate-100 text-slate-600 border border-slate-200">
+                          {item.country === 'IN' ? '🇮🇳 IN' : item.country === 'US' ? '🇺🇸 US' : item.country}
                         </span>
                       )}
                     </div>
-                    <p className="text-xs text-slate-500 truncate mt-0.5">
-                      {item.display_composition}
-                    </p>
-                    <p className="text-[11px] text-slate-400 truncate">
-                      {item.manufacturer_name} • {item.pack_size_label}
-                    </p>
+
+                    <div className="text-xs text-slate-500 mt-0.5 flex items-center gap-1.5 flex-wrap">
+                      <span className="font-semibold text-blue-900 bg-blue-50 px-2 py-0.5 rounded text-[11px]">
+                        {item.display_composition}
+                      </span>
+                      <span className="text-slate-300">•</span>
+                      <span className="text-slate-500 truncate text-[11px]">{item.manufacturer_name}</span>
+                    </div>
                   </div>
                 </div>
 
-                <div className="text-right flex-shrink-0">
-                  <div className="font-bold text-sm text-slate-900">₹{item.price.toFixed(2)}</div>
-                  <div className="text-[11px] text-slate-500">₹{item.unit_price.toFixed(2)}/unit</div>
+                <div className="text-right flex-shrink-0 flex items-center gap-2">
+                  <div>
+                    {item.has_verified_price && item.price > 0 ? (
+                      <>
+                        <div className="text-sm font-black text-slate-900">
+                          ₹{item.price.toFixed(2)}
+                        </div>
+                        <div className="text-[11px] text-slate-500 font-medium">
+                          ₹{item.unit_price.toFixed(2)} / unit
+                        </div>
+                      </>
+                    ) : (
+                      <span className="text-[10px] font-bold text-slate-600 bg-slate-100 px-2 py-1 rounded-md border border-slate-200">
+                        {item.source === 'RxNorm (NLM)' ? 'RxNorm Concept' : 'Registry Entry'}
+                      </span>
+                    )}
+                  </div>
+                  <ChevronRight className="w-4 h-4 text-blue-400 hidden sm:block" />
                 </div>
               </li>
             );
@@ -235,46 +266,28 @@ export default function SearchBar({ onSelectMedicine, initialQuery = '' }) {
         </ul>
       )}
 
-      {/* No results fallback */}
-      {isOpen && !isLoading && searchTerm.trim() && results.length === 0 && (
-        <div className="absolute left-0 right-0 top-full mt-2 bg-white rounded-2xl shadow-elevated border border-slate-200 p-6 text-center z-50">
-          <div className="w-10 h-10 bg-amber-50 text-amber-600 rounded-full flex items-center justify-center mx-auto mb-2">
-            <Search className="w-5 h-5" />
-          </div>
-          <p className="font-medium text-slate-800 text-sm">No exact medicine match found</p>
-          <p className="text-xs text-slate-500 mt-1 max-w-sm mx-auto">
-            Try searching by the chemical salt name (e.g. Paracetamol, Amoxycillin, Metformin) or click one of the popular medicines below.
-          </p>
-        </div>
-      )}
-
-      {/* Quick Search Chips */}
-      <div className="mt-3 flex items-center gap-1.5 flex-wrap" aria-label="Popular medicine quick filters">
-        <span className="text-xs font-semibold text-slate-500 mr-1 flex items-center gap-1">
-          <Tag className="w-3.5 h-3.5" /> Popular:
+      {/* Quick Search Chips with Pop Effect */}
+      <div className="mt-3.5 flex items-center gap-1.5 overflow-x-auto pb-1 text-xs custom-scrollbar">
+        <span className="text-slate-400 font-semibold whitespace-nowrap text-[11px]">
+          Popular:
         </span>
-        {QUICK_SEARCH_CHIPS.map(chip => (
+        {QUICK_SEARCH_CHIPS.map((chip) => (
           <button
             key={chip.label}
             type="button"
-            onClick={() => setSearchTerm(chip.query)}
-            className="text-xs px-2.5 py-1 rounded-full bg-slate-100 hover:bg-teal-50 hover:text-teal-700 hover:border-teal-300 border border-slate-200 text-slate-700 font-medium transition-colors focus:ring-1 focus:ring-teal-500"
+            onClick={() => {
+              setSearchTerm(chip.query);
+              inputRef.current?.focus();
+            }}
+            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-slate-200 ${chip.color} text-slate-700 text-xs font-semibold whitespace-nowrap transition-all duration-150 hover:-translate-y-0.5 shadow-sm`}
           >
-            {chip.label}
+            <span>{chip.label}</span>
+            <span className="text-[10px] text-slate-400 font-medium">({chip.condition})</span>
           </button>
         ))}
-
-        {/* Scan Prescription Chip */}
-        <button
-          type="button"
-          onClick={() => setIsScannerOpen(true)}
-          className="text-xs px-2.5 py-1 rounded-full bg-gradient-to-r from-teal-50 to-emerald-50 hover:from-teal-100 hover:to-emerald-100 text-teal-700 border border-teal-200 font-semibold transition-colors focus:ring-1 focus:ring-teal-500 flex items-center gap-1"
-        >
-          <Camera className="w-3 h-3" /> Scan Rx
-        </button>
       </div>
 
-      {/* Prescription Scanner Modal */}
+      {/* Prescription Camera Modal */}
       <PrescriptionScanner
         isOpen={isScannerOpen}
         onClose={() => setIsScannerOpen(false)}

@@ -7,6 +7,9 @@ import dotenv from 'dotenv';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { buildAndSeedFullDataset } from './scripts/build_full_dataset.js';
 import { STORE_DATABASE, calculateDistanceKm, getDirectionsUrl } from './data/pharmacies.js';
+import { SearchManager } from './adapters/SearchManager.js';
+import { ClinicalComparator } from './services/comparator.js';
+import { ReportService } from './services/reportService.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -22,21 +25,20 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json({ limit: '10mb' }));
 
-// Initialize Gemini AI (lazy — only when key is present)
+// Initialize Gemini AI (strict OCR for prescription photo reading)
 let genAI = null;
 let geminiModel = null;
 if (process.env.GEMINI_API_KEY && process.env.GEMINI_API_KEY !== 'your_gemini_api_key_here') {
   genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
   geminiModel = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
-  console.log('🔑 Gemini Vision API initialized for prescription scanning.');
+  console.log('🔑 Gemini Vision API initialized for optical character recognition.');
 } else {
   console.warn('⚠️  GEMINI_API_KEY not set — prescription photo scanning will be unavailable.');
 }
 
-// In-memory indexed data store
+// In-memory indexed data store & Multi-source Search Manager
 let medicineData = { medicines: [], groups: [] };
-let medicinesById = new Map();
-let medicinesByGroup = new Map();
+let searchManager = null;
 
 function loadOrSeedData() {
   if (!fs.existsSync(DATA_FILE)) {
@@ -52,18 +54,13 @@ function loadOrSeedData() {
     }
   }
 
-  medicinesById.clear();
-  medicinesByGroup.clear();
-
-  for (const med of medicineData.medicines) {
-    medicinesById.set(med.id, med);
-    if (!medicinesByGroup.has(med.composition_key)) {
-      medicinesByGroup.set(med.composition_key, []);
-    }
-    medicinesByGroup.get(med.composition_key).push(med);
+  if (!searchManager) {
+    searchManager = new SearchManager(medicineData);
+  } else {
+    searchManager.updateIndianData(medicineData);
   }
 
-  console.log(`🚀 Loaded ${medicineData.medicines.length} medicines into memory (${medicinesByGroup.size} composition groups).`);
+  console.log(`🚀 Loaded ${medicineData.medicines.length} medicines into memory (${medicineData.groups?.length || 0} composition groups).`);
 }
 
 // Initial data load
@@ -72,9 +69,9 @@ loadOrSeedData();
 // Curated Popular Categories
 const THERAPEUTIC_CATEGORIES = [
   {
-    id: 'fever-pain',
+    id: 'fever',
     title: 'Fever & Pain Relief',
-    subtitle: 'Paracetamol, Ibuprofen, Aceclofenac, Diclofenac',
+    subtitle: 'Paracetamol, Ibuprofen, Aceclofenac',
     icon: 'Flame',
     color: 'from-orange-500 to-amber-500',
     sampleQuery: 'Dolo 650'
@@ -82,21 +79,21 @@ const THERAPEUTIC_CATEGORIES = [
   {
     id: 'diabetes',
     title: 'Diabetes Care',
-    subtitle: 'Metformin, Vildagliptin, Glimepiride, Sitagliptin',
+    subtitle: 'Metformin, Vildagliptin, Glimepiride',
     icon: 'Activity',
-    color: 'from-blue-500 to-cyan-500',
+    color: 'from-sky-500 to-blue-500',
     sampleQuery: 'Glycomet 500'
   },
   {
-    id: 'blood-pressure',
+    id: 'cardiac',
     title: 'Blood Pressure & Heart',
-    subtitle: 'Telmisartan, Amlodipine, Atorvastatin, Rosuvastatin',
+    subtitle: 'Telmisartan, Amlodipine, Atorvastatin',
     icon: 'HeartPulse',
     color: 'from-rose-500 to-red-500',
     sampleQuery: 'Telma 40'
   },
   {
-    id: 'acidity',
+    id: 'gastro',
     title: 'Acidity & Digestion',
     subtitle: 'Pantoprazole, Omeprazole, Rabeprazole',
     icon: 'ShieldAlert',
@@ -104,331 +101,266 @@ const THERAPEUTIC_CATEGORIES = [
     sampleQuery: 'Pan D'
   },
   {
-    id: 'antibiotics',
+    id: 'infection',
     title: 'Antibiotics & Infections',
-    subtitle: 'Augmentin, Azithral, Taxim-O, Ceftum',
+    subtitle: 'Augmentin, Azithral, Taxim-O',
     icon: 'Pill',
     color: 'from-purple-500 to-indigo-500',
     sampleQuery: 'Augmentin 625'
   },
   {
-    id: 'allergies',
+    id: 'respiratory',
     title: 'Allergy & Respiratory',
-    subtitle: 'Montair LC, Allegra 120, Cetzine 10',
+    subtitle: 'Montair LC, Allegra 120, Cetzine',
     icon: 'Wind',
-    color: 'from-sky-500 to-blue-600',
-    sampleQuery: 'Montair LC'
+    color: 'from-blue-500 to-cyan-500',
+    sampleQuery: 'Allegra 120'
   }
 ];
 
-// 1. Search Endpoint with Type-ahead Autocomplete
-app.get('/api/search', (req, res) => {
-  const query = String(req.query.q || '').trim().toLowerCase();
-  const limit = Math.min(parseInt(req.query.limit, 10) || 12, 50);
-  const includeDiscontinued = req.query.includeDiscontinued === 'true';
+// ==========================================
+// API ROUTES
+// ==========================================
 
-  if (!query) {
-    return res.json({ query: '', results: [], total: 0 });
-  }
+/**
+ * 1. Multi-Source Medicine Autocomplete & Search Endpoint
+ * Queries Indian Pharmacopoeia + RxNorm (NLM) + openFDA with deduplication and caching.
+ */
+app.get('/api/search', async (req, res) => {
+  try {
+    const query = String(req.query.q || '').trim();
+    const limit = parseInt(req.query.limit, 10) || 10;
+    const country = req.query.country || 'all';
 
-  const activePool = medicineData.medicines.filter(m => includeDiscontinued || !m.is_discontinued);
-
-  const exactMatches = [];
-  const startsWithMatches = [];
-  const containsMatches = [];
-  const saltMatches = [];
-
-  for (const med of activePool) {
-    const nameLower = med.name.toLowerCase();
-    const compLower = med.display_composition.toLowerCase();
-    const mfgLower = med.manufacturer_name.toLowerCase();
-
-    if (nameLower === query) {
-      exactMatches.push(med);
-    } else if (nameLower.startsWith(query)) {
-      startsWithMatches.push(med);
-    } else if (nameLower.includes(query) || mfgLower.includes(query)) {
-      containsMatches.push(med);
-    } else if (compLower.includes(query)) {
-      saltMatches.push(med);
+    if (!query) {
+      return res.json({ query: '', results: [], total: 0, sources_queried: [] });
     }
+
+    const searchResponse = await searchManager.search(query, { limit, country });
+    return res.json(searchResponse);
+  } catch (err) {
+    console.error('Search endpoint error:', err);
+    return res.status(500).json({ error: 'Search service encountered an internal error' });
   }
-
-  const combined = [
-    ...exactMatches,
-    ...startsWithMatches,
-    ...containsMatches,
-    ...saltMatches
-  ];
-
-  const seen = new Set();
-  const deduped = [];
-  for (const item of combined) {
-    if (!seen.has(item.id)) {
-      seen.add(item.id);
-      deduped.push(item);
-    }
-    if (deduped.length >= limit) break;
-  }
-
-  return res.json({
-    query: req.query.q,
-    total: deduped.length,
-    results: deduped.map(item => ({
-      id: item.id,
-      name: item.name,
-      price: item.price,
-      unit_price: item.unit_price,
-      pack_size_label: item.pack_size_label,
-      manufacturer_name: item.manufacturer_name,
-      display_composition: item.display_composition,
-      badge_type: item.badge_type,
-      generic_flag: item.generic_flag,
-      is_cheapest: item.is_cheapest,
-      composition_key: item.composition_key
-    }))
-  });
 });
 
-// 2. Medicine Details & Full Comparison Group Endpoint
+/**
+ * 2. Medicine Details & Clinical Comparison Endpoint
+ * Uses ClinicalComparator for strict formulation evaluation and bounded savings math.
+ */
 app.get('/api/medicine/:id', (req, res) => {
+  try {
+    const medicineId = req.params.id;
+    const targetMed = searchManager.getMedicineById(medicineId);
+
+    if (!targetMed) {
+      return res.status(404).json({ error: 'Medicine not found in connected databases' });
+    }
+
+    // Get candidate alternatives sharing active composition
+    const candidateAlts = searchManager.getByComposition(targetMed.composition_key);
+    
+    // Fallback: If no group alternatives found, at least include target itself
+    const candidatePool = candidateAlts.length > 0 ? candidateAlts : [targetMed];
+
+    // Run clinical comparator
+    const comparisonResult = ClinicalComparator.buildComparison(targetMed, candidatePool);
+
+    return res.json(comparisonResult);
+  } catch (err) {
+    console.error('Medicine details endpoint error:', err);
+    return res.status(500).json({ error: 'Failed to generate medicine comparison' });
+  }
+});
+
+/**
+ * 3. Provenance & Verification Metadata Endpoint
+ * Returns regulatory audit trail, retrieval date, and authority citations.
+ */
+app.get('/api/provenance/:id', (req, res) => {
   const medicineId = req.params.id;
-  const targetMed = medicinesById.get(medicineId);
+  const targetMed = searchManager.getMedicineById(medicineId);
 
   if (!targetMed) {
-    return res.status(404).json({ error: 'Medicine not found' });
+    return res.status(404).json({ error: 'Medicine record not found' });
   }
 
-  const allGroupMeds = medicinesByGroup.get(targetMed.composition_key) || [targetMed];
-
-  const activeAlternatives = allGroupMeds
-    .filter(m => !m.is_discontinued)
-    .sort((a, b) => a.unit_price - b.unit_price);
-
-  const cheapestOption = activeAlternatives[0] || targetMed;
-
-  const priceDiffPerUnit = Math.max(0, targetMed.unit_price - cheapestOption.unit_price);
-  const priceDiffPerPack = parseFloat((priceDiffPerUnit * targetMed.pack_unit_count).toFixed(2));
-  const savingsPct = targetMed.unit_price > 0 
-    ? Math.round(((targetMed.unit_price - cheapestOption.unit_price) / targetMed.unit_price) * 100)
-    : 0;
-
-  const hasSavings = priceDiffPerUnit > 0.05 && targetMed.id !== cheapestOption.id;
-
   return res.json({
-    medicine: targetMed,
-    composition_key: targetMed.composition_key,
-    shared_composition: targetMed.display_composition,
-    salts: targetMed.salts,
-    cheapest_option: cheapestOption,
-    savings: {
-      has_savings: hasSavings,
-      savings_percentage: Math.max(0, savingsPct),
-      savings_per_unit: parseFloat(priceDiffPerUnit.toFixed(2)),
-      savings_per_pack: priceDiffPerPack,
-      target_unit_price: targetMed.unit_price,
-      cheapest_unit_price: cheapestOption.unit_price,
-      pack_unit_count: targetMed.pack_unit_count,
-      pack_unit_type: targetMed.pack_unit_type
-    },
-    total_alternatives: activeAlternatives.length,
-    alternatives: activeAlternatives.map(alt => {
-      const altDiffPerUnit = Math.max(0, targetMed.unit_price - alt.unit_price);
-      const altSavingsPct = targetMed.unit_price > 0
-        ? Math.round(((targetMed.unit_price - alt.unit_price) / targetMed.unit_price) * 100)
-        : 0;
-
-      return {
-        ...alt,
-        is_current_selection: alt.id === targetMed.id,
-        savings_vs_target_pct: Math.max(0, altSavingsPct),
-        savings_vs_target_unit: parseFloat(altDiffPerUnit.toFixed(2)),
-        savings_vs_target_pack: parseFloat((altDiffPerUnit * alt.pack_unit_count).toFixed(2))
-      };
-    })
+    medicine_id: targetMed.id,
+    name: targetMed.name,
+    country: targetMed.country,
+    jurisdiction: targetMed.jurisdiction,
+    provenance: targetMed.provenance,
+    regulatory_rules: {
+      schedule_h_prescription: true,
+      substitution_requires_consultation: true,
+      bioequivalence_standard: targetMed.country === 'IN' ? 'Indian Pharmacopoeia (IP)' : 'USP / FDA Orange Book'
+    }
   });
 });
 
-// 3. Categories Endpoint
+/**
+ * 4. Report-An-Error Endpoint
+ * Allows clinicians and patients to submit corrections, pricing updates, or formulation errors.
+ */
+app.post('/api/report-error', (req, res) => {
+  try {
+    const { medicine_id, medicine_name, error_type, description, reporter_contact, suggested_correction, source_reference } = req.body;
+
+    if (!medicine_id || !description) {
+      return res.status(400).json({ error: 'medicine_id and description are required.' });
+    }
+
+    const report = ReportService.submitReport({
+      medicine_id,
+      medicine_name,
+      error_type,
+      description,
+      reporter_contact,
+      suggested_correction,
+      source_reference
+    });
+
+    return res.status(201).json({
+      success: true,
+      message: 'Error report submitted successfully for clinical review.',
+      report_id: report.report_id,
+      submitted_at: report.submitted_at
+    });
+  } catch (err) {
+    console.error('Error reporting endpoint failed:', err);
+    return res.status(500).json({ error: err.message || 'Failed to submit error report' });
+  }
+});
+
+app.get('/api/reports', (req, res) => {
+  const reports = ReportService.getReports(req.query.status);
+  return res.json({ total: reports.length, reports });
+});
+
+/**
+ * 5. Categories Endpoint
+ */
 app.get('/api/categories', (req, res) => {
   return res.json({ categories: THERAPEUTIC_CATEGORIES });
 });
 
-// 4. Store Locator Endpoint
+/**
+ * 6. Store Locator Endpoint
+ */
 app.get('/api/stores/nearby', (req, res) => {
   const lat = parseFloat(req.query.lat);
   const lng = parseFloat(req.query.lng);
-  const city = String(req.query.city || '').trim().toLowerCase();
-  const pincode = String(req.query.pincode || '').trim();
+  const cityFilter = (req.query.city || '').toLowerCase().trim();
 
-  const userLat = !isNaN(lat) ? lat : 28.6139;
-  const userLng = !isNaN(lng) ? lng : 77.2090;
+  const userLocationProvided = !isNaN(lat) && !isNaN(lng);
 
-  const filterStore = (store) => {
-    if (city && store.city.toLowerCase().includes(city)) return true;
-    if (pincode && store.pincode.startsWith(pincode.substring(0, 3))) return true;
-    return true;
-  };
+  function enrichStores(storeList) {
+    return storeList
+      .filter(store => {
+        if (!cityFilter || cityFilter === 'all locations') return true;
+        return store.city.toLowerCase() === cityFilter;
+      })
+      .map(store => {
+        let distance = null;
+        if (userLocationProvided) {
+          distance = calculateDistanceKm(lat, lng, store.lat, store.lng);
+        }
+        return {
+          ...store,
+          distance_km: distance,
+          directions_url: getDirectionsUrl(store)
+        };
+      })
+      .sort((a, b) => {
+        if (a.distance_km !== null && b.distance_km !== null) {
+          return a.distance_km - b.distance_km;
+        }
+        return 0;
+      });
+  }
 
-  const mapWithDistance = (store) => {
-    const dist = calculateDistanceKm(userLat, userLng, store.lat, store.lng);
-    return {
-      ...store,
-      distance_km: dist,
-      directions_url: getDirectionsUrl(store.name, store.lat, store.lng, store.address)
-    };
-  };
-
-  const janAushadhi = STORE_DATABASE.jan_aushadhi
-    .filter(filterStore)
-    .map(mapWithDistance)
-    .sort((a, b) => a.distance_km - b.distance_km);
-
-  const generalPharmacies = STORE_DATABASE.general_pharmacies
-    .filter(filterStore)
-    .map(mapWithDistance)
-    .sort((a, b) => a.distance_km - b.distance_km);
+  const enrichedJanAushadhi = enrichStores(STORE_DATABASE.jan_aushadhi || STORE_DATABASE.jan_aushadhi_kendras || []);
+  const enrichedGeneral = enrichStores(STORE_DATABASE.general || STORE_DATABASE.general_pharmacies || []);
 
   return res.json({
-    user_location: {
-      lat: userLat,
-      lng: userLng,
-      is_default: isNaN(lat) || isNaN(lng)
-    },
-    jan_aushadhi_kendras: janAushadhi,
-    general_pharmacies: generalPharmacies,
-    total_jan_aushadhi: janAushadhi.length,
-    total_general: generalPharmacies.length
+    user_location: userLocationProvided ? { lat, lng } : null,
+    total_found: enrichedJanAushadhi.length + enrichedGeneral.length,
+    jan_aushadhi_kendras: enrichedJanAushadhi,
+    general_pharmacies: enrichedGeneral
   });
 });
 
-// 5. System Stats
+/**
+ * 7. System Stats Endpoint
+ */
 app.get('/api/stats', (req, res) => {
-  const totalMeds = medicineData.medicines.length;
-  const activeMeds = medicineData.medicines.filter(m => !m.is_discontinued).length;
-  const totalGroups = medicinesByGroup.size;
-  const genericCount = medicineData.medicines.filter(m => m.generic_flag && !m.is_discontinued).length;
-
+  const storeCount = (STORE_DATABASE.jan_aushadhi?.length || 0) + (STORE_DATABASE.general?.length || 0);
   return res.json({
-    total_medicines: totalMeds,
-    active_medicines: activeMeds,
-    composition_groups: totalGroups,
-    generics_count: genericCount,
-    average_savings_pct: 68
+    total_medicines: medicineData.medicines.length,
+    total_groups: medicineData.groups?.length || 0,
+    total_stores: storeCount,
+    supported_jurisdictions: ['IN (CDSCO / PMBJP)', 'US (NLM RxNorm)', 'US (FDA NDC)'],
+    last_updated: '2026-10-14'
   });
 });
 
-// 6. Prescription Photo Scanner — Gemini Vision OCR
+/**
+ * 8. Strict OCR Prescription Image Reading Endpoint
+ * Optical Character Recognition ONLY — does NOT generate side effects or unprompted medical prescriptions.
+ */
 app.post('/api/scan-prescription', async (req, res) => {
   try {
     if (!geminiModel) {
       return res.status(503).json({
-        error: 'Prescription scanning is not configured. Set GEMINI_API_KEY in server/.env'
+        error: 'Prescription OCR service is not configured. GEMINI_API_KEY environment variable is required.'
       });
     }
 
-    const { image, mimeType } = req.body;
-    if (!image) {
-      return res.status(400).json({ error: 'No image provided' });
+    const { imageBase64, mimeType } = req.body;
+    if (!imageBase64) {
+      return res.status(400).json({ error: 'imageBase64 is required' });
     }
 
-    // Strip data URL prefix if present
-    const base64Data = image.replace(/^data:image\/\w+;base64,/, '');
-    const imageType = mimeType || 'image/jpeg';
-
-    const prompt = `You are a medical prescription reader for Indian pharmacies.
-
-Analyze this prescription image carefully and extract ALL medicine/drug names written on it.
-
-Rules:
-1. Extract ONLY medicine brand names or generic drug names (e.g., "Dolo 650", "Augmentin 625 Duo", "Pan D", "Glycomet 500", "Paracetamol 500mg")
-2. Include the dosage/strength if visible (e.g., "650", "500mg", "10mg")
-3. Do NOT include dosage instructions like "1-0-1" or "twice daily"
-4. Do NOT include non-medicine text like doctor name, patient name, dates, or diagnosis
-5. If the handwriting is unclear for a medicine name, provide your best guess with the name only
-6. Return ONLY a JSON array of medicine name strings, nothing else
-
-Example output: ["Dolo 650", "Pan D", "Augmentin 625"]
-
-If no medicines can be identified, return an empty array: []
-
-IMPORTANT: Return ONLY the JSON array, no markdown formatting, no code blocks, no explanation.`;
-
-    const result = await geminiModel.generateContent([
-      prompt,
-      {
-        inlineData: {
-          mimeType: imageType,
-          data: base64Data
-        }
+    const imagePart = {
+      inlineData: {
+        data: imageBase64.replace(/^data:image\/\w+;base64,/, ''),
+        mimeType: mimeType || 'image/jpeg'
       }
-    ]);
+    };
 
-    const responseText = result.response.text().trim();
+    const prompt = `You are a medical Optical Character Recognition (OCR) assistant.
+Analyze this prescription image and extract ONLY the exact written medicine brand names or chemical salt names.
+DO NOT provide dosage recommendations, medical advice, side effects, or clinical diagnosis.
 
-    // Parse the JSON array from Gemini's response
+Return ONLY a valid JSON object in this exact format:
+{
+  "extracted_medicines": ["Medicine Name 1", "Medicine Name 2"]
+}`;
+
+    const result = await geminiModel.generateContent([prompt, imagePart]);
+    const responseText = result.response.text();
+
     let extractedNames = [];
     try {
-      // Remove any markdown code fences if present
-      const cleaned = responseText.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
-      extractedNames = JSON.parse(cleaned);
-      if (!Array.isArray(extractedNames)) {
-        extractedNames = [];
+      const jsonMatch = responseText.match(/\{[\s\S]*\}/);
+      if (jsonMatch) {
+        const parsed = JSON.parse(jsonMatch[0]);
+        extractedNames = parsed.extracted_medicines || [];
       }
     } catch (parseErr) {
-      console.error('Failed to parse Gemini response:', responseText);
-      // Try to extract names from text as fallback
-      extractedNames = responseText
-        .split(/[,\n]+/)
-        .map(s => s.replace(/["\[\]]/g, '').trim())
-        .filter(s => s.length > 1 && s.length < 60);
+      console.warn('Failed to parse Gemini OCR JSON:', parseErr);
     }
 
-    // Match extracted names against our medicine database
+    // Match extracted medicine names against database
     const matchedMedicines = [];
-    const includeDiscontinued = false;
-    const activePool = medicineData.medicines.filter(m => !m.is_discontinued);
-
-    for (const name of extractedNames) {
-      const queryLower = name.toLowerCase();
-      let bestMatch = null;
-      let bestScore = 0;
-
-      for (const med of activePool) {
-        const medNameLower = med.name.toLowerCase();
-        if (medNameLower === queryLower) {
-          bestMatch = med;
-          bestScore = 100;
-          break;
-        }
-        if (medNameLower.startsWith(queryLower) && bestScore < 80) {
-          bestMatch = med;
-          bestScore = 80;
-        }
-        if (medNameLower.includes(queryLower) && bestScore < 60) {
-          bestMatch = med;
-          bestScore = 60;
-        }
-        // Also check if the query contains the medicine name
-        if (queryLower.includes(medNameLower) && medNameLower.length > 3 && bestScore < 50) {
-          bestMatch = med;
-          bestScore = 50;
-        }
-      }
+    for (const rawName of extractedNames) {
+      const searchRes = await searchManager.search(rawName, { limit: 1 });
+      const bestMatch = searchRes.results?.[0] || null;
 
       matchedMedicines.push({
-        extracted_name: name,
-        matched: bestMatch ? {
-          id: bestMatch.id,
-          name: bestMatch.name,
-          price: bestMatch.price,
-          unit_price: bestMatch.unit_price,
-          pack_size_label: bestMatch.pack_size_label,
-          manufacturer_name: bestMatch.manufacturer_name,
-          display_composition: bestMatch.display_composition,
-          generic_flag: bestMatch.generic_flag
-        } : null,
-        confidence: bestScore
+        extracted_name: rawName,
+        matched: bestMatch
       });
     }
 
@@ -438,11 +370,10 @@ IMPORTANT: Return ONLY the JSON array, no markdown formatting, no code blocks, n
       total_extracted: extractedNames.length,
       total_matched: matchedMedicines.filter(m => m.matched).length
     });
-
   } catch (err) {
-    console.error('Prescription scan error:', err);
+    console.error('Prescription OCR error:', err);
     return res.status(500).json({
-      error: 'Failed to scan prescription. Please try again with a clearer image.'
+      error: 'Failed to read prescription text. Please ensure clear focus and good lighting.'
     });
   }
 });
@@ -459,5 +390,5 @@ if (fs.existsSync(CLIENT_DIST)) {
 }
 
 app.listen(PORT, () => {
-  console.log(`🏥 MediCompare API server running at http://localhost:${PORT}`);
+  console.log(`🏥 MediCompare Healthcare API Server running at http://localhost:${PORT}`);
 });

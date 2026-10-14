@@ -51,7 +51,7 @@ async function runTests() {
 
   // 4. Test Augmentin 625 Duo Comparison
   await test('Augmentin 625 comparison against Jan Aushadhi Amoxyclav', async () => {
-    const res = await fetch('http://localhost:3001/api/medicine/MED009'); // Augmentin 625
+    const res = await fetch('http://localhost:3001/api/medicine/MED070'); // Augmentin 625
     const data = await res.json();
     
     if (data.medicine.name !== 'Augmentin 625 Duo Tablet') throw new Error('Incorrect medicine returned');

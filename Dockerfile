@@ -1,36 +1,35 @@
-# Multi-stage Dockerfile for MediCompare Production Deployment
-FROM node:20-alpine AS builder
+# Multi-stage Dockerfile for MediCompare
+# Stage 1: Build the Vite frontend
+FROM node:18-alpine AS client-builder
+WORKDIR /app/client
 
-WORKDIR /app
-
-# Copy package files
-COPY package.json ./
-COPY server/package.json ./server/
-COPY client/package.json ./client/
-
-# Install dependencies
+COPY client/package*.json ./
 RUN npm install
-RUN cd server && npm install
-RUN cd client && npm install
 
-# Copy source code
-COPY . .
+COPY client/ ./
+RUN npm run build
 
-# Build client bundle & seed database
-RUN cd client && npm run build
-RUN node server/scripts/build_full_dataset.js
-
-# Production runner image
-FROM node:20-alpine AS runner
-
+# Stage 2: Production Server
+FROM node:18-alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
 ENV PORT=3001
 
-COPY --from=builder /app/package.json ./
-COPY --from=builder /app/server ./server
-COPY --from=builder /app/client/dist ./client/dist
+# Copy root & server package files
+COPY package*.json ./
+COPY server/package*.json ./server/
+
+# Install server production dependencies
+WORKDIR /app/server
+RUN npm install --production
+
+WORKDIR /app
+# Copy server source code and datasets
+COPY server/ ./server/
+
+# Copy built frontend assets from stage 1 into client/dist
+COPY --from=client-builder /app/client/dist ./client/dist
 
 EXPOSE 3001
 

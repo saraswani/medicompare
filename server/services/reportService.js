@@ -1,0 +1,80 @@
+/**
+ * ReportService
+ * Handles persistence, validation, and review tracking for medicine error reports.
+ */
+
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const REPORTS_FILE = path.join(__dirname, '..', 'data', 'error_reports.json');
+
+export class ReportService {
+  static loadReports() {
+    try {
+      if (!fs.existsSync(REPORTS_FILE)) {
+        fs.writeFileSync(REPORTS_FILE, JSON.stringify([], null, 2), 'utf8');
+        return [];
+      }
+      const raw = fs.readFileSync(REPORTS_FILE, 'utf8');
+      return JSON.parse(raw);
+    } catch (e) {
+      console.error('Error loading error reports:', e);
+      return [];
+    }
+  }
+
+  static saveReports(reports) {
+    try {
+      fs.writeFileSync(REPORTS_FILE, JSON.stringify(reports, null, 2), 'utf8');
+      return true;
+    } catch (e) {
+      console.error('Error saving error reports:', e);
+      return false;
+    }
+  }
+
+  static submitReport(data) {
+    const { medicine_id, medicine_name, error_type, description, reporter_contact, suggested_correction, source_reference } = data;
+
+    if (!medicine_id || !description) {
+      throw new Error('medicine_id and description are required fields.');
+    }
+
+    const reportId = `ERR-${Date.now().toString(36).toUpperCase()}-${Math.floor(1000 + Math.random() * 9000)}`;
+
+    const newReport = {
+      report_id: reportId,
+      medicine_id: String(medicine_id).trim(),
+      medicine_name: String(medicine_name || 'Unknown').trim(),
+      error_type: String(error_type || 'GENERAL_DATA_INACCURACY').trim(),
+      description: String(description).trim(),
+      reporter_contact: String(reporter_contact || 'Anonymous').trim(),
+      suggested_correction: String(suggested_correction || '').trim(),
+      source_reference: String(source_reference || '').trim(),
+      status: 'PENDING_REVIEW',
+      submitted_at: new Date().toISOString(),
+      review_log: [
+        {
+          timestamp: new Date().toISOString(),
+          action: 'REPORT_SUBMITTED',
+          note: 'Report queued for clinical reviewer evaluation.'
+        }
+      ]
+    };
+
+    const reports = this.loadReports();
+    reports.unshift(newReport);
+    this.saveReports(reports);
+
+    return newReport;
+  }
+
+  static getReports(statusFilter = null) {
+    const reports = this.loadReports();
+    if (!statusFilter) return reports;
+    return reports.filter(r => r.status === statusFilter);
+  }
+}

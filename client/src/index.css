@@ -4,40 +4,62 @@
 
 @layer base {
   :root {
-    --brand-primary: #0f766e;
-    --brand-savings: #16a34a;
-    --brand-generic: #6366f1;
+    --brand-blue: #2563eb;
+    --brand-blue-light: #eff6ff;
+    --brand-emerald: #10b981;
+    --brand-amber: #f97316;
   }
 
   html {
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {
-    @apply bg-slate-50 text-slate-800 antialiased font-sans;
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    background-color: #f4f8fe;
+    color: #0f172a;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
 
-  /* Keyboard focus rings for accessibility */
   :focus-visible {
-    @apply outline-none ring-2 ring-teal-500 ring-offset-2;
+    outline: none;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #2563eb;
   }
 }
 
-/* Glassmorphism helpers */
-.glass-panel {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+/* Card Pop Micro-Interaction (Cursor Hover Effect) */
+.pop-card {
+  transition: transform 0.22s cubic-bezier(0.34, 1.45, 0.7, 1), box-shadow 0.22s ease, border-color 0.2s ease;
 }
 
-.glass-sticky-bar {
-  background: rgba(15, 23, 42, 0.92);
+.pop-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 14px 30px -8px rgba(37, 99, 235, 0.14), 0 4px 10px -2px rgba(0, 0, 0, 0.04);
+}
+
+.pop-card:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+/* Floating App Dock Bar */
+.floating-dock {
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 10px 35px -5px rgba(37, 99, 235, 0.15), 0 2px 10px rgba(0, 0, 0, 0.04);
 }
 
-/* Modern smooth animations */
+/* Animations */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
 @keyframes slideUp {
   from {
     transform: translateY(100%);
@@ -49,61 +71,14 @@
   }
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.98); }
-  to { opacity: 1; transform: scale(1); }
-}
-
 .animate-slide-up {
-  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.25s ease-out forwards;
-}
-
-/* Prescription Scanner Modal */
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.92) translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
-@keyframes scanLine {
-  0% {
-    top: 0;
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    top: 100%;
-    opacity: 0;
-  }
-}
-
-.animate-scale-in {
-  animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.scan-line-animation {
-  animation: scanLine 1.8s ease-in-out infinite;
-  position: absolute;
-}
-
-/* Scrollbar customizations */
+/* Scrollbar */
 .custom-scrollbar::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 .custom-scrollbar::-webkit-scrollbar-track {
   background: #f1f5f9;
@@ -117,13 +92,13 @@
   background: #94a3b8;
 }
 
-/* Print Stylesheet for Doctor / Pharmacist Prescription Summary */
+/* Print Stylesheet */
 @media print {
   body {
     background: #ffffff !important;
     color: #000000 !important;
   }
-  header, footer, button, .no-print, [role="combobox"] {
+  header, footer, button, .no-print, [role="combobox"], nav {
     display: none !important;
   }
 }
