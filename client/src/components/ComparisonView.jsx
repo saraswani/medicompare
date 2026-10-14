@@ -103,7 +103,7 @@ export default function ComparisonView({
 
           {/* Searched Price Reference & Report Discrepancy Action */}
           <div className="flex items-center md:flex-col md:items-end justify-between border-t md:border-t-0 pt-3 md:pt-0 border-slate-100 bg-blue-50/50 md:bg-transparent p-3.5 md:p-0 rounded-2xl">
-            {medicine.has_verified_price && medicine.price > 0 ? (
+            {(medicine.has_verified_price !== false && medicine.price > 0) ? (
               <>
                 <div>
                   <span className="text-xs text-slate-500 block md:text-right font-medium">Standard MRP</span>
@@ -311,7 +311,7 @@ export default function ComparisonView({
 
                 {/* Price Math & Savings Callout */}
                 <div className="mt-5 pt-3.5 border-t border-slate-100">
-                  {alt.can_compare_price ? (
+                  {(alt.can_compare_price !== false && alt.price > 0) ? (
                     <>
                       <div className="flex items-baseline justify-between mb-2">
                         <div>

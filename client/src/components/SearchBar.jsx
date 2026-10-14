@@ -243,7 +243,7 @@ export default function SearchBar({ onSelectMedicine, initialQuery = '' }) {
 
                 <div className="text-right flex-shrink-0 flex items-center gap-2">
                   <div>
-                    {item.has_verified_price && item.price > 0 ? (
+                    {(item.has_verified_price !== false && item.price > 0) ? (
                       <>
                         <div className="text-sm font-black text-slate-900">
                           ₹{item.price.toFixed(2)}

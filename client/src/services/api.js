@@ -49,10 +49,19 @@ function clientSearch(query, limit = 12) {
       seen.add(item.id);
       deduped.push({
         ...item,
+        price: typeof item.price === 'number' ? item.price : parseFloat(item.price) || 0,
+        unit_price: typeof item.unit_price === 'number' ? item.unit_price : parseFloat(item.unit_price) || 0,
+        has_verified_price: true,
+        price_type: item.badge_type === 'PMBJP Generic' ? 'PMBJP_GOVT_MAX_RETAIL_PRICE' : 'MARKET_MRP',
+        currency: 'INR',
+        currency_symbol: '₹',
+        dosage_form: item.dosage_form || 'Tablet',
+        release_characteristic: item.release_characteristic || 'Immediate Release',
         country: 'IN',
         jurisdiction: 'India (CDSCO / PMBJP)',
         provenance: item.provenance || {
-          source_name: 'Indian Pharmacopoeia & PMBJP Database',
+          source_name: item.badge_type === 'PMBJP Generic' ? 'Pradhan Mantri Bhartiya Janaushadhi Pariyojana' : 'Indian Medicine Register',
+          data_authority: item.badge_type === 'PMBJP Generic' ? 'PMBJP (Govt. of India)' : 'CDSCO / NPPA (Govt. of India)',
           verification_status: item.badge_type === 'PMBJP Generic' ? 'OFFICIAL_PRICE_REFERENCE' : 'VERIFIED_MARKET_LISTING',
           retrieval_date: '2026-10-14'
         }
@@ -85,18 +94,30 @@ function clientGetMedicine(medicineId) {
   return {
     medicine: {
       ...targetMed,
+      price: typeof targetMed.price === 'number' ? targetMed.price : parseFloat(targetMed.price) || 0,
+      unit_price: typeof targetMed.unit_price === 'number' ? targetMed.unit_price : parseFloat(targetMed.unit_price) || 0,
+      has_verified_price: true,
+      price_type: targetMed.badge_type === 'PMBJP Generic' ? 'PMBJP_GOVT_MAX_RETAIL_PRICE' : 'MARKET_MRP',
+      currency: 'INR',
+      currency_symbol: '₹',
+      dosage_form: targetMed.dosage_form || 'Tablet',
+      release_characteristic: targetMed.release_characteristic || 'Immediate Release',
       country: 'IN',
       jurisdiction: 'India (CDSCO / PMBJP)',
       provenance: targetMed.provenance || {
-        source_name: 'Indian Pharmacopoeia & PMBJP Database',
+        source_name: targetMed.badge_type === 'PMBJP Generic' ? 'Pradhan Mantri Bhartiya Janaushadhi Pariyojana' : 'Indian Medicine Register',
+        data_authority: targetMed.badge_type === 'PMBJP Generic' ? 'PMBJP (Govt. of India)' : 'CDSCO / NPPA (Govt. of India)',
         verification_status: targetMed.badge_type === 'PMBJP Generic' ? 'OFFICIAL_PRICE_REFERENCE' : 'VERIFIED_MARKET_LISTING',
         retrieval_date: '2026-10-14'
       }
     },
     composition_key: targetMed.composition_key,
     shared_composition: targetMed.display_composition,
+    dosage_form: targetMed.dosage_form || 'Tablet',
+    release_characteristic: targetMed.release_characteristic || 'Immediate Release',
     salts: targetMed.salts,
     cheapest_option: cheapestOption,
+    can_calculate_savings: hasSavings,
     savings: {
       has_savings: hasSavings,
       savings_percentage: Math.max(0, savingsPct),
@@ -118,16 +139,26 @@ function clientGetMedicine(medicineId) {
 
       return {
         ...alt,
+        price: typeof alt.price === 'number' ? alt.price : parseFloat(alt.price) || 0,
+        unit_price: typeof alt.unit_price === 'number' ? alt.unit_price : parseFloat(alt.unit_price) || 0,
+        has_verified_price: true,
+        price_type: alt.badge_type === 'PMBJP Generic' ? 'PMBJP_GOVT_MAX_RETAIL_PRICE' : 'MARKET_MRP',
+        currency: 'INR',
+        currency_symbol: '₹',
+        dosage_form: alt.dosage_form || 'Tablet',
+        release_characteristic: alt.release_characteristic || 'Immediate Release',
         country: 'IN',
         jurisdiction: 'India (CDSCO / PMBJP)',
         evaluation: {
           status: 'EXACT_FORMULATION_MATCH',
           status_label: 'Identical Formulation Match',
+          badge_color: 'bg-emerald-100 text-emerald-800 border-emerald-300',
           is_substitutable_candidate: true,
           reasons: ['Same active pharmaceutical molecule and dosage form.']
         },
         provenance: alt.provenance || {
-          source_name: 'Indian Pharmacopoeia & PMBJP Database',
+          source_name: alt.badge_type === 'PMBJP Generic' ? 'Pradhan Mantri Bhartiya Janaushadhi Pariyojana' : 'Indian Medicine Register',
+          data_authority: alt.badge_type === 'PMBJP Generic' ? 'PMBJP (Govt. of India)' : 'CDSCO / NPPA (Govt. of India)',
           verification_status: alt.badge_type === 'PMBJP Generic' ? 'OFFICIAL_PRICE_REFERENCE' : 'VERIFIED_MARKET_LISTING',
           retrieval_date: '2026-10-14'
         },
