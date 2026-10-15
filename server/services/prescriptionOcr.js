@@ -81,6 +81,10 @@ export class PrescriptionOcrService {
 
   initLexicon() {
     this.indexedBrands = [];
+    this.indexedRoots = new Map();
+    this.indexedPhrases = new Map();
+    this.saltIndex = new Map();
+
     for (const med of this.medicines) {
       if (med.is_discontinued) continue;
 
@@ -89,7 +93,7 @@ export class PrescriptionOcrService {
         .replace(/\b(Tablet|Tablets|Capsule|Capsules|Injection|Syrup|Suspension|Drops|Gel|Ointment|Duo|Advance|SR|ER|PR|CR)\b/gi, '')
         .trim();
 
-      this.indexedBrands.push({
+      const item = {
         id: med.id,
         fullName: med.name,
         cleanBrand: cleanBrand.toLowerCase(),
@@ -97,7 +101,40 @@ export class PrescriptionOcrService {
         compositionKey: med.composition_key,
         price: med.price,
         record: med
-      });
+      };
+
+      this.indexedBrands.push(item);
+
+      // Index multi-word brand phrase (e.g. "aceclo plus", "pan d", "dolo 650")
+      const cleanLower = cleanBrand.toLowerCase();
+      if (!this.indexedPhrases.has(cleanLower)) {
+        this.indexedPhrases.set(cleanLower, []);
+      }
+      this.indexedPhrases.get(cleanLower).push(med);
+
+      // Index single primary brand root (e.g. "aceclo", "dolo", "augmentin", "pan", "telma", "calpol")
+      const tokens = cleanLower.split(/[\s-]+/).filter(t => t.length >= 3 && !/^\d+$/.test(t));
+      const primaryRoot = tokens[0];
+      if (primaryRoot && primaryRoot.length >= 3 && !CLINICAL_STOPWORDS.has(primaryRoot)) {
+        if (!this.indexedRoots.has(primaryRoot)) {
+          this.indexedRoots.set(primaryRoot, []);
+        }
+        this.indexedRoots.get(primaryRoot).push(med);
+      }
+
+      // Index active salts
+      if (med.display_composition) {
+        const rawSalts = med.display_composition.split('+');
+        for (const s of rawSalts) {
+          const saltName = s.replace(/\([^)]*\)/g, '').trim().toLowerCase();
+          if (saltName.length >= 4 && !CLINICAL_STOPWORDS.has(saltName)) {
+            if (!this.saltIndex.has(saltName)) {
+              this.saltIndex.set(saltName, []);
+            }
+            this.saltIndex.get(saltName).push(med);
+          }
+        }
+      }
     }
   }
 
@@ -212,85 +249,74 @@ Return ONLY a valid JSON object in this exact format:
 
   /**
    * Pharmaceutical text parsing and entity extraction
+   * Supports phrase matching, primary brand roots, active salts, and fuzzy OCR typo tolerance
    */
   extractMedicinesFromText(text) {
     if (!text || typeof text !== 'string') return [];
 
-    const normalized = text.toLowerCase();
-    const candidateMatches = [];
+    const normalized = text.toLowerCase().replace(/[-_.]/g, ' ');
+    const words = normalized.split(/\s+/).filter(w => w.length >= 3 && !CLINICAL_STOPWORDS.has(w));
+    const candidateMatches = new Map();
 
-    // Check exact & substring matches against our indexed brands
-    for (const item of this.indexedBrands) {
-      const brand = item.cleanBrand;
-      if (brand.length < 3) continue;
-
-      // Word boundary regex check
-      const regex = new RegExp(`\\b${brand.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
-      if (regex.test(normalized)) {
-        candidateMatches.push({
-          name: item.fullName,
-          score: 1.0,
-          length: brand.length
-        });
-      }
-    }
-
-    // Also check active salt names (e.g., "Paracetamol", "Aceclofenac", "Amoxicillin")
-    for (const med of this.medicines) {
-      if (med.generic_flag && med.display_composition) {
-        const salts = med.display_composition.toLowerCase().split('+').map(s => s.replace(/\([^)]*\)/g, '').trim());
-        for (const salt of salts) {
-          if (salt.length >= 5 && normalized.includes(salt)) {
-            candidateMatches.push({
-              name: med.name,
-              score: 0.9,
-              length: salt.length
-            });
+    // 1. Check multi-word phrase matches (e.g. "aceclo plus", "pan d", "dolo 650", "augmentin 625")
+    if (this.indexedPhrases) {
+      for (const [phrase, meds] of this.indexedPhrases.entries()) {
+        if (phrase.includes(' ') && normalized.includes(phrase)) {
+          const primary = meds.find(m => !m.generic_flag) || meds[0];
+          if (primary && !candidateMatches.has(primary.id)) {
+            candidateMatches.set(primary.id, { name: primary.name, score: 1.0, length: phrase.length });
           }
         }
       }
     }
 
-    // If still no matches, split text into lines and check fuzzy distance
-    if (candidateMatches.length === 0) {
-      const lines = text.split(/[\r\n]+/);
-      for (const line of lines) {
-        const cleanLine = line
-          .replace(/[0-9]+/g, '')
-          .replace(/[^\w\s]/g, ' ')
-          .trim();
+    // 2. Check primary brand root matches (e.g. "aceclo", "dolo", "augmentin", "pan", "telma", "calpol")
+    if (this.indexedRoots) {
+      for (const word of words) {
+        if (this.indexedRoots.has(word)) {
+          const meds = this.indexedRoots.get(word);
+          const primary = meds.find(m => !m.generic_flag) || meds[0];
+          if (primary && !candidateMatches.has(primary.id)) {
+            candidateMatches.set(primary.id, { name: primary.name, score: 0.95, length: word.length });
+          }
+        }
+      }
+    }
 
-        const words = cleanLine.split(/\s+/).filter(w => w.length >= 4 && !CLINICAL_STOPWORDS.has(w.toLowerCase()));
+    // 3. Check active pharmaceutical salts (e.g. "paracetamol", "aceclofenac", "amoxicillin", "pantoprazole")
+    if (this.saltIndex) {
+      for (const [salt, meds] of this.saltIndex.entries()) {
+        if (normalized.includes(salt)) {
+          const primary = meds.find(m => !m.generic_flag) || meds[0];
+          if (primary && !candidateMatches.has(primary.id)) {
+            candidateMatches.set(primary.id, { name: primary.name, score: 0.90, length: salt.length });
+          }
+        }
+      }
+    }
 
-        for (const word of words) {
-          for (const item of this.indexedBrands) {
-            const sim = stringSimilarity(word, item.cleanBrand);
-            if (sim >= 0.78) {
-              candidateMatches.push({
-                name: item.fullName,
-                score: sim,
-                length: item.cleanBrand.length
-              });
+    // 4. Fuzzy Levenshtein match on brand roots for OCR typos (e.g. "Acecl0", "D0lo", "Augmntin")
+    if (candidateMatches.size === 0 && this.indexedRoots) {
+      for (const word of words) {
+        if (word.length >= 4) {
+          for (const [root, meds] of this.indexedRoots.entries()) {
+            if (root.length >= 4) {
+              const sim = stringSimilarity(word, root);
+              if (sim >= 0.74) {
+                const primary = meds.find(m => !m.generic_flag) || meds[0];
+                if (primary && !candidateMatches.has(primary.id)) {
+                  candidateMatches.set(primary.id, { name: primary.name, score: Math.round(sim * 100) / 100, length: root.length });
+                }
+              }
             }
           }
         }
       }
     }
 
-    // Deduplicate and sort by match quality
-    candidateMatches.sort((a, b) => b.score - a.score || b.length - a.length);
-    const unique = [];
-    const seen = new Set();
-
-    for (const c of candidateMatches) {
-      if (!seen.has(c.name)) {
-        seen.add(c.name);
-        unique.push(c.name);
-      }
-      if (unique.length >= 5) break;
-    }
-
-    return unique;
+    // Sort by match score and length
+    const sorted = Array.from(candidateMatches.values()).sort((a, b) => b.score - a.score || b.length - a.length);
+    return sorted.map(c => c.name).slice(0, 5);
   }
 
   /**

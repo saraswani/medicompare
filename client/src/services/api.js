@@ -381,9 +381,28 @@ export const api = {
           }
         }
 
-        const popularDefaults = ['MED031', 'MED001', 'MED011', 'MED021']
+        const popularDefaults = ['MED031', 'MED001', 'MED011', 'MED021', 'MED061']
           .map(id => medicinesById.get(id))
-          .filter(Boolean);
+          .filter(Boolean)
+          .map(med => {
+            const groupMeds = medicinesByGroup.get(med.composition_key) || [];
+            const generics = groupMeds.filter(m => m.generic_flag || m.badge_type === 'PMBJP Generic');
+            generics.sort((a, b) => a.price - b.price);
+            const cheapest = generics[0] || null;
+            return {
+              extracted_name: med.name,
+              confidence: 0.95,
+              matched: med,
+              generic_alternative: cheapest ? {
+                id: cheapest.id,
+                name: cheapest.name,
+                price: cheapest.price,
+                pack_size_label: cheapest.pack_size_label,
+                savings_amount: Math.max(0, med.price - cheapest.price),
+                savings_percentage: med.price > 0 ? Math.round(((med.price - cheapest.price) / med.price) * 100) : 0
+              } : null
+            };
+          });
 
         resolve({
           success: true,
