@@ -10,6 +10,7 @@ import { STORE_DATABASE, calculateDistanceKm, getDirectionsUrl } from './data/ph
 import { SearchManager } from './adapters/SearchManager.js';
 import { ClinicalComparator } from './services/comparator.js';
 import { ReportService } from './services/reportService.js';
+import { PrescriptionOcrService } from './services/prescriptionOcr.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -31,14 +32,15 @@ let geminiModel = null;
 if (process.env.GEMINI_API_KEY && process.env.GEMINI_API_KEY !== 'your_gemini_api_key_here') {
   genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
   geminiModel = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
-  console.log('🔑 Gemini Vision API initialized for optical character recognition.');
+  console.log('🔑 Gemini Vision API initialized for accelerated OCR.');
 } else {
-  console.warn('⚠️  GEMINI_API_KEY not set — prescription photo scanning will be unavailable.');
+  console.log('📄 Using built-in local Tesseract OCR & Indian Pharmacopoeia Lexicon matcher (zero external API keys required).');
 }
 
-// In-memory indexed data store & Multi-source Search Manager
+// In-memory indexed data store, Multi-source Search Manager & OCR Service
 let medicineData = { medicines: [], groups: [] };
 let searchManager = null;
+let ocrService = null;
 
 function loadOrSeedData() {
   if (!fs.existsSync(DATA_FILE)) {
@@ -58,6 +60,13 @@ function loadOrSeedData() {
     searchManager = new SearchManager(medicineData);
   } else {
     searchManager.updateIndianData(medicineData);
+  }
+
+  if (!ocrService) {
+    ocrService = new PrescriptionOcrService(medicineData, searchManager, geminiModel);
+  } else {
+    ocrService.updateData(medicineData);
+    ocrService.setGeminiModel(geminiModel);
   }
 
   console.log(`🚀 Loaded ${medicineData.medicines.length} medicines into memory (${medicineData.groups?.length || 0} composition groups).`);
@@ -419,68 +428,24 @@ app.get('/api/stats', (req, res) => {
 /**
  * 8. Strict OCR Prescription Image Reading Endpoint
  * Optical Character Recognition ONLY — does NOT generate side effects or unprompted medical prescriptions.
+ * Multi-Tier Engine:
+ * - Tier 1: Gemini Vision (if configured)
+ * - Tier 2: Free local Tesseract.js OCR
+ * - Tier 3: Indian Pharmacopoeia Lexicon matcher
  */
 app.post('/api/scan-prescription', async (req, res) => {
   try {
-    if (!geminiModel) {
-      return res.status(503).json({
-        error: 'Prescription OCR service is not configured. GEMINI_API_KEY environment variable is required.'
-      });
-    }
-
-    const { imageBase64, mimeType } = req.body;
+    const { imageBase64, mimeType, fileName } = req.body;
     if (!imageBase64) {
       return res.status(400).json({ error: 'imageBase64 is required' });
     }
 
-    const imagePart = {
-      inlineData: {
-        data: imageBase64.replace(/^data:image\/\w+;base64,/, ''),
-        mimeType: mimeType || 'image/jpeg'
-      }
-    };
-
-    const prompt = `You are a medical Optical Character Recognition (OCR) assistant.
-Analyze this prescription image and extract ONLY the exact written medicine brand names or chemical salt names.
-DO NOT provide dosage recommendations, medical advice, side effects, or clinical diagnosis.
-
-Return ONLY a valid JSON object in this exact format:
-{
-  "extracted_medicines": ["Medicine Name 1", "Medicine Name 2"]
-}`;
-
-    const result = await geminiModel.generateContent([prompt, imagePart]);
-    const responseText = result.response.text();
-
-    let extractedNames = [];
-    try {
-      const jsonMatch = responseText.match(/\{[\s\S]*\}/);
-      if (jsonMatch) {
-        const parsed = JSON.parse(jsonMatch[0]);
-        extractedNames = parsed.extracted_medicines || [];
-      }
-    } catch (parseErr) {
-      console.warn('Failed to parse Gemini OCR JSON:', parseErr);
+    if (!ocrService) {
+      ocrService = new PrescriptionOcrService(medicineData, searchManager, geminiModel);
     }
 
-    // Match extracted medicine names against database
-    const matchedMedicines = [];
-    for (const rawName of extractedNames) {
-      const searchRes = await searchManager.search(rawName, { limit: 1 });
-      const bestMatch = searchRes.results?.[0] || null;
-
-      matchedMedicines.push({
-        extracted_name: rawName,
-        matched: bestMatch
-      });
-    }
-
-    return res.json({
-      extracted_names: extractedNames,
-      medicines: matchedMedicines,
-      total_extracted: extractedNames.length,
-      total_matched: matchedMedicines.filter(m => m.matched).length
-    });
+    const scanResult = await ocrService.scanPrescriptionImage(imageBase64, mimeType, { fileName });
+    return res.json(scanResult);
   } catch (err) {
     console.error('Prescription OCR error:', err);
     return res.status(500).json({

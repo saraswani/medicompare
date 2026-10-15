@@ -132,10 +132,10 @@ npm run build
 Create a `.env` file in the `server/` directory:
 ```env
 PORT=3001
-# Optional: Google Gemini API key for prescription camera scanning
+# Optional: Google Gemini API key for accelerated vision OCR (default uses free local Tesseract OCR & Pharmacopoeia matcher)
 GEMINI_API_KEY=your_gemini_api_key_here
 ```
-*(Note: If `GEMINI_API_KEY` is not provided, the application remains fully functional with manual search and autocomplete).*
+*(Note: Zero API keys are required. The prescription scanner runs out of the box using built-in Tesseract OCR and pharmaceutical lexicon matching. `GEMINI_API_KEY` is completely optional).*
 
 ### Step 4: Run Locally in Development Mode
 ```bash

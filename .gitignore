@@ -19,4 +19,7 @@ Thumbs.db
 .vscode/
 .idea/
 
+# OCR cached models
+*.traineddata
+
 # Note: server/data/ and client/src/data/ ARE included so datasets are always pushed to Git!
