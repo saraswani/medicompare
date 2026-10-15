@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pill, BookmarkCheck, HelpCircle, Activity, Heart, ShieldCheck, AlertTriangle } from 'lucide-react';
+import { Pill, BookmarkCheck, HelpCircle, Activity, Heart, ShieldCheck, AlertTriangle, MapPin } from 'lucide-react';
 
 export default function Navbar({ 
   onOpenSavedSwaps, 
@@ -7,7 +7,8 @@ export default function Navbar({
   totalSavedAmount, 
   onOpenInfo, 
   onResetToHome,
-  onOpenReportError 
+  onOpenReportError,
+  onLocateStore
 }) {
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-blue-100/80 shadow-[0_2px_15px_-3px_rgba(37,99,235,0.06)]">
@@ -41,6 +42,18 @@ export default function Navbar({
 
         {/* Right Action Controls */}
         <div className="flex items-center gap-2 sm:gap-3">
+          {/* Locate Store Button */}
+          {onLocateStore && (
+            <button
+              onClick={onLocateStore}
+              className="flex items-center gap-1.5 px-3 py-2 text-xs font-bold text-slate-700 hover:text-emerald-700 hover:bg-emerald-50/70 rounded-xl transition-colors min-h-[40px]"
+              title="Locate Nearby Jan Aushadhi Kendras & Pharmacies"
+            >
+              <MapPin className="w-4 h-4 text-emerald-600" />
+              <span className="hidden sm:inline">Locate Store</span>
+            </button>
+          )}
+
           {/* Clinical Guide Button */}
           <button
             onClick={onOpenInfo}

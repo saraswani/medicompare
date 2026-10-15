@@ -28,6 +28,7 @@ export default function ComparisonView({
 }) {
   const [filterType, setFilterType] = useState('all'); // 'all' | 'janaushadhi' | 'generic'
   const [chemistModalMed, setChemistModalMed] = useState(null);
+  const [isSavingsBarDismissed, setIsSavingsBarDismissed] = useState(false);
 
   if (!comparisonData || !comparisonData.medicine) return null;
 
@@ -409,10 +410,10 @@ export default function ComparisonView({
       </div>
 
       {/* 5. Mobile & Desktop Slim Savings Sticky Bar */}
-      {!isTargetAlreadyCheapest && savings?.savings_percentage > 0 && (
+      {!isSavingsBarDismissed && !isTargetAlreadyCheapest && savings?.savings_percentage > 0 && (
         <aside 
           aria-label="Medicine Savings Summary"
-          className="fixed bottom-16 md:bottom-3 left-4 right-4 z-40 max-w-5xl mx-auto floating-dock text-slate-900 px-4 py-3 rounded-2xl border border-blue-200/80 shadow-2xl animate-slide-up"
+          className="fixed bottom-16 md:bottom-3 left-4 right-4 z-30 max-w-5xl mx-auto floating-dock text-slate-900 px-4 py-3 rounded-2xl border border-blue-200/80 shadow-2xl animate-slide-up"
         >
           <div className="flex items-center justify-between gap-3">
             <div className="min-w-0">
@@ -439,6 +440,15 @@ export default function ComparisonView({
               >
                 <BookmarkCheck className="w-3.5 h-3.5" />
                 <span>Save Swap</span>
+              </button>
+
+              <button
+                onClick={() => setIsSavingsBarDismissed(true)}
+                className="p-1 hover:bg-slate-200/70 text-slate-400 hover:text-slate-700 rounded-lg transition-colors ml-1"
+                title="Dismiss savings notification"
+                aria-label="Close savings banner"
+              >
+                <X className="w-4 h-4" />
               </button>
             </div>
           </div>

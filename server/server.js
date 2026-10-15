@@ -292,6 +292,117 @@ app.get('/api/stores/nearby', (req, res) => {
 });
 
 /**
+ * 6b. OpenStreetMap Geocoding & Overpass Proxy Endpoints
+ * Fully compliant with Nominatim & Overpass usage policies (with User-Agent & caching)
+ */
+const osmServerCache = new Map();
+
+app.get('/api/osm/geocode', async (req, res) => {
+  const query = String(req.query.q || '').trim();
+  if (!query) return res.status(400).json({ error: 'Query parameter q is required' });
+
+  const cacheKey = `geo_${query.toLowerCase()}`;
+  if (osmServerCache.has(cacheKey)) {
+    return res.json(osmServerCache.get(cacheKey));
+  }
+
+  try {
+    const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&addressdetails=1&limit=5&countrycodes=in`;
+    const response = await fetch(url, {
+      headers: {
+        'User-Agent': 'MediCompare-College-Project/1.0 (saraswani@medicompare.local)',
+        'Accept': 'application/json'
+      }
+    });
+
+    if (!response.ok) {
+      return res.status(response.status).json({ error: 'Nominatim geocoding failed' });
+    }
+
+    const data = await response.json();
+    if (!Array.isArray(data) || data.length === 0) {
+      return res.json({ found: false, result: null });
+    }
+
+    const top = data[0];
+    const result = {
+      found: true,
+      result: {
+        display_name: top.display_name,
+        lat: parseFloat(top.lat),
+        lng: parseFloat(top.lon),
+        address: top.address || {},
+        type: top.type
+      }
+    };
+
+    osmServerCache.set(cacheKey, result);
+    return res.json(result);
+  } catch (err) {
+    console.error('Server Nominatim proxy error:', err);
+    return res.status(500).json({ error: 'Failed to geocode address' });
+  }
+});
+
+app.get('/api/osm/pharmacies', async (req, res) => {
+  const lat = parseFloat(req.query.lat);
+  const lng = parseFloat(req.query.lng);
+  const radius = parseInt(req.query.radius, 10) || 5000;
+
+  if (isNaN(lat) || isNaN(lng)) {
+    return res.status(400).json({ error: 'Valid lat and lng required' });
+  }
+
+  const cacheKey = `osm_${lat.toFixed(3)}_${lng.toFixed(3)}_${radius}`;
+  if (osmServerCache.has(cacheKey)) {
+    return res.json(osmServerCache.get(cacheKey));
+  }
+
+  const query = `
+    [out:json][timeout:15];
+    (
+      node["amenity"="pharmacy"](around:${radius},${lat},${lng});
+      way["amenity"="pharmacy"](around:${radius},${lat},${lng});
+      node["healthcare"="pharmacy"](around:${radius},${lat},${lng});
+      way["healthcare"="pharmacy"](around:${radius},${lat},${lng});
+      node["shop"="chemist"](around:${radius},${lat},${lng});
+      way["shop"="chemist"](around:${radius},${lat},${lng});
+    );
+    out center tags;
+  `.replace(/\s+/g, ' ').trim();
+
+  const mirrors = [
+    'https://overpass-api.de/api/interpreter',
+    'https://overpass.kumi.systems/api/interpreter',
+    'https://maps.mail.ru/osm/tools/overpass/api/interpreter'
+  ];
+
+  for (const endpoint of mirrors) {
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        body: `data=${encodeURIComponent(query)}`,
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+          'User-Agent': 'MediCompare-College-Project/1.0 (saraswani@medicompare.local)',
+          'Accept': 'application/json'
+        }
+      });
+
+      if (!response.ok) continue;
+      const data = await response.json();
+      const output = { elements: data.elements || [] };
+      osmServerCache.set(cacheKey, output);
+      return res.json(output);
+    } catch (e) {
+      console.warn(`Overpass mirror ${endpoint} failed on server, trying next:`, e.message);
+    }
+  }
+
+  return res.status(502).json({ error: 'Overpass API service temporarily unavailable' });
+});
+
+/**
  * 7. System Stats Endpoint
  */
 app.get('/api/stats', (req, res) => {

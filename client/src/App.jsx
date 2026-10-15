@@ -133,7 +133,7 @@ export default function App() {
   );
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f4f8fe] text-slate-900 pb-20 md:pb-0">
+    <div className="min-h-screen flex flex-col bg-[#f4f8fe] text-slate-900 pb-28 md:pb-8">
       
       {/* Top Colorful Navigation */}
       <Navbar
@@ -142,6 +142,7 @@ export default function App() {
         totalSavedAmount={totalSavedAmount}
         onOpenInfo={() => setIsInfoModalOpen(true)}
         onResetToHome={handleResetToHome}
+        onLocateStore={handleScrollToStores}
         onOpenReportError={() => {
           setReportingMedicine(comparisonData?.medicine || null);
           setIsReportModalOpen(true);
@@ -361,18 +362,27 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="pop-card bg-white rounded-2xl p-5 border border-indigo-100 shadow-sm flex items-start gap-4">
+              <div 
+                onClick={handleScrollToStores}
+                className="pop-card bg-white rounded-2xl p-5 border border-indigo-100 shadow-sm flex items-start gap-4 cursor-pointer hover:border-indigo-300 transition-all"
+              >
                 <div className="w-11 h-11 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center flex-shrink-0 shadow-sm">
                   <Store className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-sm text-slate-900">Jan Aushadhi Kendra Locator</h3>
+                  <div className="flex items-center gap-1.5">
+                    <h3 className="font-bold text-sm text-slate-900">Jan Aushadhi Kendra Locator</h3>
+                    <span className="text-[10px] font-bold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded-full border border-indigo-200">Interactive Map</span>
+                  </div>
                   <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                    Locate nearest government PMBJP Kendras and licensed retail pharmacies with live Google Maps directions.
+                    Locate nearest government PMBJP Kendras and licensed retail pharmacies with live OpenStreetMap directions.
                   </p>
                 </div>
               </div>
             </section>
+
+            {/* Live Store Locator on Homepage */}
+            <StoreLocator forwardRef={storeSectionRef} />
 
           </div>
         )}
@@ -423,13 +433,7 @@ export default function App() {
         </button>
 
         <button
-          onClick={() => {
-            if (comparisonData) {
-              handleScrollToStores();
-            } else {
-              window.scrollTo({ top: 350, behavior: 'smooth' });
-            }
-          }}
+          onClick={handleScrollToStores}
           className="flex flex-col items-center justify-center flex-1 h-full text-slate-600 hover:text-blue-600 transition-colors"
         >
           <Store className="w-4 h-4" />
