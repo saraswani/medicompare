@@ -52,7 +52,7 @@
         badge.innerHTML = `
           <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 8px;">
             <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: #34d399; letter-spacing: 0.5px;">
-              ⚡ MediCompare Generic Alert
+              ⚡ ValueBuy Generic Alert
             </div>
             <button id="medicompare-close-btn" style="background: transparent; border: none; color: #94a3b8; cursor: pointer; font-size: 14px; padding: 0;">✕</button>
           </div>

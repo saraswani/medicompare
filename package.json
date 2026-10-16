@@ -1,7 +1,7 @@
 {
   "name": "medicompare",
   "version": "1.0.0",
-  "description": "Indian Medicine Price Comparison and Generic Alternative Finder App",
+  "description": "ValueBuy — Indian Medicine Price Comparison and Generic Alternative Finder App",
   "type": "module",
   "scripts": {
     "start": "node server/server.js",

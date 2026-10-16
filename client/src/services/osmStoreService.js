@@ -182,7 +182,7 @@ export async function geocodeLocation(query, signal) {
   const headers = { 'Accept': 'application/json' };
   try {
     if (typeof window === 'undefined') {
-      headers['User-Agent'] = 'MediCompare-College-Project/1.0';
+        headers['User-Agent'] = 'ValueBuy-College-Project/1.0';
     }
   } catch (e) {}
 
@@ -318,7 +318,7 @@ async function fetchDirectOverpass(lat, lng, radiusMeters, signal) {
         'Accept': 'application/json'
       };
       if (typeof window === 'undefined') {
-        headers['User-Agent'] = 'MediCompare-College-Project/1.0';
+          headers['User-Agent'] = 'ValueBuy-College-Project/1.0';
       }
 
       const res = await fetch(endpoint, {

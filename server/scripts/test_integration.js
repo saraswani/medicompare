@@ -1,5 +1,5 @@
 async function runTests() {
-  console.log('🧪 Starting MediCompare API & Integration Tests...\n');
+  console.log('🧪 Starting ValueBuy API & Integration Tests...\n');
 
   let passed = 0;
   let failed = 0;

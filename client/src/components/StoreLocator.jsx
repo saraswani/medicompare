@@ -703,7 +703,7 @@ export default function StoreLocator({ forwardRef, activeMedicineName, cheapestG
                 Use Your Current Location
               </h3>
               <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
-                MediCompare uses browser geolocation to find the nearest Jan Aushadhi Kendras and retail chemist stores around you.
+                ValueBuy uses browser geolocation to find the nearest Jan Aushadhi Kendras and retail chemist stores around you.
               </p>
             </div>
 

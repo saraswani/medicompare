@@ -1,6 +1,6 @@
-# Chrome Web Store Listing — MediCompare
+# Chrome Web Store Listing — ValueBuy
 
-Single source of truth for the MediCompare Chrome Extension Web Store submission.
+Single source of truth for the ValueBuy Chrome Extension Web Store submission.
 
 ---
 
@@ -8,7 +8,7 @@ Single source of truth for the MediCompare Chrome Extension Web Store submission
 
 | Field | Value |
 | :--- | :--- |
-| **Extension Name** | MediCompare — Indian Medicine Generic Finder |
+| **Extension Name** | ValueBuy — Indian Medicine Generic Finder |
 | **Short Description** (Max 132 chars) | Compare Indian medicine prices by exact salt composition. Discover cheaper Jan Aushadhi generic alternatives and save up to 90%. |
 | **Category** | Accessibility / Shopping & Healthcare |
 | **Primary Language** | English |
@@ -19,9 +19,9 @@ Single source of truth for the MediCompare Chrome Extension Web Store submission
 ## 2. Detailed Description
 
 ```markdown
-Save up to 90% on your Indian prescription medicines with MediCompare!
+Save up to 90% on your Indian prescription medicines with ValueBuy!
 
-When you search for medicines or browse Indian pharmacy websites (Tata 1mg, Apollo Pharmacy, Netmeds, PharmEasy), MediCompare automatically matches the exact active chemical salt formulation (API) and shows you the verified lower-cost generic equivalent, including Pradhan Mantri Bhartiya Janaushadhi Pariyojana (PMBJP) products.
+When you search for medicines or browse Indian pharmacy websites (Tata 1mg, Apollo Pharmacy, Netmeds, PharmEasy), ValueBuy automatically matches the exact active chemical salt formulation (API) and shows you the verified lower-cost generic equivalent, including Pradhan Mantri Bhartiya Janaushadhi Pariyojana (PMBJP) products.
 
 ### Key Features:
 ✨ Instant Salt-by-Salt Comparison: Check identical chemical salt compositions across Indian manufacturers.

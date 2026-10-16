@@ -30,7 +30,7 @@ export default function Navbar({
           <div>
             <div className="flex items-center gap-2">
               <span className="font-black text-lg text-slate-900 tracking-tight flex items-center">
-                Medi<span className="text-blue-600">Compare</span>
+                Value<span className="text-blue-600">Buy</span>
               </span>
               <span className="text-[10px] font-bold px-2 py-0.5 bg-blue-50 text-blue-700 border border-blue-200/60 rounded-full uppercase tracking-wider">
                 India Rx

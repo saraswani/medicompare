@@ -319,7 +319,7 @@ app.get('/api/osm/geocode', async (req, res) => {
     const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&addressdetails=1&limit=5&countrycodes=in`;
     const response = await fetch(url, {
       headers: {
-        'User-Agent': 'MediCompare-College-Project/1.0 (saraswani@medicompare.local)',
+        'User-Agent': 'ValueBuy-College-Project/1.0 (saraswani@valuebuy.local)',
         'Accept': 'application/json'
       }
     });
@@ -393,7 +393,7 @@ app.get('/api/osm/pharmacies', async (req, res) => {
         body: `data=${encodeURIComponent(query)}`,
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-          'User-Agent': 'MediCompare-College-Project/1.0 (saraswani@medicompare.local)',
+          'User-Agent': 'ValueBuy-College-Project/1.0 (saraswani@valuebuy.local)',
           'Accept': 'application/json'
         }
       });
@@ -469,6 +469,6 @@ export default app;
 
 if (!process.env.VERCEL) {
   app.listen(PORT, () => {
-    console.log(`🏥 MediCompare Healthcare API Server running at http://localhost:${PORT}`);
+    console.log(`🏥 ValueBuy Healthcare API Server running at http://localhost:${PORT}`);
   });
 }

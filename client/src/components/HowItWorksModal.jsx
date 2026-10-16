@@ -91,7 +91,7 @@ export default function HowItWorksModal({ isOpen, onClose }) {
           </div>
 
           <div className="border-t border-slate-100 pt-3">
-            <h3 className="font-bold text-slate-900 mb-1 text-xs">How to use MediCompare at the pharmacy:</h3>
+            <h3 className="font-bold text-slate-900 mb-1 text-xs">How to use ValueBuy at the pharmacy:</h3>
             <ol className="list-decimal list-inside space-y-1 text-xs text-slate-600">
               <li>Search the brand name printed on your prescription.</li>
               <li>Inspect the verified active chemical salt and strength.</li>

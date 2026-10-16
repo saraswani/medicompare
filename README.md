@@ -1,4 +1,4 @@
-# MediCompare (India Rx) — Healthcare Data & Medicine Price Comparison Platform
+# ValueBuy (India Rx) — Healthcare Data & Medicine Price Comparison Platform
 
 > **CEPL Final Evaluation Submission**  
 > A clinical-grade, mobile-first web application designed to help patients in India safely compare branded prescription medicines against verified low-cost generic alternatives and government **Pradhan Mantri Bhartiya Janaushadhi Pariyojana (PMBJP)** formulations.
@@ -9,7 +9,7 @@
 
 In India, branded medicines are frequently sold at 50% to 90% markups over identical generic chemical equivalents due to commercial marketing, medical representative networks, and distributor margins. 
 
-**MediCompare** empowers patients and healthcare professionals to:
+**ValueBuy** empowers patients and healthcare professionals to:
 1. **Search & Autocomplete** medicines across Indian and international regulatory databases in real time.
 2. **Match Exact Active Pharmaceutical Ingredients (APIs)** using standardized Indian Pharmacopoeia (IP) and WHO-GMP bioequivalence guidelines.
 3. **Verify Formulation Compatibility** (preventing dangerous cross-formulation substitutions like immediate-release vs sustained-release, or tablets vs pediatric syrups).
@@ -21,7 +21,7 @@ In India, branded medicines are frequently sold at 50% to 90% markups over ident
 
 ## 2. Regulatory Datasets & API Integration
 
-MediCompare adheres to strict medical data integrity standards. It distinguishes regulatory product approval from commercial pricing and never hallucinates medical data or prices.
+ValueBuy adheres to strict medical data integrity standards. It distinguishes regulatory product approval from commercial pricing and never hallucinates medical data or prices.
 
 | Data Source | Authority / Country | Integration Method | Role & Scope | Verification Status |
 | :--- | :--- | :--- | :--- | :--- |
@@ -40,7 +40,7 @@ MediCompare adheres to strict medical data integrity standards. It distinguishes
 
 ## 3. Clinical Match Engine & Safety Rules
 
-Clinical interchangeability cannot be inferred simply from similar brand names or loose ingredient overlap. MediCompare employs a multi-gate `ClinicalComparator` service:
+Clinical interchangeability cannot be inferred simply from similar brand names or loose ingredient overlap. ValueBuy employs a multi-gate `ClinicalComparator` service:
 
 ### A. Formulation Compatibility Rules
 1. **Dosage Form Matching:** Tablets, Capsules, Syrups, Injections, and Drops are categorized separately. A tablet is never matched as a substitute for an oral syrup.
@@ -48,7 +48,7 @@ Clinical interchangeability cannot be inferred simply from similar brand names o
 3. **Strength Parity:** A 500mg formulation is never presented as an automatic substitute for a 650mg tablet.
 
 ### B. Narrow Therapeutic Index (NTI) Safety Warnings
-For narrow therapeutic index medications (such as anti-epileptics, levothyroxine, lithium, digoxin, and immunosuppressants), minor bioavailability variations between manufacturers can be clinically significant. MediCompare automatically attaches high-priority clinical advisories requiring direct physician supervision before brand switching.
+For narrow therapeutic index medications (such as anti-epileptics, levothyroxine, lithium, digoxin, and immunosuppressants), minor bioavailability variations between manufacturers can be clinically significant. ValueBuy automatically attaches high-priority clinical advisories requiring direct physician supervision before brand switching.
 
 ### C. Safe Pricing & Savings Bounds
 - Price comparisons are only computed when both items share identical bioequivalent active salts, dosage forms, release profiles, and verified retail prices in the same currency (`INR`).
@@ -58,7 +58,7 @@ For narrow therapeutic index medications (such as anti-epileptics, levothyroxine
 
 ## 4. System Architecture
 
-MediCompare is structured into an extensible, decoupled full-stack architecture:
+ValueBuy is structured into an extensible, decoupled full-stack architecture:
 
 ```
 medicompare/
@@ -148,7 +148,7 @@ npm run dev
 
 ## 7. Verification & Automated Test Suites
 
-MediCompare includes two comprehensive automated test suites:
+ValueBuy includes two comprehensive automated test suites:
 
 ### 1. Evaluation Test Suite (`test:eval`)
 Validates clinical safety gates, formulation mismatch detection, price bounds, and error logging:
@@ -176,6 +176,6 @@ npm test
 
 ## 8. Limitations & External Integration Notes
 
-1. **CDSCO REST API Availability:** CDSCO (India) currently publishes regulatory drug approvals and banned formulations as periodic gazettes and portal tables without an authenticated public REST API. MediCompare uses a standardized, repeatable offline ingestion pipeline (`server/scripts/build_full_dataset.js`) with explicit retrieval dates and verification badges.
+1. **CDSCO REST API Availability:** CDSCO (India) currently publishes regulatory drug approvals and banned formulations as periodic gazettes and portal tables without an authenticated public REST API. ValueBuy uses a standardized, repeatable offline ingestion pipeline (`server/scripts/build_full_dataset.js`) with explicit retrieval dates and verification badges.
 2. **Real-Time Pharmacy Stock:** While PMBJP prices and maximum retail prices (MRP) are strictly bounded by government notification, individual physical Jan Aushadhi store inventory fluctuates locally. The app displays phone numbers and directions for advance verification.
 3. **External API Latency:** RxNorm and openFDA servers are located in North America. Network latency on initial requests is mitigated with an in-memory LRU cache and a strict `AbortSignal.timeout(5000)` fallback so local Indian queries are never delayed.

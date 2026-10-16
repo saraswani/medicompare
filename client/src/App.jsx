@@ -393,7 +393,7 @@ export default function App() {
       <footer className="bg-white border-t border-blue-100/80 py-6 mt-12 text-slate-500 text-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
           <div className="flex items-center gap-2">
-            <span className="font-bold text-slate-800">MediCompare</span>
+            <span className="font-bold text-slate-800">ValueBuy</span>
             <span>— Open Indian Medicine & Price Comparison Directory</span>
           </div>
 

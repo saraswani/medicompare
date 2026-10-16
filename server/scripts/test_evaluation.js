@@ -18,7 +18,7 @@ import { ReportService } from '../services/reportService.js';
 import assert from 'node:assert';
 
 console.log('\n======================================================');
-console.log('  MEDICOMPARE — CEPL FINAL EVALUATION TEST SUITE');
+console.log('  VALUEBUY — CEPL FINAL EVALUATION TEST SUITE');
 console.log('======================================================\n');
 
 let passedTests = 0;

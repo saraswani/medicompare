@@ -38,7 +38,7 @@ export default function SavedSwapsDrawer({
         `• ${s.original.name} (₹${s.original.price}) ➔ ${s.alternative.name} (₹${s.alternative.price}) [Salt: ${s.original.display_composition}]`
       ).join('\n');
       navigator.share({
-        title: 'MediCompare - My Saved Generic Swaps',
+        title: 'ValueBuy - My Saved Generic Swaps',
         text: `My medicine generic alternatives:\n${summary}\nEstimated savings: ₹${totalSavingsPerPack.toFixed(2)}/pack.`
       }).catch(() => {});
     }
